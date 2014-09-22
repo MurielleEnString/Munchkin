@@ -14,8 +14,8 @@
 class Carte {
   private :
     //Attributs
-    protected String nom;
-    protected String description;
+    protected string nom;
+    protected string description;
 
   public :
     //Constructeur
