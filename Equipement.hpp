@@ -1,28 +1,29 @@
 /*
-  Fichier Tresor.hpp
-  Définition de la classe Tresor
+  Fichier Equipement.hpp
+  Définition de la classe Equipement
   Auteur : LE CORVEC Quentin Cdrik Boua
 */
 
 /****************************************************************************************************/
 
-#ifndef TRESOR_HPP
-#define TRESOR_HPP
+#ifndef EQUIPEMENT_HPP
+#define EQUIPEMENT_HPP
+#include "Effet.hpp"
 
 /****************************************************************************************************/
 
-class Tresor:public Carte {
+class Equipement:public Equipement {
   protected :
     //Attributs
-    int prix
+    Effet effet;
 
   public :
     //Constructeur
-    Tresor(String n, int p); //Constructeur par défaut
-    Tresor(String n, String d, int p);
+    Equipement(String n, String p, Effet e); //Constructeur par défaut
+    Equipement(String n, String d, String p, Effet e);
 
     //Destructeur
-    ~Tresor();
+    ~Equipement();
 
     //Accesseurs
     void afficher() const;
@@ -30,10 +31,7 @@ class Tresor:public Carte {
     //Mutateurs
 
 }; //Class Carte
-
 /****************************************************************************************************/
-
-#include "Tresor.cpp" //Implémentation de Carte
-#endif // TRESOR_HPP
-
+#include "Equipement.cpp" //Implémentation de Equipement
+#endif // EQUIPEMENT_HPP
 /****************************************************************************************************/
