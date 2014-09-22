@@ -18,8 +18,8 @@ class Tresor:public Carte {
 
   public :
     //Constructeur
-    Tresor(String n, String p); //Constructeur par défaut
-    Tresor(String n, String d, String p);
+    Tresor(String n, int p); //Constructeur par défaut
+    Tresor(String n, String d, int p);
 
     //Destructeur
     ~Tresor();
