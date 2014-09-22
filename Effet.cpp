@@ -3,7 +3,7 @@
 
 
 Effet::Effet(int valeur){
-	val=valeur; //C'est nul
+	val=valeur; 
 	cible=NULL;
 }
 
