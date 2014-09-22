@@ -19,8 +19,8 @@ class Equipement:public Equipement {
 
   public :
     //Constructeur
-    Equipement(String n, String p); //Constructeur par défaut
-    Equipement(String n, String d, String p);
+    Equipement(String n, String p, Effet e); //Constructeur par défaut
+    Equipement(String n, String d, String p, Effet e);
 
     //Destructeur
     ~Equipement();
