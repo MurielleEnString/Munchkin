@@ -1,6 +1,6 @@
 /*
-  Fichier Carte.cpp
-  Définition des méthodes de Carte
+  Fichier Tresor.cpp
+  Définition des méthodes de Tresor
   Auteur : LE CORVEC Quentin, Cédric boite
 */
 
