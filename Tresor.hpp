@@ -12,9 +12,9 @@
 /****************************************************************************************************/
 
 class Tresor:public Carte {
-  private :
+  protected :
     //Attributs
-    protected prix
+    int prix
 
   public :
     //Constructeur
