@@ -21,7 +21,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Carte::Carte(String n) {
+Carte::Carte(string n) {
   nom = n;
 }
 
@@ -32,7 +32,7 @@ Carte::Carte(String n) {
 //Postcondition : Aucune
 //Description : Constructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Carte::Carte(String n, String d) {
+Carte::Carte(string n, string d) {
   nom = n;
   description = d;
   

@@ -19,8 +19,8 @@ class Carte {
 
   public :
     //Constructeur
-    Carte(String n); //Constructeur par défaut
-    Carte(String n, String d);
+    Carte(string n); //Constructeur par défaut
+    Carte(string n, String d);
 
     //Destructeur
     ~Carte();
