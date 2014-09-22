@@ -32,6 +32,6 @@ class Equipement:public Equipement {
 
 }; //Class Carte
 /****************************************************************************************************/
-#include "Equipement.cpp" //Implémentation de Carte
+#include "Equipement.cpp" //Implémentation de Equipement
 #endif // EQUIPEMENT_HPP
 /****************************************************************************************************/
