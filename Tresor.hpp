@@ -16,12 +16,12 @@ class Tresor:public Carte {
   protected :
     //Attributs
     int prix;
-    Effet effet;
+    Effet * effet;
 
   public :
     //Constructeur
-    Tresor(string n, Effet e, string p); //Constructeur par défaut
-    Tresor(string n, string d, Effet e, string p);
+    Tresor(string n, Effet * e, int p); //Constructeur par défaut
+    Tresor(string n, string d, Effet * e, int p);
 
     //Destructeur
     ~Tresor();

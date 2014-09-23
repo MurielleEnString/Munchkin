@@ -21,7 +21,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Equipement::Equipement(String n, String p, Effet e) : Tresor(n,e,p) {
+Equipement::Equipement(string n, int p, Effet * e) : Tresor(n,e,p) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ Equipement::Equipement(String n, String p, Effet e) : Tresor(n,e,p) {
 //Postcondition : Aucune
 //Description : Constructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Equipement::Equipement(String n, String d, Effet e, String p) : Tresor(n, d, e, p) {
+Equipement::Equipement(string n, string d, int p, Effet * e) : Tresor(n, d, e, p) {
 }
 
 /****************************************************************************************************/
@@ -59,8 +59,9 @@ Equipement::~Equipement() {
 //Postcondition : Aucune
 //Description : 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-void Equipement::Equipement() const {
-}
+
+//void Equipement::Equipement() const {
+//}
 
 /****************************************************************************************************/
 /********** Mutateurs **********/

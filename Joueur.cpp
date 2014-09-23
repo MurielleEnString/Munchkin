@@ -11,9 +11,6 @@ Joueur::~Joueur(){
 	
 }
 
-int Joueur::getNiveau(){
-	return niveau;
-}
 
 void Joueur::pioche(){
 	

@@ -10,6 +10,7 @@
 #define EQUIPEMENT_HPP
 #include "Effet.h"
 #include "Tresor.hpp"
+#include <string>
 
 /****************************************************************************************************/
 
@@ -20,8 +21,8 @@ class Equipement:public Tresor {
 
   public :
     //Constructeur
-    Equipement(String n, String p, Effet e); //Constructeur par défaut
-    Equipement(String n, String d, String p, Effet e);
+    Equipement(string n, int p, Effet * e); //Constructeur par défaut
+    Equipement(string n, string d, int p, Effet * e);
 
     //Destructeur
     ~Equipement();
