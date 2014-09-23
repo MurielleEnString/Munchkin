@@ -1,7 +1,7 @@
 #ifndef EFFET_H
 	#define EFFET_H
 	
-#include "Personnage.cpp"
+#include "Personnage.h"
 #include <cstddef>
 	
 class Effet{

@@ -3,6 +3,7 @@
 
 #include "Carte.hpp"
 #include "Personnage.h"
+#include "Equipement.hpp"
 #include <vector>
 
 class Joueur:public Personnage{

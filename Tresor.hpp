@@ -8,18 +8,20 @@
 
 #ifndef TRESOR_HPP
 #define TRESOR_HPP
+#include <string>
 
 /****************************************************************************************************/
 
 class Tresor:public Carte {
   protected :
     //Attributs
-    int prix
+    int prix;
+    Effet effet;
 
   public :
     //Constructeur
-    Tresor(String n, int p); //Constructeur par défaut
-    Tresor(String n, String d, int p);
+    Tresor(string n, Effet e, string p); //Constructeur par défaut
+    Tresor(string n, string d, Effet e, string p);
 
     //Destructeur
     ~Tresor();

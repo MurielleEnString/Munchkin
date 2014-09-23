@@ -1,30 +1,31 @@
 /*
-  Fichier Equipement.hpp
-  Définition de la classe Equipement
+  Fichier Carte.hpp
+  Définition de la classe Carte
   Auteur : LE CORVEC Quentin Cdrik Boua
 */
 
 /****************************************************************************************************/
 
-#ifndef EQUIPEMENT_HPP
-#define EQUIPEMENT_HPP
-#include "Effet.h"
-#include "Tresor.hpp"
+#ifndef CARTE_HPP
+#define CARTE_HPP
+#include <string>
 
 /****************************************************************************************************/
 
-class Equipement:public Tresor {
-  protected :
+class Carte {
+  private :
     //Attributs
-    
+    protected :
+		string nom;
+		string description;
 
   public :
     //Constructeur
-    Equipement(String n, String p, Effet e); //Constructeur par défaut
-    Equipement(String n, String d, String p, Effet e);
+    Carte(string n); //Constructeur par défaut
+    Carte(string n, string d);
 
     //Destructeur
-    ~Equipement();
+    ~Carte();
 
     //Accesseurs
     void afficher() const;
@@ -32,7 +33,12 @@ class Equipement:public Tresor {
     //Mutateurs
 
 }; //Class Carte
+
+
+
 /****************************************************************************************************/
-#include "Equipement.cpp" //Implémentation de Equipement
-#endif // EQUIPEMENT_HPP
+
+#include "Carte.cpp" //Implémentation de Carte
+#endif // CARTE_HPP
+
 /****************************************************************************************************/
