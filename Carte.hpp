@@ -9,6 +9,8 @@
 #ifndef CARTE_HPP
 #define CARTE_HPP
 #include <string>
+#include <iostream>
+using namespace std;
 
 /****************************************************************************************************/
 
@@ -16,7 +18,7 @@ class Carte {
   private :
     //Attributs
     protected :
-		string nom;
+		std::string nom;
 		string description;
 
   public :
@@ -38,7 +40,7 @@ class Carte {
 
 /****************************************************************************************************/
 
-#include "Carte.cpp" //Implémentation de Carte
+
 #endif // CARTE_HPP
 
 /****************************************************************************************************/

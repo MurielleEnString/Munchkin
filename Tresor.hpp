@@ -9,6 +9,10 @@
 #ifndef TRESOR_HPP
 #define TRESOR_HPP
 #include <string>
+#include "Effet.h"
+#include "Carte.hpp"
+
+using namespace std;
 
 /****************************************************************************************************/
 
@@ -35,7 +39,7 @@ class Tresor:public Carte {
 
 /****************************************************************************************************/
 
-#include "Tresor.cpp" //Implémentation de Carte
+
 #endif // TRESOR_HPP
 
 /****************************************************************************************************/

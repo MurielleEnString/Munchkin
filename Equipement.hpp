@@ -11,6 +11,9 @@
 #include "Effet.h"
 #include "Tresor.hpp"
 #include <string>
+#include <iostream>
+
+using namespace std;
 
 /****************************************************************************************************/
 
@@ -34,6 +37,6 @@ class Equipement:public Tresor {
 
 }; //Class Carte
 /****************************************************************************************************/
-#include "Equipement.cpp" //Implémentation de Equipement
+
 #endif // EQUIPEMENT_HPP
 /****************************************************************************************************/

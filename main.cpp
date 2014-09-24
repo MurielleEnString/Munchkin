@@ -5,8 +5,8 @@ using namespace std;
 #include<iostream>
 #include<stdio.h>
 #include<stdlib.h>
-#include"Personnage.cpp"
-#include"Joueur.cpp"
+#include"Personnage.h"
+#include"Joueur.h"
 
 
 
