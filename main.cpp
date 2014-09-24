@@ -1,12 +1,14 @@
 
 
-using namespace std;
+
 
 #include<iostream>
 #include<stdio.h>
 #include<stdlib.h>
 #include"Personnage.h"
 #include"Joueur.h"
+
+using namespace std;
 
 
 

@@ -18,7 +18,7 @@ class Carte {
   private :
     //Attributs
     protected :
-		std::string nom;
+		string nom;
 		string description;
 
   public :
