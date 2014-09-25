@@ -25,6 +25,13 @@ Tresor.o: Effet.o
 	
 Potion.o:Tresor.o
 	g++ Potion.cpp -o Potion.o -c
+	
+TourDeJeu.o:
+	
+PhasesTour.o:
+
+OuvrirPorte.o:
+
 
 clean:
 	rm -rf *.o
