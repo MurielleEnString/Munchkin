@@ -1,5 +1,7 @@
 #ifndef PHASESTOUR_HPP
 	#define PHASESTOUR_HPP
+	
+	#include "TourDeJeu.hpp"
 
 public class PhasesTour{
 	protected:
