@@ -9,7 +9,7 @@ TourDeJeu::TourDeJeu(){
 
 
 void TourDeJeu::setPhase(PhasesTour * p){
-	phase_=p
+	phase_=p;
 }
 PhasesTour * TourDeJeu::getOuvrirLaPorte(){
 	return ouvrirLaPorte;

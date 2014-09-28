@@ -8,8 +8,8 @@ Potion::Potion(string n, int p, Effet * e):Tresor(n,e,p){
 
 Potion::~Potion(){}
 
-Potion::boire(){
+void Potion::boire(){
 	
 }
 
-Potion::donner(Personnage p){}
+void Potion::donner(Personnage p){}

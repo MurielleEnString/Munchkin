@@ -1,6 +1,7 @@
 #ifndef POTION_HPP
 	#define POTION_HPP
 	
+	#include"Tresor.hpp"
 	
 class Potion:public Tresor{
 	public:

@@ -26,13 +26,11 @@ Tresor.o: Effet.o
 Potion.o:Tresor.o
 	g++ Potion.cpp -o Potion.o -c
 	
-TourDeJeu.o:
+TourDeJeu.o: 
 	g++ TourDeJeu.cpp -o TourDeJeu.o -c
 	
-PhasesTour.o: TourDeJeu.o
-	g++ PhasesTour.cpp -o PhasesTour.o -c
 
-OuvrirPorte.o:
+OuvrirPorte.o:PhasesTour.o
 	g++ OuvrirPorte.cpp -o OuvrirPorte.o -c
 
 

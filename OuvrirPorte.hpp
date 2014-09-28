@@ -1,7 +1,9 @@
 #ifndef OUVRIRPORTE_HPP
 	#define OUVRIRPORTE_HPP
 	
-public class OuvrirPorte:public PhasesTour{
+	#include"PhasesTour.hpp"
+	
+class OuvrirPorte:public PhasesTour{
 	private:
 		bool combat;
 	public:

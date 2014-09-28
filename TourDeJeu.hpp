@@ -1,7 +1,12 @@
 #ifndef TOURDEJEU_HPP
 	#define TOURDEJEU_HPP
 	
-public class TourDeJeu{
+
+	#include"PhasesTour.hpp"
+class PhasesTour;
+
+
+class TourDeJeu{
 	
 	private:
 		PhasesTour * ouvrirLaPorte;

@@ -1,5 +1,5 @@
-#include "PhaseTour.hpp"
+#include "PhasesTour.hpp"
 
-PhasesTour::PhasesTour(TourDeJeu t){
+PhasesTour::PhasesTour(TourDeJeu * t){
 	tour=t;
 }
