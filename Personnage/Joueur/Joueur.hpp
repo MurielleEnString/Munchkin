@@ -14,10 +14,12 @@
 #include "../../Carte/Carte.hpp"
 #include "../../Carte/Tresor/Equipement/Equipement.hpp"
 #include "../Personnage.hpp"
+#include "EtatJoueur/EtatJoueur.hpp"
 
 #include <vector>
 
 /****************************************************************************************************/
+class EtatJoueur;
 
 class Joueur:public Personnage{
   public:
@@ -32,11 +34,26 @@ class Joueur:public Personnage{
     void poseEquipement(Equipement e);
     void equiper(Equipement e);
     void desequiper(Equipement e);
+    void tirerUneCarte();
+	void poserUnMonstre();
+	void setEtat(EtatJoueur * e);
+    
+    EtatJoueur * getOuvrirLaPorte();
+	EtatJoueur * getPiller();
+	EtatJoueur * getBagarre();
+	EtatJoueur * getCharite();
 
   protected:
 
   private:
     //Attributs
+    EtatJoueur * ouvrirLaPorte;
+	EtatJoueur * piller;
+	EtatJoueur * bagarre;
+	EtatJoueur * charite;
+		
+	EtatJoueur * etat_;
+		
     std::vector<Carte> * main;
     std::vector<Equipement> * bagage;
     std::vector<Equipement> * equipe;

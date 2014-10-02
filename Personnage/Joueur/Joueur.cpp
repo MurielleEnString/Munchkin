@@ -26,6 +26,10 @@ Joueur::Joueur():Personnage() {
 	main = new std::vector<Carte>();
 	equipe = new std::vector<Equipement>();
 	bagage = new std::vector<Equipement>();
+	ouvrirLaPorte=new EtatJoueur(this);
+	piller=new EtatJoueur(this);
+	bagarre=new EtatJoueur(this);
+	charite=new EtatJoueur(this);
 }
 
 
@@ -68,4 +72,25 @@ void Joueur::pioche(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 void desequiper(Equipement e){
 }
+
+
+
+
 /****************************************************************************************************/
+
+
+void Joueur::setEtat(EtatJoueur * e){
+	etat_=e;
+}
+EtatJoueur * Joueur::getOuvrirLaPorte(){
+	return ouvrirLaPorte;
+}
+EtatJoueur * Joueur::getPiller(){
+	return piller;
+}
+EtatJoueur * Joueur::getBagarre(){
+	return bagarre;
+}
+EtatJoueur * Joueur::getCharite(){
+	return charite;
+}
