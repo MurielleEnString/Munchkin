@@ -18,11 +18,15 @@
 
 #include <vector>
 
+using namespace std;
+
 /****************************************************************************************************/
 class EtatJoueur;
 
 class Joueur:public Personnage{
   public:
+  
+	
     //Constructeur
     Joueur();
 
@@ -30,18 +34,18 @@ class Joueur:public Personnage{
     ~Joueur();
 
     //Mutateurs
-    void pioche();
-    void poseEquipement(Equipement e);
-    void equiper(Equipement e);
-    void desequiper(Equipement e);
-    void tirerUneCarte();
-	void poserUnMonstre();
+    
 	void setEtat(EtatJoueur * e);
     
     EtatJoueur * getOuvrirLaPorte();
 	EtatJoueur * getPiller();
 	EtatJoueur * getBagarre();
 	EtatJoueur * getCharite();
+	
+	vector<Equipement> * getBagage();
+	vector<Equipement> * getEquipe();
+	
+	
 
   protected:
 

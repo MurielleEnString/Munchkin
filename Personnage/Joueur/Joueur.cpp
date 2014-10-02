@@ -52,15 +52,6 @@ Joueur::~Joueur(){
 /**********          Mutateurs                                                             **********/
 /****************************************************************************************************/
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : pioche()
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description : 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-void Joueur::pioche(){
-}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -93,4 +84,12 @@ EtatJoueur * Joueur::getBagarre(){
 }
 EtatJoueur * Joueur::getCharite(){
 	return charite;
+}
+
+vector<Equipement> * Joueur::getBagage(){
+	return bagage;
+	
+}
+vector<Equipement> * Joueur::getEquipe(){
+		return equipe;
 }
