@@ -41,13 +41,10 @@ class Joueur:public Personnage{
 	EtatJoueur * getPiller();
 	EtatJoueur * getBagarre();
 	EtatJoueur * getCharite();
-	
 	vector<Equipement> * getBagage();
 	vector<Equipement> * getEquipe();
+	vector<Carte> * getMain();
 	
-	
-
-  protected:
 
   private:
     //Attributs

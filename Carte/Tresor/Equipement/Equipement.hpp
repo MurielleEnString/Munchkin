@@ -29,6 +29,8 @@ class Equipement:public Tresor {
 
     //Accesseurs
     void afficher() const;
+    
+    
 
   protected:
 

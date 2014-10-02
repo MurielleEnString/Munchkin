@@ -88,3 +88,10 @@ std::string Carte::Getdescription() const {
 
 
 /****************************************************************************************************/
+
+bool Carte::compare(Carte * e){
+	if(this->nom==e->Getnom()){
+		return true;
+	}
+	return false;
+}

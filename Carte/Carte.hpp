@@ -31,6 +31,8 @@ class Carte {
     //Mutateurs
     //void Setnom(string val);
     //void Setdescription(string val);
+    
+    bool compare(Carte * e);
 
   protected:
     //Attributs

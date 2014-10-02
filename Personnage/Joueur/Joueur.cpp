@@ -93,3 +93,7 @@ vector<Equipement> * Joueur::getBagage(){
 vector<Equipement> * Joueur::getEquipe(){
 		return equipe;
 }
+
+vector<Carte> * Joueur::getMain(){
+	return main;
+}
