@@ -1,0 +1,44 @@
+/*
+  Fichier Munchkin.hpp
+  Définition de la classe Munchkin
+  Auteur : LE CORVEC Quentin Cédric Bois
+*/
+
+/****************************************************************************************************/
+
+#ifndef MUNCHKIN_HPP
+#define MUNCHKIN_HPP
+
+/****************************************************************************************************/
+
+#include "../Carte/Porte/Porte.hpp"
+#include "../Carte/Tresor/Tresor.hpp"
+#include "../Personnage/Joueur/Joueur.hpp"
+
+#include <vector>
+
+/****************************************************************************************************/
+
+class Munchkin {
+  public:
+    //Constructeur
+    Munchkin(std::string filename);
+
+    //Destructeur
+    ~Munchkin();
+
+  protected:
+    //Attributs
+    std::vector<Porte> portes;
+    std::vector<Tresor> tresors;
+    std::vector<Joueur> joueurs;
+
+  private:
+
+}; //Class Munchkin
+
+/****************************************************************************************************/
+
+#endif //MUNCHKIN_HPP
+
+/****************************************************************************************************/
