@@ -1,20 +1,10 @@
+#include <iostream>
 
-
-
-
-#include<iostream>
-#include<stdio.h>
-#include<stdlib.h>
-#include"Personnage.h"
-#include"Joueur.h"
+#include "include/Munchkin/Munchkin.hpp"
 
 using namespace std;
 
-
-
-int main(){
-	Joueur * j1=new Joueur();
-	cout<<j1->getNiveau()<<endl;
-	
-	return 0;
+int main() {
+  Munchkin * m = new Munchkin("blabla");
+  return 0;
 }
