@@ -3,12 +3,12 @@ all:Joueur.o Carte.o Monstre.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o P
 
 
 Carte.o:
-	g++ -Wall include/Carte/Carte.cpp -o Carte.o -c
+	g++ -Wall include/Carte/Carte.cpp -o obj/Debug/include/Carte/Carte.o -c
 	
 Porte.o: Carte.o
 	g++ -Wall include/Carte/Porte/Porte.cpp -o obj/Debug/include/Carte/Porte/Porte.o -c
 	
-Monstre.o: Porte.o Effet.o Personnge.o
+Monstre.o: Porte.o Effet.o Personnage.o
 	g++ -Wall include/Carte/Porte/Monstre/Monstre.cpp -o obj/Debug/include/Carte/Porte/Monstre/Monstre.o -c
 	
 Race.o:Porte.o Effet.o

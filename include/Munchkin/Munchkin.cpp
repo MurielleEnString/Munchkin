@@ -78,3 +78,20 @@ Munchkin::~Munchkin() {
 }
 
 /****************************************************************************************************/
+
+std::vector<Porte> Munchkin::getPiochePorte(){
+	return piochePorte;
+}
+
+std::vector<Porte> Munchkin::getdefaussePorte(){
+		return defaussePorte;
+}
+
+std::vector<Tresor> Munchkin::getPiocheTresor(){
+	return piocheTresor;
+}
+
+std::vector<Tresor> Munchkin::getDefausseTresor(){
+	return defausseTresor;
+}
+

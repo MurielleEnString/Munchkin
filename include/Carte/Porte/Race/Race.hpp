@@ -3,13 +3,20 @@
 	
 #include "../Porte.hpp"
 #include "../../../Effet/Effet.hpp"
+#include<string>
+
+class Effet;
+
+using namespace std;
+
+
 	
 class Race:public Porte{
 	protected:
 		Effet * e1;
 		Effet * e2;
 	public:
-		Race();
+		Race(Effet * e,Effet * e0, string nom, string description);
 		~Race();
 		
 };

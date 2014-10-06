@@ -1,6 +1,6 @@
 #include "OuvrirPorte.hpp"
 
-OuvrirPorte::OuvrirPorte(){
+OuvrirPorte::OuvrirPorte(Joueur *j):EtatJoueur(j){
 	combat=false;
 }
 
@@ -18,6 +18,6 @@ void OuvrirPorte::piocherFaceVisible(){
 	 * ou
 	 * 	tour.setPhase(tour.getBagarre());
 	 * }
-	 */
-	 tour
+	 
+	 tour*/
 }

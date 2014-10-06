@@ -26,12 +26,22 @@ class Munchkin {
 
     //Destructeur
     ~Munchkin();
+  
+	std::vector<Porte> getPiochePorte();
+	std::vector<Porte> getdefaussePorte();
+	std::vector<Tresor> getPiocheTresor();
+	std::vector<Tresor> getDefausseTresor();
 
   protected:
     //Attributs
-    std::vector<Porte> portes;
-    std::vector<Tresor> tresors;
-    std::vector<Joueur> joueurs;
+	std::vector<Porte> piochePorte;
+	std::vector<Tresor> piocheTresor;
+	std::vector<Porte> defaussePorte;
+	std::vector<Tresor> defausseTresor;
+  
+	std::vector<Joueur> joueurs;
+  
+  
 
   private:
 
