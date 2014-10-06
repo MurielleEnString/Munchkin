@@ -21,10 +21,8 @@ class EtatJoueur{
 	public:
 		EtatJoueur(Joueur * t);
 		
-		virtual void piocherPorteFaceVisible();
-		virtual void piocherPorteFaceCache();
-		virtual void poserUnMonstre();
-		virtual void donnerCarte();
+		void piocherPorteFaceVisible();
+		void piocherPorteFaceCache();
 		void poseEquipement(Equipement * e);
 		void equiper(Equipement * e);
 		void desequiper(Equipement * e);

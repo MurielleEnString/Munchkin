@@ -5,6 +5,15 @@ EtatJoueur::EtatJoueur(Joueur * j){
 	joueur=j;
 }
 
+void piocherPorteFaceVisible(){
+	cout<<"Vous ne pouvez pas piocher pour l'instant"<<endl;
+}
+
+void piocherPorteFaceCache(){
+	cout<<"Vous ne pouvez pas piocher pour l'instant"<<endl;
+}	
+
+
 void EtatJoueur::poseEquipement(Equipement * e){
 	joueur->getBagage()->push_back(*e);
 	

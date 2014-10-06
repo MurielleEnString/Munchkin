@@ -78,20 +78,24 @@ Munchkin::~Munchkin() {
 }
 
 /****************************************************************************************************/
-
-std::vector<Porte> Munchkin::getPiochePorte(){
+Porte * piocherPorte(){
+	Porte * res=piochePorte.front();
+	piochePorte.erase(res);
+	return res;
+}
+std::vector<Porte*> Munchkin::getPiochePorte(){
 	return piochePorte;
 }
 
-std::vector<Porte> Munchkin::getdefaussePorte(){
+std::vector<Porte*> Munchkin::getdefaussePorte(){
 		return defaussePorte;
 }
 
-std::vector<Tresor> Munchkin::getPiocheTresor(){
+std::vector<Tresor*> Munchkin::getPiocheTresor(){
 	return piocheTresor;
 }
 
-std::vector<Tresor> Munchkin::getDefausseTresor(){
+std::vector<Tresor*> Munchkin::getDefausseTresor(){
 	return defausseTresor;
 }
 

@@ -26,7 +26,7 @@ Effet.o:Personnage.o
 Munchkin.o: Porte.o Tresor.o Joueur.o
 	g++ -Wall include/Munchkin/Munchkin.cpp -o obj/Debug/include/Munchkin/Munchkin.o -c
 	
-Personnage.o:Race.o
+Personnage.o:Race.o Munchkin.o
 	g++ -Wall include/Personnage/Personnage.cpp -o obj/Debug/include/Personnage/Personnage.o -c
 
 Joueur.o: Carte.o Equipement.o Personnage.o EtatJoueur.o Effet.o
@@ -40,6 +40,9 @@ OuvrirPorte.o: EtatJoueur.o
 	
 PillerPiece.o: EtatJoueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.o -c
+	
+DebutTour.o: EtatJoueur.o
+	g++ -Wall include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.o -c
 	
 
 	

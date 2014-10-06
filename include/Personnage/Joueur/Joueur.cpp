@@ -22,7 +22,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Joueur::Joueur():Personnage() {
+Joueur::Joueur(Munchkin * j):Personnage() {
 	main = new std::vector<Carte>();
 	equipe = new std::vector<Equipement>();
 	bagage = new std::vector<Equipement>();
@@ -31,6 +31,7 @@ Joueur::Joueur():Personnage() {
 	bagarre=new EtatJoueur(this);
 	charite=new EtatJoueur(this);
 	race=NULL;
+	jeu=j;
 }
 
 

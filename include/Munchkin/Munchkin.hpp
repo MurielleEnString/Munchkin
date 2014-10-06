@@ -17,6 +17,8 @@
 
 #include <vector>
 
+class Joueur;
+
 /****************************************************************************************************/
 
 class Munchkin {
@@ -27,17 +29,19 @@ class Munchkin {
     //Destructeur
     ~Munchkin();
   
-	std::vector<Porte> getPiochePorte();
-	std::vector<Porte> getdefaussePorte();
-	std::vector<Tresor> getPiocheTresor();
-	std::vector<Tresor> getDefausseTresor();
+	std::vector<Porte*> getPiochePorte();
+	std::vector<Porte*> getdefaussePorte();
+	std::vector<Tresor*> getPiocheTresor();
+	std::vector<Tresor*> getDefausseTresor();
+	
+	Porte * piocherPorte();
 
   protected:
     //Attributs
-	std::vector<Porte> piochePorte;
-	std::vector<Tresor> piocheTresor;
-	std::vector<Porte> defaussePorte;
-	std::vector<Tresor> defausseTresor;
+	std::vector<Porte*> piochePorte;
+	std::vector<Tresor*> piocheTresor;
+	std::vector<Porte*> defaussePorte;
+	std::vector<Tresor*> defausseTresor;
   
 	std::vector<Joueur> joueurs;
   

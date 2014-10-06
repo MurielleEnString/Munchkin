@@ -16,8 +16,11 @@
 #include "../Personnage.hpp"
 #include "EtatJoueur/EtatJoueur.hpp"
 #include "../../Effet/Effet.hpp"
+#include "../../Munchkin/Munchkin.hpp"
 
 #include <vector>
+
+class Munchkin;
 
 using namespace std;
 
@@ -29,7 +32,7 @@ class Joueur:public Personnage{
   
 	
     //Constructeur
-    Joueur();
+    Joueur(Munchkin * j);
 
     //Destructeur
     ~Joueur();
@@ -54,12 +57,15 @@ class Joueur:public Personnage{
 	EtatJoueur * piller;
 	EtatJoueur * bagarre;
 	EtatJoueur * charite;
+	EtatJoueur * debut;
 		
 	EtatJoueur * etat_;
 		
     std::vector<Carte> * main;
     std::vector<Equipement> * bagage;
     std::vector<Equipement> * equipe;
+    
+    Munchkin * jeu;
 
 }; //Class Joueur
 
