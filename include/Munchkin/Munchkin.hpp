@@ -22,6 +22,7 @@ class Joueur;
 /****************************************************************************************************/
 
 class Munchkin {
+	
   public:
     //Constructeur
     Munchkin(std::string filename);

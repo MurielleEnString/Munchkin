@@ -1,4 +1,4 @@
-all:Joueur.o Carte.o Monstre.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o
+all:Joueur.o Carte.o Monstre.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour
 	g++ -Wall main.cpp -o main
 
 

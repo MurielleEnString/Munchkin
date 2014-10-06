@@ -46,9 +46,11 @@ class Joueur:public Personnage{
 	EtatJoueur * getBagarre();
 	EtatJoueur * getCharite();
   
-	vector<Equipement> * getBagage();
-	vector<Equipement> * getEquipe();
-	vector<Carte> * getMain();
+	vector<Equipement*> * getBagage();
+	vector<Equipement*> * getEquipe();
+	vector<Carte*> * getMain();
+	
+	Munchkin * getJeu();
 	
 
   private:
@@ -61,9 +63,9 @@ class Joueur:public Personnage{
 		
 	EtatJoueur * etat_;
 		
-    std::vector<Carte> * main;
-    std::vector<Equipement> * bagage;
-    std::vector<Equipement> * equipe;
+    std::vector<Carte*> * main;
+    std::vector<Equipement*> * bagage;
+    std::vector<Equipement*> * equipe;
     
     Munchkin * jeu;
 

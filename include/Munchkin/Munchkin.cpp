@@ -78,9 +78,9 @@ Munchkin::~Munchkin() {
 }
 
 /****************************************************************************************************/
-Porte * piocherPorte(){
+Porte * Munchkin::piocherPorte(){
 	Porte * res=piochePorte.front();
-	piochePorte.erase(res);
+	piochePorte.erase(piochePorte.begin());
 	return res;
 }
 std::vector<Porte*> Munchkin::getPiochePorte(){
