@@ -85,15 +85,15 @@ EtatJoueur * Joueur::getCharite(){
 	return charite;
 }
 
-vector<Equipement*> * Joueur::getBagage(){
+vector<Equipement*>  Joueur::getBagage(){
 	return bagage;
 	
 }
-vector<Equipement*> * Joueur::getEquipe(){
+vector<Equipement*>  Joueur::getEquipe(){
 		return equipe;
 }
 
-vector<Carte*> * Joueur::getMain(){
+vector<Carte*>  Joueur::getMain(){
 	return main;
 }
 

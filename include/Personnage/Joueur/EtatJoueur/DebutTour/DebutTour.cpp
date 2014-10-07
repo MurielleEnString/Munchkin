@@ -4,10 +4,10 @@ DebutTour::DebutTour(Joueur * j):EtatJoueur(j){
 }
 
 void DebutTour::piocherPorteFaceVisible(){
-	const Carte * c=joueur->getJeu()->piocherPorte();
+	Carte * c=joueur->getJeu()->piocherPorte();
 	cout<<"J'ai pioché "<<c->Getnom()<<endl;
-	joueur->getMain()->push_back(*c);
-	joueur->etat_=joueur->getOuvrirLaPorte();
+	joueur->getMain().push_back(c);
+	//joueur->etat_=joueur->getOuvrirLaPorte();
 }
 
 
