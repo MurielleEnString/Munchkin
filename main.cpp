@@ -4,7 +4,7 @@
 #include "include/Personnage/Joueur/Joueur.hpp"
 #include "include/Carte/Carte.hpp"
 #include <vector>
-
+#include <typeinfo>
 using namespace std;
 
 int main() {
@@ -33,6 +33,11 @@ int main() {
 	  cout<<(*it)->Getnom()<<endl;
 	  
   }
+  Carte * c2=new Monstre("Plante", new Effet(2),10, 2);
+  cout<<typeid(c.front()).name()<<endl;
+  cout<<c.size()<<endl;
+ 
+  
   
   return 0;
 }

@@ -45,7 +45,7 @@ void EtatJoueur::desequiper(Equipement * e){
 	joueur->getBagage().push_back(e);
 }
 
-void EtatJoueur::poserUnMonstre(Monstre * m){
+void EtatJoueur::combattre(Monstre * m){
 	cout<<"Vous ne pouvez pas poser de monstre maintenant"<<endl;
 }
 

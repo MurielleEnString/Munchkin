@@ -1,5 +1,5 @@
 all:Joueur.o Carte.o Monstre.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour.o
-	g++ -Wall main.cpp obj/Debug/include/Carte/Carte.o -o main
+	g++ -Wall main.cpp obj/Debug/include/Personnage/Personnage.o obj/Debug/include/Carte/Porte/Porte.o obj/Debug/include/Carte/Carte.o obj/Debug/include/Effet/Effet.o obj/Debug/include/Carte/Porte/Monstre/Monstre.o -o main
 
 
 Carte.o:
@@ -8,6 +8,9 @@ Carte.o:
 Porte.o: Carte.o
 	g++ -Wall include/Carte/Porte/Porte.cpp -o obj/Debug/include/Carte/Porte/Porte.o -c
 	
+Malediction.o:Effet.o
+	g++ -Wall include/Carte/Porte/Malediction/Malediction.cpp -o obj/Debug/include/Carte/Porte/Malediction/Malediction.o -c
+
 Monstre.o: Porte.o Effet.o Personnage.o
 	g++ -Wall include/Carte/Porte/Monstre/Monstre.cpp -o obj/Debug/include/Carte/Porte/Monstre/Monstre.o -c
 	
@@ -29,8 +32,7 @@ Munchkin.o: Porte.o Tresor.o Joueur.o
 Personnage.o:Race.o Munchkin.o
 	g++ -Wall include/Personnage/Personnage.cpp -o obj/Debug/include/Personnage/Personnage.o -c
 
-Joueur.o: Carte.o Equipement.o Personnage.o EtatJoueur.o Effet.o
-	g++ -Wall include/Personnage/Joueur/Joueur.cpp -o obj/Debug/include/Personnage/Joueur/Joueur.o -c
+
 	
 EtatJoueur.o:Carte.o Equipement.o Joueur.o Monstre.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/EtatJoueur.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/EtatJoueur.o -c
@@ -44,8 +46,11 @@ PillerPiece.o: EtatJoueur.o
 DebutTour.o: EtatJoueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.o -c
 	
+Bagarre.o: EtatJoueur.o
+	g++ -Wall include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o -c
 
-	
+Joueur.o: Carte.o Equipement.o Personnage.o EtatJoueur.o Effet.o OuvrirPorte.o PillerPiece.o DebutTour.o Bagarre.o
+	g++ -Wall include/Personnage/Joueur/Joueur.cpp -o obj/Debug/include/Personnage/Joueur/Joueur.o -c
 
 clean:
 	rm -rf  *.o

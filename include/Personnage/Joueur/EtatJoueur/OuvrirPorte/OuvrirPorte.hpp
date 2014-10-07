@@ -1,8 +1,11 @@
 #ifndef OUVRIRPORTE_HPP
 	#define OUVRIRPORTE_HPP
 	
-	#include"../EtatJoueur.hpp"
-	
+	#include "../EtatJoueur.hpp"
+	#include "../../../../Carte/Porte/Monstre/Monstre.hpp"
+	#include "../../../../Carte/Porte/Malediction/Malediction.hpp"
+	#include <typeinfo>
+
 class OuvrirPorte:public EtatJoueur{
 	private:
 		bool combat;

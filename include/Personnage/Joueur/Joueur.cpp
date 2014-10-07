@@ -23,9 +23,10 @@
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 Joueur::Joueur(Munchkin * j):Personnage() {
-	ouvrirLaPorte=new EtatJoueur(this);
-	piller=new EtatJoueur(this);
-	bagarre=new EtatJoueur(this);
+	debut= new DebutTour(this);
+	ouvrirLaPorte=new OuvrirPorte(this);
+	piller=new PillerPiece(this);
+	bagarre=new Bagarre(this);
 	charite=new EtatJoueur(this);
 	race=NULL;
 	jeu=j;
@@ -72,13 +73,21 @@ void desequiper(Equipement e){
 void Joueur::setEtat(EtatJoueur * e){
 	etat_=e;
 }
-EtatJoueur * Joueur::getOuvrirLaPorte(){
+
+EtatJoueur * Joueur::getEtat(){
+	return etat_;
+}
+
+DebutTour * Joueur::getDebut(){
+	return debut;
+}
+OuvrirPorte * Joueur::getOuvrirLaPorte(){
 	return ouvrirLaPorte;
 }
-EtatJoueur * Joueur::getPiller(){
+PillerPiece * Joueur::getPiller(){
 	return piller;
 }
-EtatJoueur * Joueur::getBagarre(){
+Bagarre * Joueur::getBagarre(){
 	return bagarre;
 }
 EtatJoueur * Joueur::getCharite(){

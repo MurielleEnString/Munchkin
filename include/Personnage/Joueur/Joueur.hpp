@@ -17,10 +17,18 @@
 #include "EtatJoueur/EtatJoueur.hpp"
 #include "../../Effet/Effet.hpp"
 #include "../../Munchkin/Munchkin.hpp"
+#include "EtatJoueur/DebutTour/DebutTour.hpp"
+#include "EtatJoueur/OuvrirPorte/OuvrirPorte.hpp"
+#include "EtatJoueur/PillerPiece/PillerPiece.hpp"
+#include "EtatJoueur/Bagarre/Bagarre.hpp"
 
 #include <vector>
 
 class Munchkin;
+class DebutTour;
+class OuvrirPorte;
+class PillerPiece;
+class Bagarre;
 
 using namespace std;
 
@@ -40,10 +48,12 @@ class Joueur:public Personnage{
     //Mutateurs
     
 	void setEtat(EtatJoueur * e);
+	EtatJoueur * getEtat();
     
-	EtatJoueur * getOuvrirLaPorte();
-	EtatJoueur * getPiller();
-	EtatJoueur * getBagarre();
+    DebutTour * getDebut();
+	OuvrirPorte * getOuvrirLaPorte();
+	PillerPiece * getPiller();
+	Bagarre * getBagarre();
 	EtatJoueur * getCharite();
   
 	vector<Equipement*> getBagage();
@@ -55,11 +65,12 @@ class Joueur:public Personnage{
 
   private:
     //Attributs
-    EtatJoueur * ouvrirLaPorte;
-	EtatJoueur * piller;
-	EtatJoueur * bagarre;
+	DebutTour * debut;
+    OuvrirPorte * ouvrirLaPorte;
+	PillerPiece * piller;
+	Bagarre * bagarre;
 	EtatJoueur * charite;
-	EtatJoueur * debut;
+	
 		
 	EtatJoueur * etat_;
 		

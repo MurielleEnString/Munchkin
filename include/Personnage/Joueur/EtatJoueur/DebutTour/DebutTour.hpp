@@ -1,7 +1,7 @@
 #ifndef DEBUTTOUR_HPP
 	#define DEBUTTOUR_HPP
 	
-	#include"../EtatJoueur.hpp"
+	#include "../EtatJoueur.hpp"
 
 class DebutTour:public EtatJoueur{
 	public:
