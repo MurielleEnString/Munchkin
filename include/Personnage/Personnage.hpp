@@ -9,7 +9,7 @@
 #ifndef PERSONNAGE_HPP
 #define PERSONNAGE_HPP
 
-#include "../Carte/Porte/Race/Race.hpp"
+
 
 class Race;
 

@@ -1,10 +1,9 @@
 #ifndef ETATJOUEUR_HPP
 	#define ETATJOUEUR_HPP
 	
-	#include "../../../Carte/Carte.hpp"
-	#include "../Joueur.hpp"
-	#include "../../../Carte/Porte/Monstre/Monstre.hpp"
-	#include "../../../Carte/Tresor/Equipement/Equipement.hpp"
+	
+	
+	
 	#include <iostream>
 	#include <vector>
 	
@@ -13,6 +12,11 @@
 	
 	
 class Joueur;
+class Personnage;
+class Monstre;
+class Equipement;
+class Tresor;
+class Carte;
 
 class EtatJoueur{
 	protected:

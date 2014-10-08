@@ -2,7 +2,8 @@
 	#define DEBUTTOUR_HPP
 	
 	#include "../EtatJoueur.hpp"
-
+	#include "../../Joueur.hpp"
+	
 class DebutTour:public EtatJoueur{
 	public:
 		DebutTour(Joueur * j);

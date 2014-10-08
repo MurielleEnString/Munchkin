@@ -13,7 +13,8 @@
 
 #include "../../../Personnage/Personnage.hpp"
 #include "../Porte.hpp"
-#include "../../../Effet/Effet.hpp"
+
+class Effet;
 
 /****************************************************************************************************/
 

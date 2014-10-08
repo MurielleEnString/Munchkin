@@ -11,13 +11,13 @@
 
 /****************************************************************************************************/
 
-#include "../Carte/Porte/Porte.hpp"
-#include "../Carte/Tresor/Tresor.hpp"
-#include "../Personnage/Joueur/Joueur.hpp"
 
+#include "../Personnage/Joueur/Joueur.hpp"
 #include <vector>
 
 class Joueur;
+class Porte;
+class Tresor;
 
 /****************************************************************************************************/
 

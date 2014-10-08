@@ -4,7 +4,7 @@ DebutTour::DebutTour(Joueur * j):EtatJoueur(j){
 }
 
 void DebutTour::piocherPorteFaceVisible(){
-	joueur->setEtat(joueur->getOuvrirLaPorte());
+	joueur->setEtat((EtatJoueur*)joueur->getOuvrirLaPorte());
 	joueur->getEtat()->piocherPorteFaceVisible();
 }
 

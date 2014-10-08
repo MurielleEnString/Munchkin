@@ -3,8 +3,9 @@
 	#define MALEDICTION_HPP
 
 #include "../Porte.hpp"
-#include "../../../Effet/Effet.hpp"
 #include <string>
+
+class Effet;
 
 class Malediction:public Porte{
 	public:

@@ -11,12 +11,8 @@
 
 /****************************************************************************************************/
 
-#include "../../Carte/Carte.hpp"
-#include "../../Carte/Tresor/Equipement/Equipement.hpp"
+
 #include "../Personnage.hpp"
-#include "EtatJoueur/EtatJoueur.hpp"
-#include "../../Effet/Effet.hpp"
-#include "../../Munchkin/Munchkin.hpp"
 #include "EtatJoueur/DebutTour/DebutTour.hpp"
 #include "EtatJoueur/OuvrirPorte/OuvrirPorte.hpp"
 #include "EtatJoueur/PillerPiece/PillerPiece.hpp"
@@ -24,15 +20,21 @@
 
 #include <vector>
 
-class Munchkin;
-class DebutTour;
-class OuvrirPorte;
-class PillerPiece;
-class Bagarre;
+
+
 
 using namespace std;
 
 /****************************************************************************************************/
+
+class Equipement;
+class Effet;
+class Munchkin;
+
+class DebutTour;
+class OuvrirPorte;
+class PillerPiece;
+class Bagarre;
 class EtatJoueur;
 
 class Joueur:public Personnage{

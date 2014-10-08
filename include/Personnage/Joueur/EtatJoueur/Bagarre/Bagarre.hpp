@@ -2,6 +2,9 @@
 #define BAGARRE_HPP
 
 #include "../EtatJoueur.hpp"
+#include "../../Joueur.hpp"
+
+
 
 class Bagarre:public EtatJoueur{
 	public:

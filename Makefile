@@ -32,25 +32,25 @@ Munchkin.o: Porte.o Tresor.o Joueur.o
 Personnage.o:Race.o Munchkin.o
 	g++ -Wall include/Personnage/Personnage.cpp -o obj/Debug/include/Personnage/Personnage.o -c
 
-
+Joueur.o: Personnage.o 
+	g++ -Wall include/Personnage/Joueur/Joueur.cpp -o obj/Debug/include/Personnage/Joueur/Joueur.o -c
 	
-EtatJoueur.o:Carte.o Equipement.o Joueur.o Monstre.o
+EtatJoueur.o:
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/EtatJoueur.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/EtatJoueur.o -c
 	
-OuvrirPorte.o: EtatJoueur.o
+OuvrirPorte.o: EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/OuvrirPorte/OuvrirPorte.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/OuvrirPorte/OuvrirPorte.o -c
 	
-PillerPiece.o: EtatJoueur.o
+PillerPiece.o: EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.o -c
 	
-DebutTour.o: EtatJoueur.o
+DebutTour.o: EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.o -c
 	
-Bagarre.o: EtatJoueur.o
+Bagarre.o: EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o -c
 
-Joueur.o: Carte.o Equipement.o Personnage.o EtatJoueur.o Effet.o OuvrirPorte.o PillerPiece.o DebutTour.o Bagarre.o
-	g++ -Wall include/Personnage/Joueur/Joueur.cpp -o obj/Debug/include/Personnage/Joueur/Joueur.o -c
+
 
 clean:
 	rm -rf  *.o
@@ -69,3 +69,32 @@ clean:
 	
 
 
+# DO NOT DELETE
+
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Joueur/EtatJoueur/EtatJoueur.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Carte.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Joueur/Joueur.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Carte.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Tresor/Equipement/Equipement.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Effet/Effet.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Personnage.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Porte/Race/Race.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Porte/Porte.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Carte.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Tresor/Tresor.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Effet/Effet.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Personnage.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Joueur/EtatJoueur/EtatJoueur.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Munchkin/Munchkin.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Porte/Porte.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Tresor/Tresor.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Joueur/Joueur.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Joueur/EtatJoueur/OuvrirPorte/OuvrirPorte.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Porte/Monstre/Monstre.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Personnage.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Porte/Malediction/Malediction.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Porte/Monstre/Monstre.hpp
+include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o: include/Carte/Tresor/Equipement/Equipement.hpp

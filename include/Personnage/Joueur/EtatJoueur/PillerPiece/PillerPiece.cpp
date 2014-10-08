@@ -1,4 +1,4 @@
-#include "PillerPiece.cpp"
+#include "PillerPiece.hpp"
 
-PillerPiece(Joueur *j):EtatJoueur(j){
+PillerPiece::PillerPiece(Joueur *j):EtatJoueur(j){
 }

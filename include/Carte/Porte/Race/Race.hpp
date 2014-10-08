@@ -2,7 +2,6 @@
 	#define RACE_HPP
 	
 #include "../Porte.hpp"
-#include "../../../Effet/Effet.hpp"
 #include<string>
 
 class Effet;

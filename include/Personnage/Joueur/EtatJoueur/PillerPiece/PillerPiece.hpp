@@ -2,6 +2,8 @@
 #define PILLERPIECE_HPP
 
 #include "../EtatJoueur.hpp"
+#include "../../Joueur.hpp"
+
 
 class PillerPiece:public EtatJoueur{
 	public:
