@@ -26,16 +26,10 @@ using namespace std;
 
 /****************************************************************************************************/
 
-class Equipement;
+
 class Effet;
 class Munchkin;
-
-class DebutTour;
 class OuvrirPorte;
-class PillerPiece;
-class Bagarre;
-class FinTour;
-class Attente;
 
 class EtatJoueur;
 

@@ -49,8 +49,9 @@ void EtatJoueur::combattre(Monstre * m){
 	cout<<"Vous ne pouvez pas poser de monstre maintenant"<<endl;
 }
 
-void EtatJoueur::poserMalediction(Joueur * cible){
-	//A FAIRE PLUS TARD 
+void EtatJoueur::poserMalediction(Joueur * cible, Malediction * m){
+	//Appliquer malediction
+	joueur->getJeu()->getDefaussePorte().push_back(m);
 }
 
 void EtatJoueur::poserPotion(Personnage *){

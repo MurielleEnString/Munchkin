@@ -12,9 +12,8 @@ void OuvrirPorte::piocherFaceVisible(){
 	}
 	else{ 
 		if(typeid(*c )==typeid(Malediction)){
-			
-			
-			
+			//Appliquer malediction
+			joueur->getJeu()->getDefaussePorte().push_back((Porte *)c);			
 		}
 		else{
 			joueur->getMain().push_back(c);

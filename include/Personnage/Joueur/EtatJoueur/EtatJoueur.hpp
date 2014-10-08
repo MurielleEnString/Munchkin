@@ -2,8 +2,9 @@
 	#define ETATJOUEUR_HPP
 	
 	
-	
-	
+	#include "../../../Carte/Tresor/Equipement/Equipement.hpp"
+	#include "../Joueur.hpp"
+	#include "../../../Munchkin/Munchkin.hpp"
 	#include <iostream>
 	#include <vector>
 	
@@ -14,9 +15,11 @@
 class Joueur;
 class Personnage;
 class Monstre;
-class Equipement;
+//class Equipement;
 class Tresor;
 class Carte;
+class Malediction;
+
 
 class EtatJoueur{
 	protected:
@@ -31,7 +34,7 @@ class EtatJoueur{
 		void equiper(Equipement * e);
 		void desequiper(Equipement * e);
 		void combattre(Monstre * m);
-		void poserMalediction(Joueur * cible);
+		void poserMalediction(Joueur * cible, Malediction * m);
 		void poserPotion(Personnage *);
 		void vendreObjets(vector<Tresor> * sacAvendre);
 		void deguerpir();

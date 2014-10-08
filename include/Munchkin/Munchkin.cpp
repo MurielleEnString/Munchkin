@@ -87,7 +87,7 @@ std::vector<Porte*> Munchkin::getPiochePorte(){
 	return piochePorte;
 }
 
-std::vector<Porte*> Munchkin::getdefaussePorte(){
+std::vector<Porte*> Munchkin::getDefaussePorte(){
 		return defaussePorte;
 }
 

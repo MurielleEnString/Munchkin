@@ -31,7 +31,7 @@ class Munchkin {
     ~Munchkin();
   
 	std::vector<Porte*> getPiochePorte();
-	std::vector<Porte*> getdefaussePorte();
+	std::vector<Porte*> getDefaussePorte();
 	std::vector<Tresor*> getPiocheTresor();
 	std::vector<Tresor*> getDefausseTresor();
 	
