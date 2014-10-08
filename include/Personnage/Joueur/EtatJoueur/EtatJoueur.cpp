@@ -58,16 +58,7 @@ void EtatJoueur::poserPotion(Personnage *){
 }
 
 void EtatJoueur::defausserCarte(Carte * c){
-	vector<Carte*>::iterator i=joueur->getMain().begin();
-	while(i!=joueur->getMain().end()){
-		if((*i)->compare(c)){
-			break;
-		}
-		i++;
-	}
-	joueur->getMain().erase(i);
-	//AJOUT DE LA CARTE A LA DEFAUSSE
-	
+	cout<<"Vous ne pouvez pas défausser de carte maintenant"<<endl;	
 }
 void EtatJoueur::finirTour(){
 	cout<<"Ce n'est pas le moment de terminer le tour !"<<endl;

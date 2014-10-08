@@ -27,7 +27,8 @@ Joueur::Joueur(Munchkin * j):Personnage() {
 	ouvrirLaPorte=new OuvrirPorte(this);
 	piller=new PillerPiece(this);
 	bagarre=new Bagarre(this);
-	charite=new EtatJoueur(this);
+	fin=new FinTour(this);
+	attente=new Attente(this);
 	race=NULL;
 	jeu=j;
 }
@@ -45,6 +46,12 @@ Joueur::Joueur(Munchkin * j):Personnage() {
 //Description : Destructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 Joueur::~Joueur(){
+	delete debut;
+	delete ouvrirLaPorte;
+	delete piller;
+	delete bagarre;
+	delete fin;
+	delete attente;
 }
 
 
@@ -89,8 +96,13 @@ PillerPiece * Joueur::getPiller(){
 Bagarre * Joueur::getBagarre(){
 	return bagarre;
 }
-EtatJoueur * Joueur::getCharite(){
-	return charite;
+FinTour * Joueur::getFin(){
+	return fin;
+}
+
+
+Attente * Joueur::getAttente(){
+	return attente;
 }
 
 vector<Equipement*>  Joueur::getBagage(){
@@ -108,3 +120,4 @@ vector<Carte*>  Joueur::getMain(){
 Munchkin * Joueur::getJeu(){
 	return jeu;
 }
+

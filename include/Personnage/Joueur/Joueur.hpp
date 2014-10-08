@@ -17,10 +17,9 @@
 #include "EtatJoueur/OuvrirPorte/OuvrirPorte.hpp"
 #include "EtatJoueur/PillerPiece/PillerPiece.hpp"
 #include "EtatJoueur/Bagarre/Bagarre.hpp"
-
+#include "EtatJoueur/FinTour/FinTour.hpp"
+#include "EtatJoueur/Attente/Attente.hpp"
 #include <vector>
-
-
 
 
 using namespace std;
@@ -35,6 +34,9 @@ class DebutTour;
 class OuvrirPorte;
 class PillerPiece;
 class Bagarre;
+class FinTour;
+class Attente;
+
 class EtatJoueur;
 
 class Joueur:public Personnage{
@@ -56,7 +58,8 @@ class Joueur:public Personnage{
 	OuvrirPorte * getOuvrirLaPorte();
 	PillerPiece * getPiller();
 	Bagarre * getBagarre();
-	EtatJoueur * getCharite();
+	FinTour * getFin();
+	Attente * getAttente();
   
 	vector<Equipement*> getBagage();
 	vector<Equipement*> getEquipe();
@@ -71,7 +74,8 @@ class Joueur:public Personnage{
     OuvrirPorte * ouvrirLaPorte;
 	PillerPiece * piller;
 	Bagarre * bagarre;
-	EtatJoueur * charite;
+	FinTour * fin;
+	Attente * attente;
 	
 		
 	EtatJoueur * etat_;

@@ -13,7 +13,7 @@
 
 class OuvrirPorte:public EtatJoueur{
 	private:
-		bool combat;
+		
 	public:
 		OuvrirPorte(Joueur * j);
 		void piocherFaceVisible();

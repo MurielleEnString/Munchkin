@@ -1,7 +1,7 @@
 #include "OuvrirPorte.hpp"
 
 OuvrirPorte::OuvrirPorte(Joueur *j):EtatJoueur(j){
-	combat=false;
+	
 }
 
 void OuvrirPorte::piocherFaceVisible(){
@@ -12,7 +12,9 @@ void OuvrirPorte::piocherFaceVisible(){
 	}
 	else{ 
 		if(typeid(*c )==typeid(Malediction)){
-		
+			
+			
+			
 		}
 		else{
 			joueur->getMain().push_back(c);

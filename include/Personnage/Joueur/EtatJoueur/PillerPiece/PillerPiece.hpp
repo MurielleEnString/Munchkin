@@ -8,6 +8,7 @@
 class PillerPiece:public EtatJoueur{
 	public:
 		PillerPiece(Joueur *j);
+		void piocherPorteFaceCache();
 	
 	
 };

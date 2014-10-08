@@ -1,4 +1,4 @@
-all:Joueur.o Carte.o Monstre.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour.o
+all:Joueur.o Carte.o Monstre.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour.o Bagarre.o FinTour.o Attente.o
 	g++ -Wall main.cpp obj/Debug/include/Personnage/Personnage.o obj/Debug/include/Carte/Porte/Porte.o obj/Debug/include/Carte/Carte.o obj/Debug/include/Effet/Effet.o obj/Debug/include/Carte/Porte/Monstre/Monstre.o -o main
 
 
@@ -49,7 +49,12 @@ DebutTour.o: EtatJoueur.o Joueur.o
 	
 Bagarre.o: EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o -c
-
+	
+FinTour.o:EtatJoueur.o Joueur.o
+	g++ -Wall include/Personnage/Joueur/EtatJoueur/FinTour/FinTour.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/FinTour/FinTour.o -c
+	
+Attente.o:EtatJoueur.o Joueur.o
+	g++ -Wall include/Personnage/Joueur/EtatJoueur/Attente/Attente.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/Attente/Attente.o -c
 
 
 clean:
