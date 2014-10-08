@@ -8,28 +8,28 @@ Carte.o:
 Porte.o: Carte.o
 	g++ -Wall include/Carte/Porte/Porte.cpp -o obj/Debug/include/Carte/Porte/Porte.o -c
 	
-Malediction.o:Effet.o
+Malediction.o:Porte.o
 	g++ -Wall include/Carte/Porte/Malediction/Malediction.cpp -o obj/Debug/include/Carte/Porte/Malediction/Malediction.o -c
 
-Monstre.o: Porte.o Effet.o Personnage.o
+Monstre.o: Porte.o Personnage.o
 	g++ -Wall include/Carte/Porte/Monstre/Monstre.cpp -o obj/Debug/include/Carte/Porte/Monstre/Monstre.o -c
 	
-Race.o:Porte.o Effet.o
+Race.o:Porte.o
 	g++ -Wall include/Carte/Porte/Race/Race.cpp -o obj/Debug/include/Carte/Porte/Race/Race.o -c
 	
-Tresor.o:Carte.o Effet.o
+Tresor.o:Carte.o
 	g++ -Wall include/Carte/Tresor/Tresor.cpp -o obj/Debug/include/Carte/Tresor/Tresor.o -c
 	
-Equipement.o: Effet.o Tresor.o
+Equipement.o:Tresor.o
 	g++ -Wall include/Carte/Tresor/Equipement/Equipement.cpp -o obj/Debug/include/Carte/Tresor/Equipement/Equipement.o -c
 	
-Effet.o:Personnage.o
+Effet.o:
 	g++ -Wall include/Effet/Effet.cpp -o obj/Debug/include/Effet/Effet.o -c
 	
-Munchkin.o: Porte.o Tresor.o Joueur.o
+Munchkin.o:Joueur.o
 	g++ -Wall include/Munchkin/Munchkin.cpp -o obj/Debug/include/Munchkin/Munchkin.o -c
 	
-Personnage.o:Race.o Munchkin.o
+Personnage.o:
 	g++ -Wall include/Personnage/Personnage.cpp -o obj/Debug/include/Personnage/Personnage.o -c
 
 Joueur.o: Personnage.o 

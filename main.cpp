@@ -3,6 +3,7 @@
 #include "include/Munchkin/Munchkin.hpp"
 #include "include/Personnage/Joueur/Joueur.hpp"
 #include "include/Carte/Carte.hpp"
+#include "include/Effet/Effet.hpp"
 #include <vector>
 #include <typeinfo>
 using namespace std;

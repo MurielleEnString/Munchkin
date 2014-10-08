@@ -12,7 +12,7 @@
 /****************************************************************************************************/
 
 #include <iostream>
-#include "../Personnage/Personnage.hpp"
+
 
 class Personnage;
 
