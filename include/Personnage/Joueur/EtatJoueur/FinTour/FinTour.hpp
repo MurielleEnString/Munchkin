@@ -2,7 +2,7 @@
 	#define FINTOUR_HPP
 	
 	#include "../EtatJoueur.hpp"
-	#include "../../Joueur.hpp"
+	
 	
 class FinTour:public EtatJoueur{
 	public:

@@ -5,7 +5,7 @@ FinTour::FinTour(Joueur * j):EtatJoueur(j){
 
 void FinTour::finirTour(){
 	if(joueur->getMain().size()<6){
-		joueur->setEtat(joueur->getAttente());
+		joueur->setEtat((EtatJoueur*)joueur->getAttente());
 	}
 	else{
 		cout<<"Vous devez défausser de cartes pour n'en avoir plus que 5 en main"<<endl;

@@ -4,7 +4,6 @@
 	#include "../EtatJoueur.hpp"
 	#include "../../../../Carte/Porte/Monstre/Monstre.hpp"
 	#include "../../../../Carte/Porte/Malediction/Malediction.hpp"
-	#include "../../Joueur.hpp"
 	#include "../../../../Munchkin/Munchkin.hpp"
 	#include <typeinfo>
 	

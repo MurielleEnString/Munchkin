@@ -29,7 +29,13 @@ using namespace std;
 
 class Effet;
 class Munchkin;
+
+class DebutTour;
 class OuvrirPorte;
+class Bagarre;
+class PillerPiece;
+class FinTour;
+
 
 class EtatJoueur;
 

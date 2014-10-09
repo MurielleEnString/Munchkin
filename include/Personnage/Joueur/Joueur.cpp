@@ -100,7 +100,6 @@ FinTour * Joueur::getFin(){
 	return fin;
 }
 
-
 Attente * Joueur::getAttente(){
 	return attente;
 }
