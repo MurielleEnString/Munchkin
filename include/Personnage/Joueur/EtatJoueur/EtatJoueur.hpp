@@ -3,7 +3,7 @@
 	
 	
 	#include "../../../Carte/Tresor/Equipement/Equipement.hpp"
-	#include "../Joueur.hpp"
+	
 	#include "../../../Munchkin/Munchkin.hpp"
 	#include <iostream>
 	#include <vector>

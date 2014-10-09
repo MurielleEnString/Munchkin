@@ -2,7 +2,7 @@
 	#define ATTENTE_HPP
 	
 	#include "../EtatJoueur.hpp"
-	
+	#include "../../Joueur.hpp"
 	
 class Attente:public EtatJoueur{
 	public:

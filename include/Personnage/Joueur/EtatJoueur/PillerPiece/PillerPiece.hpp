@@ -2,6 +2,7 @@
 #define PILLERPIECE_HPP
 
 #include "../EtatJoueur.hpp"
+#include "../../Joueur.hpp"
 
 
 

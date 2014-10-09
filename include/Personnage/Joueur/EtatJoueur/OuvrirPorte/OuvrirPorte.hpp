@@ -2,12 +2,13 @@
 	#define OUVRIRPORTE_HPP
 	
 	#include "../EtatJoueur.hpp"
+	#include "../../Joueur.hpp"
 	#include "../../../../Carte/Porte/Monstre/Monstre.hpp"
 	#include "../../../../Carte/Porte/Malediction/Malediction.hpp"
 	#include "../../../../Munchkin/Munchkin.hpp"
 	#include <typeinfo>
 	
-
+	
 
 
 class OuvrirPorte:public EtatJoueur{
