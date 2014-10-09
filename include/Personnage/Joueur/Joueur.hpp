@@ -35,6 +35,7 @@ class OuvrirPorte;
 class Bagarre;
 class PillerPiece;
 class FinTour;
+class Attente;
 
 
 class EtatJoueur;
