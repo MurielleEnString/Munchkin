@@ -55,7 +55,16 @@ FinTour.o:EtatJoueur.o Joueur.o
 	
 Attente.o:EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/Attente/Attente.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/Attente/Attente.o -c
+	
+MalusBonus.o:
+	g++ -Wall include/Effet/ComportementEffet/MalusBonus/MalusBonus.cpp -o obj/Debug/include/Effet/ComportementEffet/MalusBonus/MalusBonus.o -c
 
+MalusBonusDeguerpir.o:
+	g++ -Wall include/Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.cpp -o obj/Debug/include/Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.o -c
+	
+PerteGainNiv.o:
+	g++ -Wall include/Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.cpp -o obj/Debug/include/Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.o -c
+	
 
 clean:
 	rm -rf  *.o

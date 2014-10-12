@@ -41,3 +41,12 @@ Effet::~Effet(){
 }
 
 /****************************************************************************************************/
+
+void Effet::prendEffet(){
+	comp->comp(cible,val);
+}
+
+
+void Effet::setCible(Personnage * p){
+	cible=p;
+}

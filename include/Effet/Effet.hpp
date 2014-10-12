@@ -11,6 +11,7 @@
 
 /****************************************************************************************************/
 
+#include "ComportementEffet/ComportementEffet.hpp"
 #include <iostream>
 
 
@@ -25,13 +26,15 @@ class Effet{
 
     //Destructeur
     ~Effet();
+    void prendEffet();
 
-    //Attributs
+    void setCible(Personnage * p);
 
   protected:
     //Attributs
     int val;
     Personnage * cible;
+    ComportementEffet * comp;
 
   private:
 

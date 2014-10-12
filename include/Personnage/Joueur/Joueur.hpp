@@ -53,6 +53,8 @@ class Joueur:public Personnage{
     //Mutateurs
     
     void setNiv(int n);
+    void setValDeguerpir(int val);
+    int getValDeguerpir();
     
     
 	void setEtat(EtatJoueur * e);
@@ -74,6 +76,8 @@ class Joueur:public Personnage{
 
   private:
     //Attributs
+    int valDeguerpir;
+    
 	DebutTour * debut;
     OuvrirPorte * ouvrirLaPorte;
 	PillerPiece * piller;

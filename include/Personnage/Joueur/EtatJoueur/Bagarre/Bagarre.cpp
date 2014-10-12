@@ -47,7 +47,7 @@ void Bagarre::deguerpir(Monstre * m){
 	srand(time(NULL));
 	int de=rand()%6+1;
 	cout<<"Vous lancez le dé et faites : "<<de<<endl;
-	if(de+2-6>0){
+	if(de+joueur->getValDeguerpir()-6>0){
 		cout<<"Vous arrivez à déguerpir"<<endl;
 	}
 	else{

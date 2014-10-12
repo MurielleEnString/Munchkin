@@ -23,6 +23,7 @@
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 Joueur::Joueur(Munchkin * j):Personnage() {
+	valDeguerpir=2;
 	debut= new DebutTour(this);
 	ouvrirLaPorte=new OuvrirPorte(this);
 	piller=new PillerPiece(this);
@@ -63,13 +64,15 @@ void Joueur::setNiv(int n){
 	niveau=n;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : desequiper()
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description : 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+void Joueur::setValDeguerpir(int val){
+	valDeguerpir=val;
+}
+
+int Joueur::getValDeguerpir(){
+	return valDeguerpir;
+}
+
+
 
 
 
