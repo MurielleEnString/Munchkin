@@ -35,9 +35,9 @@ class EtatJoueur{
 		void desequiper(Equipement * e);
 		void combattre(Monstre * m);
 		void poserMalediction(Joueur * cible, Malediction * m);
-		void poserPotion(Personnage *);
+		void poserPotion(Personnage * p);
 		void vendreObjets(vector<Tresor> * sacAvendre);
-		void deguerpir();
+		void deguerpir(Monstre * m);
 		void defausserCarte(Carte * c);
 		void finirTour();
 };

@@ -26,11 +26,13 @@ class Personnage {
 
     //Accesseurs
     int getNiveau();
+    int getBonus();
+    void setBonus(int b);
 
   protected:
     //Attributs
     int niveau;
-    int force;
+    int bonus;
     Race * race;
 
   private:

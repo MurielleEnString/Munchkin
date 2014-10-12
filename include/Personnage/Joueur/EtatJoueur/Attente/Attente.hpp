@@ -7,6 +7,7 @@
 class Attente:public EtatJoueur{
 	public:
 		Attente(Joueur * j);
+		void poserPotion(Personnage *);
 };
 
 

@@ -26,6 +26,8 @@ class Monstre:public Porte, public Personnage {
 
     //Destructeur
     ~Monstre();
+    int getTresors();
+    int getNbNiv();
 
   private:
     //Attributs

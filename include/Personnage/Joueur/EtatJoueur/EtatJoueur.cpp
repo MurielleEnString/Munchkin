@@ -54,7 +54,7 @@ void EtatJoueur::poserMalediction(Joueur * cible, Malediction * m){
 	joueur->getJeu()->getDefaussePorte().push_back(m);
 }
 
-void EtatJoueur::poserPotion(Personnage *){
+void EtatJoueur::poserPotion(Personnage * p){
 	cout<<"impossible de poser une potion maintenant"<<endl;
 }
 

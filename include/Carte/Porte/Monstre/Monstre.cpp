@@ -57,3 +57,11 @@ Monstre::~Monstre() {
 }
 
 /****************************************************************************************************/
+
+int Monstre::getTresors(){
+	return tresors;
+}
+
+int Monstre::getNbNiv(){
+	return nbNiv;
+}

@@ -8,6 +8,8 @@ void OuvrirPorte::piocherFaceVisible(){
 	Carte * c=joueur->getJeu()->piocherPorte();
 	cout<<"J'ai pioché "<<c->Getnom()<<endl;
 	if(typeid(*c )==typeid(Monstre)){
+		joueur->setEtat((EtatJoueur*)joueur->getBagarre());
+		joueur->getEtat()->combattre((Monstre*)c);
 		
 	}
 	else{ 
@@ -19,22 +21,5 @@ void OuvrirPorte::piocherFaceVisible(){
 			joueur->getMain().push_back(c);
 		}
 	}
-	//if(typeid(c)
 	
-	//joueur->getMain().push_back(c);
-	/*si malediction : effet malediction
-	 * sinon, si monstre -> combat
-	 * 		combat=true
-	 * 			
-	 * sinon, mettre ,en main
-	 * if(combat){
-	 * 		fin de tour
-	 * }
-	 * else{
-	 * 	tour.setPhase(tour.getPiller());
-	 * ou
-	 * 	tour.setPhase(tour.getBagarre());
-	 * }
-	 
-	 tour*/
 }

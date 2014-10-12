@@ -31,12 +31,13 @@ class Equipement:public Tresor {
 
     //Accesseurs
     void afficher() const;
-    
+    int getBonus();
     
 
   protected:
 
   private:
+	int bonus;
 
 }; //Class Equipement
 

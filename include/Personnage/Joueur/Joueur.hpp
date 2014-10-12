@@ -52,6 +52,9 @@ class Joueur:public Personnage{
 
     //Mutateurs
     
+    void setNiv(int n);
+    
+    
 	void setEtat(EtatJoueur * e);
 	EtatJoueur * getEtat();
     
@@ -86,6 +89,8 @@ class Joueur:public Personnage{
     std::vector<Equipement*> equipe;
     
     Munchkin * jeu;
+    
+    
 
 }; //Class Joueur
 
