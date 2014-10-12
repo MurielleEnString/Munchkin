@@ -24,6 +24,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 Joueur::Joueur(Munchkin * j):Personnage() {
 	valDeguerpir=2;
+	nbCartesMain=5;
 	debut= new DebutTour(this);
 	ouvrirLaPorte=new OuvrirPorte(this);
 	piller=new PillerPiece(this);
@@ -80,6 +81,12 @@ int Joueur::getValDeguerpir(){
 
 /****************************************************************************************************/
 
+void Joueur::setNbCartesMain(int n){
+	nbCartesMain=n;
+}
+int Joueur::getNbCartesMain(){
+	return nbCartesMain;
+}
 
 void Joueur::setEtat(EtatJoueur * e){
 	etat_=e;

@@ -64,7 +64,10 @@ MalusBonusDeguerpir.o:
 	
 PerteGainNiv.o:
 	g++ -Wall include/Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.cpp -o obj/Debug/include/Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.o -c
-	
+
+CarteSupMain.o:
+	g++ -Wall include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.cpp -o obj/Debug/include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.o -c
+
 
 clean:
 	rm -rf  *.o

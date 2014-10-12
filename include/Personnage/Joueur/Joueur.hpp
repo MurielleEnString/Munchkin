@@ -51,7 +51,8 @@ class Joueur:public Personnage{
     ~Joueur();
 
     //Mutateurs
-    
+    void setNbCartesMain(int n);
+    int getNbCartesMain();
     void setNiv(int n);
     void setValDeguerpir(int val);
     int getValDeguerpir();
@@ -76,6 +77,7 @@ class Joueur:public Personnage{
 
   private:
     //Attributs
+    int nbCartesMain;
     int valDeguerpir;
     
 	DebutTour * debut;
