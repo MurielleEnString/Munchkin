@@ -1,7 +1,6 @@
 #include "Bagarre.hpp"
 
-Bagarre::Bagarre(Joueur *j):EtatJoueur(j){
-}
+Bagarre::Bagarre(Joueur *j):EtatJoueur(j){}
 
 
 void Bagarre::combattre(Monstre * m){
@@ -18,6 +17,10 @@ void Bagarre::combattre(Monstre * m){
 	}
 	else{
 		cout<<"Vous perdez le combat"<<endl;
+		
+		//A TERMINER
+		
+		
 		
 		//Si pose de bonus => combattre(m);
 		//Sinon deguerpir();
@@ -52,11 +55,31 @@ void Bagarre::deguerpir(Monstre * m){
 	}
 	else{
 		cout<<"Le monstre vous attrape"<<endl;
-		//m->INCIDENT FACHEUX(joueur)
+		m->getEffet()->setCible(joueur);
+		m->getEffet()->prendEffet();
 	}
 	joueur->getJeu()->getDefaussePorte().push_back((Porte*)m);
 }
 
-void Bagarre::poserPotion(Personnage * p){
-	
+
+
+//index -> index de la carte de la main (En Commençant à 1)
+void Bagarre::poserPotion(Personnage * p, int index){
+	vector<Carte *>::iterator i=joueur->getMain().begin();
+	Carte * c;		
+	for(;index!=1;--index){
+		++i;
+	}
+			
+	c=*i;
+	if(typeid(*c )!=typeid(Malediction) /*ou potion*/){
+
+		c->getEffet()->setCible((Personnage*)p);
+		c->getEffet()->prendEffet();
+		joueur->getJeu()->getDefaussePorte().push_back((Porte*)c); //Changer defausses pour défausse commune
+	}
+	else{
+		cout<<"Vous ne pouvez pas poser cette carte maintenant"<<endl;
+	}			
 }
+

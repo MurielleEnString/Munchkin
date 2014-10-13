@@ -1,11 +1,13 @@
 #ifndef BAGARRE_HPP
 #define BAGARRE_HPP
 
+#include "../../../../Carte/Carte.hpp"
 #include <time.h>
 #include <stdlib.h>
 #include "../EtatJoueur.hpp"
 #include "../../Joueur.hpp"
 
+using namespace std;
 
 
 class Bagarre:public EtatJoueur{
@@ -19,7 +21,7 @@ class Bagarre:public EtatJoueur{
 		Bagarre(Joueur *j);
 		void combattre(Monstre * m);
 		void deguerpir(Monstre * m);
-		void poserPotion(Personnage * p);
+		void poserPotion(Personnage * p, int index);
 	
 	
 };

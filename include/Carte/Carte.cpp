@@ -22,9 +22,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Carte::Carte(std::string n, Effet * e) {
-  nom = n;
-}
+Carte::Carte(std::string n, Effet * e):nom(n) {}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Méthode : Carte(std::string n, std::string d)
@@ -33,10 +31,7 @@ Carte::Carte(std::string n, Effet * e) {
 //Postcondition : Aucune
 //Description : Constructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Carte::Carte(std::string n, std::string d, Effet * e) {
-  nom = n;
-  description = d;
-}
+Carte::Carte(std::string n, std::string d, Effet * e):nom(n),description(d) {}
 
 
 /****************************************************************************************************/
@@ -65,7 +60,7 @@ Carte::~Carte() {
 //Postcondition : Aucune
 //Description : Affiche la carte
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-std::string Carte::Getnom() const {
+std::string Carte::Getnom(){
   return nom;
 }
 
@@ -76,7 +71,7 @@ std::string Carte::Getnom() const {
 //Postcondition : Aucune
 //Description : Affiche la carte
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-std::string Carte::Getdescription() const {
+std::string Carte::Getdescription(){
   return description;
 }
 

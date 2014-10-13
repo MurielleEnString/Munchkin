@@ -27,8 +27,8 @@ class Carte {
     virtual ~Carte();
 
     //Accesseurs
-    std::string Getnom() const;
-    std::string Getdescription() const;
+    std::string Getnom();
+    std::string Getdescription();
     Effet * getEffet();
     void setEffet(Effet * e);
 
