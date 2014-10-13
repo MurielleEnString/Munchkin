@@ -22,8 +22,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Monstre::Monstre(std::string nom, Effet * e, int niv, int nbT):Porte(nom), Personnage(niv){
-	incident=e;
+Monstre::Monstre(std::string nom, Effet * e, int niv, int nbT):Porte(nom, e), Personnage(niv){
 	tresors=nbT;
 	nbNiv=1;
 
@@ -36,8 +35,7 @@ Monstre::Monstre(std::string nom, Effet * e, int niv, int nbT):Porte(nom), Perso
 //Postcondition : Aucune
 //Description : Constructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Monstre::Monstre(std::string nom, Effet * e, int niv, int nbT, int nbN):Porte(nom), Personnage(niv) {
-	incident=e;
+Monstre::Monstre(std::string nom, Effet * e, int niv, int nbT, int nbN):Porte(nom,e), Personnage(niv) {
 	tresors=nbT;
 	nbNiv=nbN;
 }

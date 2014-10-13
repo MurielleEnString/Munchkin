@@ -22,7 +22,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Porte::Porte(std::string nom):Carte(nom) {
+Porte::Porte(std::string nom, Effet * e):Carte(nom, e) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +32,7 @@ Porte::Porte(std::string nom):Carte(nom) {
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Porte::Porte(std::string nom, std::string description):Carte(nom, description) {
+Porte::Porte(std::string nom, std::string description, Effet * e):Carte(nom, description, e) {
 }
 
 /****************************************************************************************************/

@@ -12,7 +12,7 @@ class Malediction:public Porte{
 		Malediction(std::string nom, Effet * e);
 		Malediction(std::string nom, std::string description, Effet * e);
 	private:
-		Effet * e;
+		
 	
 };
 

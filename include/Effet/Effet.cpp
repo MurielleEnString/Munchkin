@@ -21,7 +21,8 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Effet::Effet(int valeur){
+Effet::Effet(int valeur, ComportementEffet * c){
+	comp=c;
   val=valeur;
   cible=NULL;
 }

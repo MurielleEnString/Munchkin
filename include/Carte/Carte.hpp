@@ -12,14 +12,16 @@
 /****************************************************************************************************/
 
 #include <string>
+#include "../Effet/Effet.hpp"
+
 
 /****************************************************************************************************/
 
 class Carte {
   public:
     //Constructeur
-    Carte(std::string n); //Constructeur par défaut
-    Carte(std::string n, std::string d);
+    Carte(std::string n, Effet * e); //Constructeur par défaut
+    Carte(std::string n, std::string d, Effet * e);
 
     //Destructeur
     virtual ~Carte();
@@ -27,6 +29,8 @@ class Carte {
     //Accesseurs
     std::string Getnom() const;
     std::string Getdescription() const;
+    Effet * getEffet();
+    void setEffet(Effet * e);
 
     //Mutateurs
     //void Setnom(string val);
@@ -38,6 +42,7 @@ class Carte {
     //Attributs
     std::string nom;
     std::string description;
+    Effet * e;
 
   private:
 

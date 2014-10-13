@@ -34,7 +34,7 @@ class Tresor:public Carte {
   protected:
     //Attributs
     int prix;
-    Effet * effet;
+    
 
   private:
 

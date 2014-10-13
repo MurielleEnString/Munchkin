@@ -21,8 +21,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Tresor::Tresor(std::string n, Effet * e, int p):Carte(n) {
-   effet = e;
+Tresor::Tresor(std::string n, Effet * e, int p):Carte(n, e) {
    prix = p;
 }
 
@@ -33,8 +32,7 @@ Tresor::Tresor(std::string n, Effet * e, int p):Carte(n) {
 //Postcondition : Aucune
 //Description : Constructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Tresor::Tresor(std::string n, std::string d, Effet * e, int p) : Carte(n, d) {
-   effet = e;
+Tresor::Tresor(std::string n, std::string d, Effet * e, int p) : Carte(n, d, e) {
    prix = p;
 }
 

@@ -31,7 +31,7 @@ class Monstre:public Porte, public Personnage {
 
   private:
     //Attributs
-    Effet * incident;
+    
     int tresors;
     int nbNiv;
 

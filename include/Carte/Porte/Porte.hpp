@@ -18,8 +18,8 @@
 class Porte:public Carte {
   public:
     //Constructeur
-    Porte(std::string nom);
-    Porte(std::string nom, std::string description);
+    Porte(std::string nom, Effet * e);
+    Porte(std::string nom, std::string description, Effet * e);
 
     //Destructeur
     virtual ~Porte();

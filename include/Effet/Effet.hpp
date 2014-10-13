@@ -22,12 +22,11 @@ class Personnage;
 class Effet{
   public:
     //Constructeur
-    Effet(int valeur);
+    Effet(int valeur, ComportementEffet * c);
 
     //Destructeur
     ~Effet();
     void prendEffet();
-
     void setCible(Personnage * p);
 
   protected:

@@ -14,8 +14,8 @@ void OuvrirPorte::piocherFaceVisible(){
 	}
 	else{ 
 		if(typeid(*c )==typeid(Malediction)){
-			//((Malediction*)c)->setCible(joueur);
-			//((Malediction*)c)->prendEffet();
+			((Malediction*)c)->getEffet()->setCible(joueur);
+			((Malediction*)c)->getEffet()->prendEffet();
 			joueur->getJeu()->getDefaussePorte().push_back((Porte *)c);			
 		}
 		else{
