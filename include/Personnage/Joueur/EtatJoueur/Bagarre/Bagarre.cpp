@@ -3,30 +3,27 @@
 Bagarre::Bagarre(Joueur *j):EtatJoueur(j){}
 
 
-void Bagarre::combattre(Monstre * m){
+bool Bagarre::combattre(Monstre * m){
 	//Envoie signal aux autres joueurs... ou pas !
 	if(calculForceJoueur()>calculForceMonstre(m)){
 		for(int i=0;i<m->getTresors();i++){
 			cout<<"Vous gagnez le combat"<<endl;
 			joueur->getMain().push_back(joueur->getJeu()->getPiocheTresor().back());
 			joueur->getJeu()->getPiocheTresor().pop_back();
-			joueur->setNiv(joueur->getNiveau()+m->getNbNiv());
-			joueur->getJeu()->getDefaussePorte().push_back((Porte*)m);
-			joueur->setBonus(0);
+			
 		}
+		joueur->setNiv(joueur->getNiveau()+m->getNbNiv());
+		joueur->getJeu()->getDefausse().push_back((Carte*)m);
+		joueur->setBonus(0);
+		joueur->setEtat((EtatJoueur*)joueur->getFin());
 	}
 	else{
 		cout<<"Vous perdez le combat"<<endl;
-		
-		//A TERMINER
-		
-		
-		
-		//Si pose de bonus => combattre(m);
-		//Sinon deguerpir();
-		
+		return false;
+				
 	}
-	joueur->setEtat((EtatJoueur*)joueur->getFin());	
+	return false;
+		
 }
 
 
@@ -58,7 +55,8 @@ void Bagarre::deguerpir(Monstre * m){
 		m->getEffet()->setCible(joueur);
 		m->getEffet()->prendEffet();
 	}
-	joueur->getJeu()->getDefaussePorte().push_back((Porte*)m);
+	joueur->getJeu()->getDefausse().push_back((Carte*)m);
+	joueur->setEtat((EtatJoueur*)joueur->getFin());
 }
 
 
@@ -76,7 +74,7 @@ void Bagarre::poserPotion(Personnage * p, int index){
 
 		c->getEffet()->setCible((Personnage*)p);
 		c->getEffet()->prendEffet();
-		joueur->getJeu()->getDefaussePorte().push_back((Porte*)c); //Changer defausses pour défausse commune
+		joueur->getJeu()->getDefausse().push_back((Carte*)c); //Changer defausses pour défausse commune
 	}
 	else{
 		cout<<"Vous ne pouvez pas poser cette carte maintenant"<<endl;

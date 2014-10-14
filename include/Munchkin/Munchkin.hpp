@@ -13,11 +13,14 @@
 
 
 #include "../Personnage/Joueur/Joueur.hpp"
+
 #include <vector>
 
 class Joueur;
 class Porte;
 class Tresor;
+
+using namespace std;
 
 /****************************************************************************************************/
 
@@ -25,15 +28,15 @@ class Munchkin {
 	
   public:
     //Constructeur
-    Munchkin(std::string filename);
+    Munchkin(std::string filename, int nbJoueurs);
 
     //Destructeur
     ~Munchkin();
   
 	std::vector<Porte*> getPiochePorte();
-	std::vector<Porte*> getDefaussePorte();
+	std::vector<Carte*> getDefausse();
 	std::vector<Tresor*> getPiocheTresor();
-	std::vector<Tresor*> getDefausseTresor();
+	
 	
 	Porte * piocherPorte();
 
@@ -41,10 +44,9 @@ class Munchkin {
     //Attributs
 	std::vector<Porte*> piochePorte;
 	std::vector<Tresor*> piocheTresor;
-	std::vector<Porte*> defaussePorte;
-	std::vector<Tresor*> defausseTresor;
+	std::vector<Carte*> defausse;
   
-	std::vector<Joueur> joueurs;
+	std::vector<Joueur*> joueurs;
   
   
 

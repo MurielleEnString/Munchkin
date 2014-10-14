@@ -6,6 +6,7 @@
 #include "include/Effet/Effet.hpp"
 #include <vector>
 #include <typeinfo>
+#include "tinyxml/tinyxml.h"
 using namespace std;
 
 int main() {
@@ -38,7 +39,6 @@ int main() {
   //cout<<typeid(c.front()).name()<<endl;
   //cout<<c.size()<<endl;
  
-  
   
   return 0;
 }

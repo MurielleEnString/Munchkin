@@ -22,7 +22,17 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Munchkin::Munchkin(std::string filename) {
+Munchkin::Munchkin(std::string filename, int nbJoueurs) {
+	int i=0;
+	
+	//CREATION DES JOUEURS
+	for(;i<nbJoueurs;++i){
+		joueurs.push_back(new Joueur(this));
+	}
+	
+	//CREATION DES CARTES
+	
+	
 /*  string ligne;
   int id
   string nom;
@@ -87,15 +97,13 @@ std::vector<Porte*> Munchkin::getPiochePorte(){
 	return piochePorte;
 }
 
-std::vector<Porte*> Munchkin::getDefaussePorte(){
-		return defaussePorte;
-}
+
 
 std::vector<Tresor*> Munchkin::getPiocheTresor(){
 	return piocheTresor;
 }
 
-std::vector<Tresor*> Munchkin::getDefausseTresor(){
-	return defausseTresor;
+std::vector<Carte*> Munchkin::getDefausse(){
+	return defausse;
 }
 

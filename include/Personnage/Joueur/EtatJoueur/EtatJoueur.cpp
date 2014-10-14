@@ -1,8 +1,7 @@
 #include "EtatJoueur.hpp"
 
 
-EtatJoueur::EtatJoueur(Joueur * j){
-	joueur=j;
+EtatJoueur::EtatJoueur(Joueur * j): joueur(j){
 }
 
 void piocherPorteFaceVisible(){
@@ -45,13 +44,14 @@ void EtatJoueur::desequiper(Equipement * e){
 	joueur->getBagage().push_back(e);
 }
 
-void EtatJoueur::combattre(Monstre * m){
+bool EtatJoueur::combattre(Monstre * m){
 	cout<<"Vous ne pouvez pas poser de monstre maintenant"<<endl;
+	return false;
 }
 
 void EtatJoueur::poserMalediction(Joueur * cible, Malediction * m){
 	//Appliquer malediction
-	joueur->getJeu()->getDefaussePorte().push_back(m);
+	joueur->getJeu()->getDefausse().push_back(m);
 }
 
 void EtatJoueur::poserPotion(Personnage * p){

@@ -1,8 +1,6 @@
 #include "OuvrirPorte.hpp"
 
-OuvrirPorte::OuvrirPorte(Joueur *j):EtatJoueur(j){
-	
-}
+OuvrirPorte::OuvrirPorte(Joueur *j):EtatJoueur(j){}
 
 void OuvrirPorte::piocherFaceVisible(){
 	Carte * c=joueur->getJeu()->piocherPorte();
@@ -16,7 +14,7 @@ void OuvrirPorte::piocherFaceVisible(){
 		if(typeid(*c )==typeid(Malediction)){
 			((Malediction*)c)->getEffet()->setCible(joueur);
 			((Malediction*)c)->getEffet()->prendEffet();
-			joueur->getJeu()->getDefaussePorte().push_back((Porte *)c);			
+			joueur->getJeu()->getDefausse().push_back((Carte *)c);			
 		}
 		else{
 			joueur->getMain().push_back(c);

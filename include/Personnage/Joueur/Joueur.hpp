@@ -20,6 +20,7 @@
 #include "EtatJoueur/FinTour/FinTour.hpp"
 #include "EtatJoueur/Attente/Attente.hpp"
 #include <vector>
+#include <string>
 
 
 using namespace std;

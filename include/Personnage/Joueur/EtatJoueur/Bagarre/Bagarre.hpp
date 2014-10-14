@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "../EtatJoueur.hpp"
 #include "../../Joueur.hpp"
+#include "../../../../Munchkin/Munchkin.hpp"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ class Bagarre:public EtatJoueur{
 	
 	public:
 		Bagarre(Joueur *j);
-		void combattre(Monstre * m);
+		bool combattre(Monstre * m);
 		void deguerpir(Monstre * m);
 		void poserPotion(Personnage * p, int index);
 	

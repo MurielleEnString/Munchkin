@@ -33,7 +33,7 @@ class EtatJoueur{
 		void poseEquipement(Equipement * e);
 		void equiper(Equipement * e);
 		void desequiper(Equipement * e);
-		void combattre(Monstre * m);
+		bool combattre(Monstre * m);
 		void poserMalediction(Joueur * cible, Malediction * m);
 		void poserPotion(Personnage * p);
 		void vendreObjets(vector<Tresor> * sacAvendre);
