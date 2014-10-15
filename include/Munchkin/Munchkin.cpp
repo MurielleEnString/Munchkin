@@ -27,7 +27,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs) {
 	
 	//CREATION DES JOUEURS
 	for(;i<nbJoueurs;++i){
-		joueurs.push_back(new Joueur(this));
+		joueurs.push_back(new Joueur(this,i));
 	}
 	
 	//CREATION DES CARTES
@@ -44,6 +44,8 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs) {
 	piocheTresor.push_back(new Equipement("Epée (de) Batard(e)",400,2,NULL));
 	piocheTresor.push_back(new Equipement("Tronçonneuse de la mort",600,3,NULL));
 	piocheTresor.push_back(new Equipement("Casque de virilité ostentatoire",600,3,NULL));
+	piocheTresor.push_back(new Equipement("Bottes de convocation d'hémoroides",400,2,NULL));
+	piocheTresor.push_back(new Equipement("Bottes de deplacement frénétique","Ces bottes vous confèrent un bonus de +2 pour deguerpir",400 ,0 ,new Effet(2, new MalusBonusDeguerpir())));
 	
 	
 	
@@ -103,11 +105,31 @@ Munchkin::~Munchkin() {
 }
 
 /****************************************************************************************************/
+
+void Munchkin::finPartie(){
+	cout<<"La partie est finie"<<endl;
+}
+
 Porte * Munchkin::piocherPorte(){
 	Porte * res=piochePorte.front();
 	piochePorte.erase(piochePorte.begin());
 	return res;
 }
+
+void Munchkin::changementJoueur(Joueur * j){
+	unsigned int id=j->getId();
+	if(id==joueurs.size()){
+		courant=*joueurs.begin();
+	}
+	else{
+		vector<Joueur*>::iterator it=joueurs.begin();
+		for(unsigned int i=0;i!=id;++i){
+			it++;
+		}
+		courant=*it;
+	}
+}
+
 std::vector<Porte*> Munchkin::getPiochePorte(){
 	return piochePorte;
 }

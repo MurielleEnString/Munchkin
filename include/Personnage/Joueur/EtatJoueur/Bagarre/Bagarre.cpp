@@ -16,6 +16,9 @@ bool Bagarre::combattre(Monstre * m){
 		joueur->getJeu()->getDefausse().push_back((Carte*)m);
 		joueur->setBonus(0);
 		joueur->setEtat((EtatJoueur*)joueur->getFin());
+		if(joueur->getNiv()>=10){
+			joueur->getJeu()->finPartie();
+		}
 	}
 	else{
 		cout<<"Vous perdez le combat"<<endl;
@@ -56,29 +59,18 @@ void Bagarre::deguerpir(Monstre * m){
 		m->getEffet()->prendEffet();
 	}
 	joueur->getJeu()->getDefausse().push_back((Carte*)m);
+	joueur->setBonus(0);
 	joueur->setEtat((EtatJoueur*)joueur->getFin());
 }
 
 
 
-//index -> index de la carte de la main (En Commençant à 1)
-void Bagarre::poserPotion(Personnage * p, int index){
-	vector<Carte *>::iterator i=joueur->getMain().begin();
-	Carte * c;		
-	for(;index!=1;--index){
-		++i;
-	}
-			
-	c=*i;
-	if(typeid(*c )!=typeid(Malediction) /*ou potion*/){
 
-		c->getEffet()->setCible((Personnage*)p);
-		c->getEffet()->prendEffet();
-		joueur->getJeu()->getDefausse().push_back((Carte*)c); //Changer defausses pour défausse commune
+void Bagarre::poserPotion(Personnage * p, Potion * po){
+	if(po->getEffet()!=NULL){
+		po->getEffet()->setCible(p);
 	}
-	else{
-		cout<<"Vous ne pouvez pas poser cette carte maintenant"<<endl;
-	}			
+	p->setBonus(p->getBonus()+po->getBonus());
 }
 
 void Bagarre::changerRace(Race * r){

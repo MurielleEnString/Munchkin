@@ -8,6 +8,7 @@
 #include "../../Joueur.hpp"
 #include "../../../../Munchkin/Munchkin.hpp"
 #include "../../../../Carte/Tresor/Equipement/Equipement.hpp"
+#include "../../../../Carte/Tresor/Potion/Potion.hpp"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ class Bagarre:public EtatJoueur{
 	private : 
 		int calculForceJoueur();
 		int calculForceMonstre(Monstre * m);
+		void poserPotion(Personnage * p, Potion * po);
 		
 	
 	

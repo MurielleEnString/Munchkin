@@ -47,7 +47,7 @@ class Joueur:public Personnage{
   
 	
     //Constructeur
-    Joueur(Munchkin * j);
+    Joueur(Munchkin * j, int i);
 
     //Destructeur
     ~Joueur();
@@ -56,10 +56,12 @@ class Joueur:public Personnage{
     void setNbCartesMain(int n);
     int getNbCartesMain();
     void setNiv(int n);
+    int getNiv();
     void setValDeguerpir(int val);
     int getValDeguerpir();
     Race * getRace();
     void setRace(Race *r);
+    int getId();
     
     
 	void setEtat(EtatJoueur * e);
@@ -82,6 +84,7 @@ class Joueur:public Personnage{
 
   private:
     //Attributs
+    int id;
     int nbCartesMain;
     int valDeguerpir;
     

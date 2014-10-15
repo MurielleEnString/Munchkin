@@ -16,6 +16,7 @@
 #include "../Effet/Effet.hpp"
 #include "../Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.hpp"
 #include "../Effet/ComportementEffet/MalusBonus/MalusBonus.hpp"
+#include "../Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.hpp"
 #include <vector>
 
 class Joueur;
@@ -40,6 +41,9 @@ class Munchkin {
 	std::vector<Carte*> getDefausse();
 	std::vector<Tresor*> getPiocheTresor();
 	
+	void finPartie();
+	void changementJoueur(Joueur * j);
+	
 	
 	Porte * piocherPorte();
 
@@ -50,6 +54,7 @@ class Munchkin {
 	std::vector<Carte*> defausse;
   
 	std::vector<Joueur*> joueurs;
+	Joueur * courant;
   
   
 

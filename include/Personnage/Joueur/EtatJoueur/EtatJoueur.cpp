@@ -40,6 +40,10 @@ void EtatJoueur::equiper(Equipement * e){
 		}
 		i++;
 	}
+	if((*i)->getEffet()!=NULL){
+		(*i)->getEffet()->setCible((Personnage*)joueur);
+		(*i)->getEffet()->prendEffet();
+	}
 	joueur->getBagage().erase(i);
 	joueur->getEquipe().push_back(e);
 		
@@ -53,6 +57,11 @@ void EtatJoueur::desequiper(Equipement * e){
 			break;
 		}
 		i++;
+	}
+	if((*i)->getEffet()!=NULL){
+		Effet * e=(*i)->getEffet();
+		e->setVal(-e->getVal());
+		e->prendEffet();
 	}
 	joueur->getEquipe().erase(i);
 	joueur->getBagage().push_back(e);
@@ -68,7 +77,7 @@ void EtatJoueur::poserMalediction(Joueur * cible, Malediction * m){
 	joueur->getJeu()->getDefausse().push_back(m);
 }
 
-void EtatJoueur::poserPotion(Personnage * p){
+void EtatJoueur::poserPotion(Personnage * p, Potion * po){
 	cout<<"impossible de poser une potion maintenant"<<endl;
 }
 

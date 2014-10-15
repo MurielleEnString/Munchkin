@@ -19,6 +19,7 @@ class Monstre;
 class Tresor;
 class Carte;
 class Malediction;
+class Potion;
 
 
 class EtatJoueur{
@@ -36,7 +37,7 @@ class EtatJoueur{
 		void desequiper(Equipement * e);
 		bool combattre(Monstre * m);
 		void poserMalediction(Joueur * cible, Malediction * m);
-		void poserPotion(Personnage * p);
+		void poserPotion(Personnage * p, Potion * po);
 		void vendreObjets(vector<Tresor> * sacAvendre);
 		void deguerpir(Monstre * m);
 		void defausserCarte(Carte * c);

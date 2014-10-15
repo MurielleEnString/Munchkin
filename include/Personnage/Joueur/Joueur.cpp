@@ -22,7 +22,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Joueur::Joueur(Munchkin * j):Personnage() {
+Joueur::Joueur(Munchkin * j, int i):Personnage(), id(i) {
 	race = new Race(new Effet(0,new MalusBonus()),NULL,"Humain","");
 	valDeguerpir=2;
 	nbCartesMain=5;
@@ -66,6 +66,10 @@ void Joueur::setNiv(int n){
 	niveau=n;
 }
 
+int Joueur::getNiv(){
+	return niveau;
+}
+
 void Joueur::setValDeguerpir(int val){
 	valDeguerpir=val;
 }
@@ -87,6 +91,10 @@ void Joueur::setNbCartesMain(int n){
 }
 int Joueur::getNbCartesMain(){
 	return nbCartesMain;
+}
+
+int Joueur::getId(){
+	return id;
 }
 
 void Joueur::setEtat(EtatJoueur * e){
