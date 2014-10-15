@@ -39,11 +39,12 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs) {
 	
 	
 	//Cartes Trésor
-	piocheTresor.push_back(new Equipement("Enorme Rocher",0,new Effet(3, new MalusBonus())));
-	piocheTresor.push_back(new Equipement("Targe d'inconscience suicidaire",400,new Effet(2, new MalusBonus())));
-	piocheTresor.push_back(new Equipement("Epée (de) Batard(e)",400,new Effet(2, new MalusBonus())));
-	piocheTresor.push_back(new Equipement("Tronçonneuse de la mort",600,new Effet(3, new MalusBonus())));
-	piocheTresor.push_back(new Equipement("Casque de virilité ostentatoire",600,new Effet(3, new MalusBonus())));
+	piocheTresor.push_back(new Equipement("Enorme Rocher",0,3,NULL));
+	piocheTresor.push_back(new Equipement("Targe d'inconscience suicidaire",400,2,NULL));
+	piocheTresor.push_back(new Equipement("Epée (de) Batard(e)",400,2,NULL));
+	piocheTresor.push_back(new Equipement("Tronçonneuse de la mort",600,3,NULL));
+	piocheTresor.push_back(new Equipement("Casque de virilité ostentatoire",600,3,NULL));
+	
 	
 	
 	

@@ -7,9 +7,11 @@
 #include "../EtatJoueur.hpp"
 #include "../../Joueur.hpp"
 #include "../../../../Munchkin/Munchkin.hpp"
+#include "../../../../Carte/Tresor/Equipement/Equipement.hpp"
 
 using namespace std;
 
+class Race;
 
 class Bagarre:public EtatJoueur{
 	private : 
@@ -23,6 +25,7 @@ class Bagarre:public EtatJoueur{
 		bool combattre(Monstre * m);
 		void deguerpir(Monstre * m);
 		void poserPotion(Personnage * p, int index);
+		void changerRace(Race * r);
 	
 	
 };

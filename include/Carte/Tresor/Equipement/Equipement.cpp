@@ -21,7 +21,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Equipement::Equipement(std::string n, int p, Effet * e) : Tresor(n,e,p) {
+Equipement::Equipement(std::string n, int p,int b, Effet * e) : Tresor(n,e,p),bonus(b) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ Equipement::Equipement(std::string n, int p, Effet * e) : Tresor(n,e,p) {
 //Postcondition : Aucune
 //Description : Constructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Equipement::Equipement(std::string n, std::string d, int p, Effet * e) : Tresor(n, d, e, p) {
+Equipement::Equipement(std::string n, std::string d, int p,int b, Effet * e) : Tresor(n, d, e, p),bonus(b) {
 }
 
 /****************************************************************************************************/
@@ -52,7 +52,9 @@ Equipement::~Equipement() {
 /********** Accesseurs **********/
 /****************************************************************************************************/
 
-
+int Equipement::getBonus(){
+	return bonus;
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Méthode : estVide() const
 //Paramètre : Aucun

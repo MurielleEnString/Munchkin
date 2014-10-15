@@ -23,21 +23,21 @@ class Effet;
 class Equipement:public Tresor {
   public :
     //Constructeur
-    Equipement(std::string n, int p, Effet * e); //Constructeur par défaut
-    Equipement(std::string n, std::string d, int p, Effet * e);
+    Equipement(std::string n, int p,int b, Effet * e); //Constructeur par défaut
+    Equipement(std::string n, std::string d, int p,int b, Effet * e);
 
     //Destructeur
     ~Equipement();
 
     //Accesseurs
     void afficher() const;
-    
+    int getBonus();
     
 
   protected:
 
   private:
-
+	int bonus;
 
 }; //Class Equipement
 

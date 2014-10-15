@@ -6,7 +6,7 @@ void comp(Personnage * p, int n){
 		int it=0,max;
 		vector<Equipement*>::iterator i;
 		for(i=((Joueur*)p)->getEquipe().begin();i!=((Joueur*)p)->getEquipe().end();++i){
-			if((*i)->getEffet()->getVal()>e->getEffet()->getVal()){
+			if((*i)->getBonus()>e->getBonus()){
 				max=it;
 				e=*i;
 			}

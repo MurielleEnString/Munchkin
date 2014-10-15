@@ -81,3 +81,7 @@ void Bagarre::poserPotion(Personnage * p, int index){
 	}			
 }
 
+void Bagarre::changerRace(Race * r){
+	cout<<"Vous ne pouvez pas changer de race"<<endl;
+}
+

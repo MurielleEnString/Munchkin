@@ -18,7 +18,7 @@ void EtatJoueur::changerRace(Race * r){
 	}
 	else{
 		Effet * e=joueur->getRace()->getEffet();
-		e->setVal(-(e->getVal()));
+		e->setVal(-e->getVal());
 		e->prendEffet();
 		joueur->getJeu()->getDefausse().push_back(joueur->getRace());
 		
