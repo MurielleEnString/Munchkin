@@ -13,12 +13,15 @@
 
 
 #include "../Personnage/Joueur/Joueur.hpp"
-
+#include "../Effet/Effet.hpp"
+#include "../Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.hpp"
+#include "../Effet/ComportementEffet/MalusBonus/MalusBonus.hpp"
 #include <vector>
 
 class Joueur;
 class Porte;
 class Tresor;
+
 
 using namespace std;
 
@@ -26,7 +29,7 @@ using namespace std;
 
 class Munchkin {
 	
-  public:
+  public: 
     //Constructeur
     Munchkin(std::string filename, int nbJoueurs);
 

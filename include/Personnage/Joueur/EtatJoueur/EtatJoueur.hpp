@@ -30,6 +30,7 @@ class EtatJoueur{
 		
 		void piocherPorteFaceVisible();
 		void piocherPorteFaceCache();
+		void changerRace(Race * r);
 		void poseEquipement(Equipement * e);
 		void equiper(Equipement * e);
 		void desequiper(Equipement * e);

@@ -1,4 +1,4 @@
-all:Joueur.o Carte.o Monstre.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour.o Bagarre.o FinTour.o Attente.o
+all:Joueur.o Carte.o Monstre.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour.o Bagarre.o FinTour.o Attente.o MalusBonus.o MalusBonusDeguerpir.o PerteGainNiv.o CarteSupMain.o PerteObjMax.o
 	g++ -Wall main.cpp obj/Debug/include/Personnage/Personnage.o obj/Debug/include/Carte/Porte/Porte.o obj/Debug/include/Carte/Carte.o obj/Debug/include/Effet/Effet.o obj/Debug/include/Carte/Porte/Monstre/Monstre.o -o main
 
 
@@ -67,6 +67,10 @@ PerteGainNiv.o:
 
 CarteSupMain.o:
 	g++ -Wall include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.cpp -o obj/Debug/include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.o -c
+
+PerteObjMax.o:
+	g++ -Wall include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.cpp -o obj/Debug/include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.o -c
+
 
 
 clean:

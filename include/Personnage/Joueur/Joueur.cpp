@@ -23,6 +23,7 @@
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 Joueur::Joueur(Munchkin * j):Personnage() {
+	race = new Race(new Effet(0,new MalusBonus()),NULL,"Humain","");
 	valDeguerpir=2;
 	nbCartesMain=5;
 	debut= new DebutTour(this);
@@ -130,5 +131,13 @@ vector<Carte*>  Joueur::getMain(){
 
 Munchkin * Joueur::getJeu(){
 	return jeu;
+}
+
+Race * Joueur::getRace(){
+	return race;
+}
+
+void Joueur::setRace(Race *r){
+	race=r;
 }
 

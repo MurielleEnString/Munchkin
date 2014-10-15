@@ -28,6 +28,8 @@ class Effet{
     ~Effet();
     void prendEffet();
     void setCible(Personnage * p);
+    int getVal();
+    void setVal(int n);
 
   protected:
     //Attributs

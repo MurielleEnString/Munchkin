@@ -13,6 +13,7 @@
 
 
 #include "../Personnage.hpp"
+#include "../../Carte/Porte/Race/Race.hpp"
 #include "EtatJoueur/DebutTour/DebutTour.hpp"
 #include "EtatJoueur/OuvrirPorte/OuvrirPorte.hpp"
 #include "EtatJoueur/PillerPiece/PillerPiece.hpp"
@@ -57,6 +58,8 @@ class Joueur:public Personnage{
     void setNiv(int n);
     void setValDeguerpir(int val);
     int getValDeguerpir();
+    Race * getRace();
+    void setRace(Race *r);
     
     
 	void setEtat(EtatJoueur * e);
@@ -72,6 +75,7 @@ class Joueur:public Personnage{
 	vector<Equipement*> getBagage();
 	vector<Equipement*> getEquipe();
 	vector<Carte*> getMain();
+	Race * race;
 	
 	Munchkin * getJeu();
 	

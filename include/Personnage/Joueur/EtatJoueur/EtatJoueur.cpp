@@ -4,14 +4,28 @@
 EtatJoueur::EtatJoueur(Joueur * j): joueur(j){
 }
 
-void piocherPorteFaceVisible(){
+void EtatJoueur::piocherPorteFaceVisible(){
 	cout<<"Vous ne pouvez pas piocher pour l'instant"<<endl;
 }
 
-void piocherPorteFaceCache(){
+void EtatJoueur::piocherPorteFaceCache(){
 	cout<<"Vous ne pouvez pas piocher pour l'instant"<<endl;
 }	
 
+void EtatJoueur::changerRace(Race * r){
+	if(joueur->getRace()->Getnom()=="Humain"){
+		delete joueur->getRace();
+	}
+	else{
+		Effet * e=joueur->getRace()->getEffet();
+		e->setVal(-(e->getVal()));
+		e->prendEffet();
+		joueur->getJeu()->getDefausse().push_back(joueur->getRace());
+		
+	}
+	joueur->setRace(r);
+	joueur->getRace()->poser(joueur);
+}
 
 void EtatJoueur::poseEquipement(Equipement * e){
 	joueur->getBagage().push_back(e);

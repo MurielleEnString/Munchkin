@@ -32,6 +32,20 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs) {
 	
 	//CREATION DES CARTES
 	
+	//Cartes Porte
+	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),1,1));
+	piochePorte.push_back(new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1));
+	piochePorte.push_back(new Malediction("Canard de l'appocalypse","Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux",new Effet(-2, new PerteGainNiv())));
+	
+	
+	//Cartes Trésor
+	piocheTresor.push_back(new Equipement("Enorme Rocher",0,new Effet(3, new MalusBonus())));
+	piocheTresor.push_back(new Equipement("Targe d'inconscience suicidaire",400,new Effet(2, new MalusBonus())));
+	piocheTresor.push_back(new Equipement("Epée (de) Batard(e)",400,new Effet(2, new MalusBonus())));
+	piocheTresor.push_back(new Equipement("Tronçonneuse de la mort",600,new Effet(3, new MalusBonus())));
+	piocheTresor.push_back(new Equipement("Casque de virilité ostentatoire",600,new Effet(3, new MalusBonus())));
+	
+	
 	
 /*  string ligne;
   int id

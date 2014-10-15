@@ -51,3 +51,11 @@ void Effet::prendEffet(){
 void Effet::setCible(Personnage * p){
 	cible=p;
 }
+
+int Effet::getVal(){
+	return val;
+}
+
+void Effet::setVal(int n){
+	val=n;
+}
