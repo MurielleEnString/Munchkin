@@ -18,7 +18,7 @@ class Bagarre:public EtatJoueur{
 	private : 
 		int calculForceJoueur();
 		int calculForceMonstre(Monstre * m);
-		void poserPotion(Personnage * p, Potion * po);
+		
 		
 	
 	
@@ -26,7 +26,7 @@ class Bagarre:public EtatJoueur{
 		Bagarre(Joueur *j);
 		bool combattre(Monstre * m);
 		void deguerpir(Monstre * m);
-		void poserPotion(Personnage * p, int index);
+		void poserPotion(Personnage * p, Potion * po);
 		void changerRace(Race * r);
 	
 	

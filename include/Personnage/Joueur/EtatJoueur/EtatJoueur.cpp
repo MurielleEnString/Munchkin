@@ -81,6 +81,23 @@ void EtatJoueur::poserPotion(Personnage * p, Potion * po){
 	cout<<"impossible de poser une potion maintenant"<<endl;
 }
 
+void EtatJoueur::vendreObjets(vector<Tresor*> * sacAvendre){
+	int somme=0;
+	
+	vector<Tresor *>::iterator i;
+	for(i=sacAvendre->begin();i!=sacAvendre->end();++i){
+		somme+=(*i)->getPrix();
+		joueur->getJeu()->getDefausse().push_back(*i);
+	}
+	delete sacAvendre;
+	somme=somme/1000;
+	if(joueur->getNiv()+somme>9) joueur->setNiv(9);
+	else joueur->setNiv(joueur->getNiv()+somme);
+}
+void EtatJoueur::deguerpir(Monstre * m){
+	cout<<"Vous ne pouvez pas deguerpir si vous n'êtes pas poursuivi"<<endl;
+}
+
 void EtatJoueur::defausserCarte(Carte * c){
 	cout<<"Vous ne pouvez pas défausser de carte maintenant"<<endl;	
 }

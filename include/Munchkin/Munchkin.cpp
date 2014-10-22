@@ -22,13 +22,14 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Munchkin::Munchkin(std::string filename, int nbJoueurs) {
+Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	int i=0;
 	
 	//CREATION DES JOUEURS
 	for(;i<nbJoueurs;++i){
 		joueurs.push_back(new Joueur(this,i));
 	}
+	courant=*joueurs.begin();
 	
 	//CREATION DES CARTES
 	
@@ -106,9 +107,7 @@ Munchkin::~Munchkin() {
 
 /****************************************************************************************************/
 
-void Munchkin::finPartie(){
-	cout<<"La partie est finie"<<endl;
-}
+
 
 Porte * Munchkin::piocherPorte(){
 	Porte * res=piochePorte.front();
@@ -130,6 +129,14 @@ void Munchkin::changementJoueur(Joueur * j){
 	}
 }
 
+bool Munchkin::getFinPartie(){
+	return finPartie;
+}
+
+void Munchkin::setFinPartie(bool b){
+	finPartie=b;
+}
+
 std::vector<Porte*> Munchkin::getPiochePorte(){
 	return piochePorte;
 }
@@ -144,3 +151,6 @@ std::vector<Carte*> Munchkin::getDefausse(){
 	return defausse;
 }
 
+Joueur * Munchkin::getCourant(){
+	return courant;
+}

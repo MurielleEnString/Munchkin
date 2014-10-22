@@ -28,6 +28,7 @@ class Tresor:public Carte {
 
     //Accesseurs
     void afficher() const;
+    int getPrix();
 
     //Mutateurs
 

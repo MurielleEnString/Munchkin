@@ -24,7 +24,7 @@ class Carte {
     Carte(std::string n, std::string d, Effet * e);
 
     //Destructeur
-    virtual ~Carte();
+    ~Carte();
 
     //Accesseurs
     std::string Getnom();

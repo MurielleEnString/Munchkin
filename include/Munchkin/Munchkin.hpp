@@ -40,8 +40,10 @@ class Munchkin {
 	std::vector<Porte*> getPiochePorte();
 	std::vector<Carte*> getDefausse();
 	std::vector<Tresor*> getPiocheTresor();
+	Joueur * getCourant();
 	
-	void finPartie();
+	bool getFinPartie();
+	void setFinPartie(bool b);
 	void changementJoueur(Joueur * j);
 	
 	
@@ -55,6 +57,7 @@ class Munchkin {
   
 	std::vector<Joueur*> joueurs;
 	Joueur * courant;
+	bool finPartie;
   
   
 

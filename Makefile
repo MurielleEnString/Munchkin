@@ -1,5 +1,6 @@
-all:Joueur.o Carte.o Monstre.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour.o Bagarre.o FinTour.o Attente.o MalusBonus.o MalusBonusDeguerpir.o PerteGainNiv.o CarteSupMain.o PerteObjMax.o
-	g++ -Wall main.cpp obj/Debug/include/Personnage/Personnage.o obj/Debug/include/Carte/Porte/Porte.o obj/Debug/include/Carte/Carte.o obj/Debug/include/Effet/Effet.o obj/Debug/include/Carte/Porte/Monstre/Monstre.o -o main
+all:Joueur.o Carte.o Monstre.o Malediction.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour.o Bagarre.o FinTour.o Attente.o MalusBonus.o MalusBonusDeguerpir.o PerteGainNiv.o CarteSupMain.o PerteObjMax.o ComportementEffet.o Potion.o
+	g++ -Wall -g main.cpp obj/Debug/include/Carte/Tresor/Potion/Potion.o obj/Debug/include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.o obj/Debug/include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.o obj/Debug/include/Effet/ComportementEffet/ComportementEffet.o obj/Debug/include/Effet/ComportementEffet/MalusBonus/MalusBonus.o obj/Debug/include/Carte/Porte/Malediction/Malediction.o obj/Debug/include/Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.o obj/Debug/include/Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.o obj/Debug/include/Personnage/Joueur/EtatJoueur/Attente/Attente.o  obj/Debug/include/Carte/Tresor/Tresor.o obj/Debug/include/Personnage/Joueur/EtatJoueur/FinTour/FinTour.o obj/Debug/include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o obj/Debug/include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.o obj/Debug/include/Personnage/Joueur/EtatJoueur/OuvrirPorte/OuvrirPorte.o obj/Debug/include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.o obj/Debug/include/Carte/Carte.o obj/Debug/include/Personnage/Joueur/EtatJoueur/EtatJoueur.o obj/Debug/include/Carte/Porte/Porte.o obj/Debug/include/Carte/Porte/Monstre/Monstre.o obj/Debug/include/Carte/Tresor/Equipement/Equipement.o obj/Debug/include/Carte/Porte/Race/Race.o obj/Debug/include/Effet/Effet.o obj/Debug/include/Personnage/Personnage.o obj/Debug/include/Personnage/Joueur/Joueur.o obj/Debug/include/Munchkin/Munchkin.o -o main
+
 
 
 Carte.o:
@@ -22,7 +23,10 @@ Tresor.o:Carte.o
 	
 Equipement.o:Tresor.o
 	g++ -Wall include/Carte/Tresor/Equipement/Equipement.cpp -o obj/Debug/include/Carte/Tresor/Equipement/Equipement.o -c
-	
+
+Potion.o:Tresor.o
+	g++ -Wall include/Carte/Tresor/Potion/Potion.cpp -o obj/Debug/include/Carte/Tresor/Potion/Potion.o -c
+
 Effet.o:
 	g++ -Wall include/Effet/Effet.cpp -o obj/Debug/include/Effet/Effet.o -c
 	
@@ -41,8 +45,11 @@ EtatJoueur.o:
 OuvrirPorte.o: EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/OuvrirPorte/OuvrirPorte.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/OuvrirPorte/OuvrirPorte.o -c
 	
+	
 PillerPiece.o: EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.o -c
+	
+	
 	
 DebutTour.o: EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.o -c
@@ -55,20 +62,26 @@ FinTour.o:EtatJoueur.o Joueur.o
 	
 Attente.o:EtatJoueur.o Joueur.o
 	g++ -Wall include/Personnage/Joueur/EtatJoueur/Attente/Attente.cpp -o obj/Debug/include/Personnage/Joueur/EtatJoueur/Attente/Attente.o -c
+
+ComportementEffet.o:
+	g++ -Wall include/Effet/ComportementEffet/ComportementEffet.cpp -o obj/Debug/include/Effet/ComportementEffet/ComportementEffet.o -c
 	
-MalusBonus.o:
+MalusBonus.o:ComportementEffet.o
 	g++ -Wall include/Effet/ComportementEffet/MalusBonus/MalusBonus.cpp -o obj/Debug/include/Effet/ComportementEffet/MalusBonus/MalusBonus.o -c
 
-MalusBonusDeguerpir.o:
+
+
+MalusBonusDeguerpir.o:ComportementEffet.o
 	g++ -Wall include/Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.cpp -o obj/Debug/include/Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.o -c
 	
-PerteGainNiv.o:
+PerteGainNiv.o:ComportementEffet.o
 	g++ -Wall include/Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.cpp -o obj/Debug/include/Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.o -c
 
-CarteSupMain.o:
+
+CarteSupMain.o:ComportementEffet.o
 	g++ -Wall include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.cpp -o obj/Debug/include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.o -c
 
-PerteObjMax.o:
+PerteObjMax.o:ComportementEffet.o
 	g++ -Wall include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.cpp -o obj/Debug/include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.o -c
 
 

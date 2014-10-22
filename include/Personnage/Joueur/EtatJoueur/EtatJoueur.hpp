@@ -3,7 +3,7 @@
 	
 	
 	#include "../../../Carte/Tresor/Equipement/Equipement.hpp"
-	
+	#include "../../../Carte/Porte/Race/Race.hpp"
 	#include "../../../Munchkin/Munchkin.hpp"
 	#include <iostream>
 	#include <vector>
@@ -29,19 +29,19 @@ class EtatJoueur{
 	public:
 		EtatJoueur(Joueur * t);
 		
-		void piocherPorteFaceVisible();
-		void piocherPorteFaceCache();
-		void changerRace(Race * r);
-		void poseEquipement(Equipement * e);
-		void equiper(Equipement * e);
-		void desequiper(Equipement * e);
-		bool combattre(Monstre * m);
-		void poserMalediction(Joueur * cible, Malediction * m);
-		void poserPotion(Personnage * p, Potion * po);
-		void vendreObjets(vector<Tresor> * sacAvendre);
-		void deguerpir(Monstre * m);
-		void defausserCarte(Carte * c);
-		void finirTour();
+		virtual void piocherPorteFaceVisible();
+		virtual void piocherPorteFaceCache();
+		virtual void changerRace(Race * r);
+		virtual void poseEquipement(Equipement * e);
+		virtual void equiper(Equipement * e);
+		virtual void desequiper(Equipement * e);
+		virtual bool combattre(Monstre * m);
+		virtual void poserMalediction(Joueur * cible, Malediction * m);
+		virtual void poserPotion(Personnage * p, Potion * po);
+		virtual void vendreObjets(vector<Tresor*> * sacAvendre);
+		virtual void deguerpir(Monstre * m);
+		virtual void defausserCarte(Carte * c);
+		virtual void finirTour();
 };
 
 #endif

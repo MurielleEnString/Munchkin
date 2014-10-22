@@ -5,7 +5,7 @@
 	
 class ComportementEffet{
 	public:
-		virtual void comp(Personnage * p, int n);	
+		virtual void comp(Personnage * p, int n) = 0;	
 };
 
 

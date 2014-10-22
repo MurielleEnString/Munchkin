@@ -1,6 +1,8 @@
-#include"Race.hpp"
+#include "Race.hpp"                    
 
 Race::Race(Effet * e,Effet * e0, string nom, string description): Porte(nom, description, e), e1(e0){}
+
+Race::~Race(){}
 
 void Race::poser(Joueur * j){
 	e->setCible((Personnage *)j);

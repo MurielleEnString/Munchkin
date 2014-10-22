@@ -17,7 +17,7 @@ bool Bagarre::combattre(Monstre * m){
 		joueur->setBonus(0);
 		joueur->setEtat((EtatJoueur*)joueur->getFin());
 		if(joueur->getNiv()>=10){
-			joueur->getJeu()->finPartie();
+			joueur->getJeu()->setFinPartie(true);
 		}
 	}
 	else{
