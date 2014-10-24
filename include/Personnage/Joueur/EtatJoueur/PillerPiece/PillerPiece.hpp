@@ -10,6 +10,13 @@ class PillerPiece:public EtatJoueur{
 	public:
 		PillerPiece(Joueur *j);
 		void piocherPorteFaceCache();
+		void defausserCarte(Carte * c);
+		void changerRace(Race * r);
+		void poseEquipement(Equipement * e);
+		void equiper(Equipement * e);
+		void desequiper(Equipement * e);
+		void poserMalediction(Joueur * cible, Malediction * m);
+		void vendreObjets(vector<Tresor*> * sacAvendre);
 	
 	
 };
