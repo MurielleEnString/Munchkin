@@ -6,6 +6,7 @@
 	
 class Race;
 
+
 class Attente:public EtatJoueur{
 	public:
 		Attente(Joueur * j);

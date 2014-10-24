@@ -2,9 +2,7 @@
 	#define ETATJOUEUR_HPP
 	
 	
-	#include "../../../Carte/Tresor/Equipement/Equipement.hpp"
-	#include "../../../Carte/Porte/Race/Race.hpp"
-	#include "../../../Munchkin/Munchkin.hpp"
+	
 	#include <iostream>
 	#include <vector>
 	
@@ -13,9 +11,11 @@
 	
 	
 class Joueur;
+class Race;
+class Munchkin;
 class Personnage;
 class Monstre;
-//class Equipement;
+class Equipement;
 class Tresor;
 class Carte;
 class Malediction;

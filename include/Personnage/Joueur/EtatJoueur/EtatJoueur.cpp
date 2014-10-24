@@ -13,7 +13,9 @@ void EtatJoueur::piocherPorteFaceCache(){
 }	
 
 void EtatJoueur::changerRace(Race * r){
-	if(joueur->getRace()->Getnom()=="Humain"){
+	
+	cout<<"Vous ne pouvez pas changer de Race maintenant"<<endl;
+	/*if(joueur->getRace()->Getnom()=="Humain"){
 		delete joueur->getRace();
 	}
 	else{
@@ -24,16 +26,18 @@ void EtatJoueur::changerRace(Race * r){
 		
 	}
 	joueur->setRace(r);
-	joueur->getRace()->poser(joueur);
+	joueur->getRace()->poser(joueur);*/
 }
 
 void EtatJoueur::poseEquipement(Equipement * e){
-	joueur->getBagage().push_back(e);
+	cout<<"Vous ne pouvez pas changer votre équipement maintenant"<<endl;
+	/*joueur->getBagage().push_back(e);*/
 	
 }
 
 void EtatJoueur::equiper(Equipement * e){
-	vector<Equipement*>::iterator i=joueur->getBagage().begin();
+	cout<<"Vous ne pouvez pas changer votre équipement maintenant"<<endl;
+	/*vector<Equipement*>::iterator i=joueur->getBagage().begin();
 	while(i!=joueur->getBagage().end()){
 		if((*i)->compare(e)){
 			break;
@@ -45,12 +49,14 @@ void EtatJoueur::equiper(Equipement * e){
 		(*i)->getEffet()->prendEffet();
 	}
 	joueur->getBagage().erase(i);
-	joueur->getEquipe().push_back(e);
+	joueur->getEquipe().push_back(e);*/
 		
 
 }
 
 void EtatJoueur::desequiper(Equipement * e){
+	cout<<"Vous ne pouvez pas changer votre équipement maintenant"<<endl;
+	/*
 	vector<Equipement*>::iterator i=joueur->getEquipe().begin();
 	while(i!=joueur->getEquipe().end()){
 		if((*i)->compare(e)){
@@ -64,7 +70,7 @@ void EtatJoueur::desequiper(Equipement * e){
 		e->prendEffet();
 	}
 	joueur->getEquipe().erase(i);
-	joueur->getBagage().push_back(e);
+	joueur->getBagage().push_back(e);*/
 }
 
 bool EtatJoueur::combattre(Monstre * m){
@@ -73,8 +79,10 @@ bool EtatJoueur::combattre(Monstre * m){
 }
 
 void EtatJoueur::poserMalediction(Joueur * cible, Malediction * m){
+	cout<<"Vous ne pouvez pas poser de malediction maintenant"<<endl;
+	
 	//Appliquer malediction
-	joueur->getJeu()->getDefausse().push_back(m);
+	//joueur->getJeu()->getDefausse().push_back(m);
 }
 
 void EtatJoueur::poserPotion(Personnage * p, Potion * po){
@@ -82,7 +90,9 @@ void EtatJoueur::poserPotion(Personnage * p, Potion * po){
 }
 
 void EtatJoueur::vendreObjets(vector<Tresor*> * sacAvendre){
-	int somme=0;
+	
+	cout<<"Vous ne pouvez pas vendre d'objet maintenant"<<endl;
+	/*int somme=0;
 	
 	vector<Tresor *>::iterator i;
 	for(i=sacAvendre->begin();i!=sacAvendre->end();++i){
@@ -92,7 +102,7 @@ void EtatJoueur::vendreObjets(vector<Tresor*> * sacAvendre){
 	delete sacAvendre;
 	somme=somme/1000;
 	if(joueur->getNiv()+somme>9) joueur->setNiv(9);
-	else joueur->setNiv(joueur->getNiv()+somme);
+	else joueur->setNiv(joueur->getNiv()+somme);*/
 }
 void EtatJoueur::deguerpir(Monstre * m){
 	cout<<"Vous ne pouvez pas deguerpir si vous n'êtes pas poursuivi"<<endl;
