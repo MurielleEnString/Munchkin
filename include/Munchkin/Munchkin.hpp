@@ -16,6 +16,7 @@
 #include "../Effet/Effet.hpp"
 #include "../Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.hpp"
 #include "../Effet/ComportementEffet/MalusBonus/MalusBonus.hpp"
+//#include "../Effet/ComportementEffet/PerteObjMax/PerteObjMax.hpp"
 #include "../Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.hpp"
 #include <vector>
 
@@ -49,7 +50,7 @@ class Munchkin {
 	
 	Porte * piocherPorte();
 
-  protected:
+  private:
     //Attributs
 	std::vector<Porte*> piochePorte;
 	std::vector<Tresor*> piocheTresor;
@@ -61,7 +62,7 @@ class Munchkin {
   
   
 
-  private:
+  
 
 }; //Class Munchkin
 

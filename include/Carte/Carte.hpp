@@ -14,6 +14,7 @@
 #include <string>
 #include "../Effet/Effet.hpp"
 
+using namespace std;
 
 /****************************************************************************************************/
 
@@ -31,7 +32,8 @@ class Carte {
     std::string Getdescription();
     Effet * getEffet();
     void setEffet(Effet * e);
-
+	virtual string type();
+	
     //Mutateurs
     //void Setnom(string val);
     //void Setdescription(string val);

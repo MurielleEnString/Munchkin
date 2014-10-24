@@ -5,6 +5,7 @@ Bagarre::Bagarre(Joueur *j):EtatJoueur(j){}
 
 bool Bagarre::combattre(Monstre * m){
 	//Envoie signal aux autres joueurs... ou pas !
+	cout<<"bagarre"<<endl;
 	if(calculForceJoueur()>calculForceMonstre(m)){
 		for(int i=0;i<m->getTresors();i++){
 			cout<<"Vous gagnez le combat"<<endl;

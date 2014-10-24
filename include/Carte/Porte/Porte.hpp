@@ -24,6 +24,8 @@ class Porte:public Carte {
     //Destructeur
     ~Porte();
 
+
+	virtual string type();
   protected:
 
   private:

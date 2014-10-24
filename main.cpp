@@ -16,10 +16,14 @@ using namespace std;
 int main() {
 	int choix;
   Munchkin * m = new Munchkin("blabla", 3);
+  Porte * p=new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1);
+  cout<<p->type()<<endl;
+  
+  
   while(!m->getFinPartie()){
 	Joueur * j=m->getCourant();
-	cout<<j->getId()<<endl;
-	
+	//j->getDebut()->piocherPorteFaceVisible();
+
 	cout<<"Actions :"<<endl;
 	cout<<"1 : Piocher une porte face visible" <<endl;
 	cout<<"2 : Piocher une porte face cachée"<<endl;
@@ -40,37 +44,41 @@ int main() {
 		
 		case 1:{
 			j->getEtat()->piocherPorteFaceVisible();
+			break;
 		}
 		case 2:{
 			j->getEtat()->piocherPorteFaceCache();
 		}
 		case 3:{
-			
+			break;
 		}
 		case 4:{
-			
+			break;
 		}
 		case 5:{
-			
+			break;
 		}
 		case 6:{
-			
+			break;
 		}
 		case 7:{
-			
+			break;
 		}
 		case 8:{
-			
+			break;
 		}
 		case 9:{
-			
+			break;
 		}
 		case 10:{
-			
+			break;
 		}
 		case 11:{
-			
+			break;
 		}
+		
+		default:
+			break;
 	}
 		//void vendreObjets(vector<Tresor> * sacAvendre);
 		

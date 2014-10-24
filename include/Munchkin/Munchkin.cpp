@@ -30,6 +30,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 		joueurs.push_back(new Joueur(this,i));
 	}
 	courant=*joueurs.begin();
+	courant->setEtat(courant->getDebut());
 	
 	//CREATION DES CARTES
 	
@@ -37,7 +38,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),1,1));
 	piochePorte.push_back(new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1));
 	piochePorte.push_back(new Malediction("Canard de l'appocalypse","Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux",new Effet(-2, new PerteGainNiv())));
-	
+	//piochePorte.push_back(new Malediction("Vraiment trop injuste !","Perdez l'objet qui vous donne le plus haut bonus",new Effet(0, new PerteObjMax())));
 	
 	//Cartes Trésor
 	piocheTresor.push_back(new Equipement("Enorme Rocher",0,3,NULL));
@@ -112,6 +113,7 @@ Munchkin::~Munchkin() {
 Porte * Munchkin::piocherPorte(){
 	Porte * res=piochePorte.front();
 	piochePorte.erase(piochePorte.begin());
+	cout<<res->type()<<endl;
 	return res;
 }
 

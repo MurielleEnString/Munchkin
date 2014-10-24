@@ -11,8 +11,11 @@
 
 /****************************************************************************************************/
 
+#include <string>
 #include "../../../Personnage/Personnage.hpp"
 #include "../Porte.hpp"
+
+using namespace std;
 
 class Effet;
 
@@ -28,6 +31,8 @@ class Monstre:public Porte, public Personnage {
     ~Monstre();
     int getTresors();
     int getNbNiv();
+    
+    string type();
 
   private:
     //Attributs

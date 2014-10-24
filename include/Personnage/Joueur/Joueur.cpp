@@ -33,6 +33,7 @@ Joueur::Joueur(Munchkin * j, int i):Personnage(), id(i) {
 	fin=new FinTour(this);
 	attente=new Attente(this);
 	race=NULL;
+	etat_=attente;
 	jeu=j;
 }
 

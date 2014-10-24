@@ -3,6 +3,7 @@
 	
 	#include "../EtatJoueur.hpp"
 	#include "../../Joueur.hpp"
+	#include "../../../../Carte/Carte.hpp"
 	#include "../../../../Carte/Porte/Monstre/Monstre.hpp"
 	#include "../../../../Carte/Porte/Malediction/Malediction.hpp"
 	#include "../../../../Munchkin/Munchkin.hpp"
@@ -16,7 +17,7 @@ class OuvrirPorte:public EtatJoueur{
 		
 	public:
 		OuvrirPorte(Joueur * j);
-		void piocherFaceVisible();
+		void piocherPorteFaceVisible();
 	
 };
 	

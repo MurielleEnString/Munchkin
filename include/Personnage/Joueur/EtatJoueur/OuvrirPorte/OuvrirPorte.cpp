@@ -2,10 +2,17 @@
 
 OuvrirPorte::OuvrirPorte(Joueur *j):EtatJoueur(j){}
 
-void OuvrirPorte::piocherFaceVisible(){
-	Carte * c=joueur->getJeu()->piocherPorte();
+void OuvrirPorte::piocherPorteFaceVisible(){
+	
+	
+	
+	Porte * c=joueur->getJeu()->getPiochePorte().front();
+	
 	cout<<"J'ai pioché "<<c->Getnom()<<endl;
-	if(typeid(*c )==typeid(Monstre)){
+	cout<<c->type()<<" "<<endl;
+	
+	/*if(typeid(*c )==typeid(Monstre)){
+		cout<<"c'est un monstre"<<endl;
 		joueur->setEtat((EtatJoueur*)joueur->getBagarre());
 		joueur->getEtat()->combattre((Monstre*)c);
 		
@@ -19,6 +26,6 @@ void OuvrirPorte::piocherFaceVisible(){
 		else{
 			joueur->getMain().push_back(c);
 		}
-	}
+	}*/
 	
 }
