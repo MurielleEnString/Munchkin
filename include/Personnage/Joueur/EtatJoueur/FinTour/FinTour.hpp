@@ -8,6 +8,8 @@
 class FinTour:public EtatJoueur{
 	public:
 		FinTour(Joueur * j);
+		virtual ~FinTour();
+		
 		void finirTour();
 		void defausserCarte(Carte * c);
 		void changerRace(Race * r);

@@ -17,6 +17,8 @@ class OuvrirPorte:public EtatJoueur{
 		
 	public:
 		OuvrirPorte(Joueur * j);
+		virtual ~OuvrirPorte();
+		
 		void piocherPorteFaceVisible();
 		
 		void changerRace(Race * r);

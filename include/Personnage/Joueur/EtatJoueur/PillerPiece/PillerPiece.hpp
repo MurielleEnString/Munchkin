@@ -9,6 +9,8 @@
 class PillerPiece:public EtatJoueur{
 	public:
 		PillerPiece(Joueur *j);
+		virtual ~PillerPiece();
+		
 		void piocherPorteFaceCache();
 		void defausserCarte(Carte * c);
 		void changerRace(Race * r);

@@ -28,6 +28,7 @@ class EtatJoueur{
 	
 	public:
 		EtatJoueur(Joueur * t);
+		virtual ~EtatJoueur();
 		
 		virtual void piocherPorteFaceVisible();
 		virtual void piocherPorteFaceCache();
@@ -42,6 +43,8 @@ class EtatJoueur{
 		virtual void deguerpir(Monstre * m);
 		virtual void defausserCarte(Carte * c);
 		virtual void finirTour();
+		
+		
 };
 
 #endif

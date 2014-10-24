@@ -3,6 +3,8 @@
 FinTour::FinTour(Joueur * j):EtatJoueur(j){
 	}
 
+FinTour::~FinTour(){}
+
 void FinTour::finirTour(){
 	if(joueur->getMain().size()<6){
 		joueur->setEtat(joueur->getFin());

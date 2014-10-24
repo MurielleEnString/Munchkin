@@ -2,6 +2,8 @@
 
 OuvrirPorte::OuvrirPorte(Joueur *j):EtatJoueur(j){}
 
+OuvrirPorte::~OuvrirPorte(){}
+
 void OuvrirPorte::piocherPorteFaceVisible(){
 	
 	

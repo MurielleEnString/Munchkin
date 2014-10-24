@@ -4,6 +4,7 @@
 EtatJoueur::EtatJoueur(Joueur * j): joueur(j){
 }
 
+EtatJoueur::~EtatJoueur(){}
 void EtatJoueur::piocherPorteFaceVisible(){
 	cout<<"Vous ne pouvez pas piocher pour l'instant"<<endl;
 }

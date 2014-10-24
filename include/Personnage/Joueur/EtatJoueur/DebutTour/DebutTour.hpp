@@ -8,6 +8,8 @@
 class DebutTour:public EtatJoueur{
 	public:
 		DebutTour(Joueur * j);
+		virtual ~ DebutTour();
+		
 		void piocherPorteFaceVisible();
 		
 		void changerRace(Race * r);

@@ -1,7 +1,8 @@
 #include "DebutTour.hpp"
 
-DebutTour::DebutTour(Joueur * j):EtatJoueur(j){
-}
+DebutTour::DebutTour(Joueur * j):EtatJoueur(j){}
+
+DebutTour::~DebutTour(){}
 
 void DebutTour::piocherPorteFaceVisible(){
 	

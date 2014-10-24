@@ -1,7 +1,7 @@
 #include "Bagarre.hpp"
 
 Bagarre::Bagarre(Joueur *j):EtatJoueur(j){}
-
+Bagarre::~Bagarre(){}
 
 bool Bagarre::combattre(Monstre * m){
 	//Envoie signal aux autres joueurs... ou pas !

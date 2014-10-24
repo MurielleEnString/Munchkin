@@ -3,6 +3,8 @@
 PillerPiece::PillerPiece(Joueur *j):EtatJoueur(j){
 }
 
+PillerPiece::~PillerPiece(){}
+
 void PillerPiece::piocherPorteFaceCache(){
 	Carte * c=joueur->getJeu()->piocherPorte();
 	joueur->getMain().push_back(c);
