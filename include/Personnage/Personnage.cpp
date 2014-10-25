@@ -69,6 +69,10 @@ int Personnage::getNiveau() {
   return niveau;
 }
 
+void Personnage::setNiveau(int n){
+	niveau=n;
+}
+
 int Personnage::getBonus(){
 	return bonus;
 }

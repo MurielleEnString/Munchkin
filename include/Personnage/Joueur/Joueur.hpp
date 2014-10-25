@@ -55,8 +55,6 @@ class Joueur:public Personnage{
     //Mutateurs
     void setNbCartesMain(int n);
     int getNbCartesMain();
-    void setNiv(int n);
-    int getNiv();
     void setValDeguerpir(int val);
     int getValDeguerpir();
     Race * getRace();
@@ -74,9 +72,9 @@ class Joueur:public Personnage{
 	FinTour * getFin();
 	Attente * getAttente();
   
-	vector<Equipement*> getBagage();
-	vector<Equipement*> getEquipe();
-	vector<Carte*> getMain();
+	vector<Equipement*>& getBagage();
+	vector<Equipement*>& getEquipe();
+	vector<Carte*>& getMain();
 	Race * race;
 	
 	Munchkin * getJeu();

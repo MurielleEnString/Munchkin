@@ -25,14 +25,14 @@ class Carte {
     Carte(std::string n, std::string d, Effet * e);
 
     //Destructeur
-    ~Carte();
+    virtual ~Carte();
 
     //Accesseurs
     std::string Getnom();
     std::string Getdescription();
     Effet * getEffet();
     void setEffet(Effet * e);
-	virtual string type();
+	
 	
     //Mutateurs
     //void Setnom(string val);

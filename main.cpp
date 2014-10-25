@@ -13,16 +13,22 @@
 
 using namespace std;
 
+
+Carte * choisirCarte(Joueur * j);
+
 int main() {
 	int choix;
   Munchkin * m = new Munchkin("blabla", 3);
-  Porte * p=new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1);
-  cout<<p->type()<<endl;
+  Joueur * j=m->getCourant();
+  vector<Carte*>::iterator i;
+  vector<Equipement*>::iterator i0;
+  Carte * c;
+  
   
   
   while(!m->getFinPartie()){
-	Joueur * j=m->getCourant();
-	//j->getDebut()->piocherPorteFaceVisible();
+	j=m->getCourant();
+	
 
 	cout<<"Actions :"<<endl;
 	cout<<"1 : Piocher une porte face visible" <<endl;
@@ -41,7 +47,23 @@ int main() {
 	cin>>choix;
 	
 	switch(choix){
-		
+		case 0:{
+			cout<<"niveau : "<<j->getNiveau()<<endl;
+			cout<<"Votre main :"<<j->getMain().size()<<endl;
+			for(i=j->getMain().begin();i!=j->getMain().end();++i){
+				cout<<(*i)->Getnom()<<endl;
+			}
+			cout<<"Votre bagage :"<<j->getBagage().size()<<endl;
+			for(i0=j->getBagage().begin();i0!=j->getBagage().end();++i0){
+				cout<<(*i0)->Getnom()<<endl;
+			}
+			cout<<"Vos Equipements actifs :"<<j->getEquipe().size()<<endl;
+			for(i0=j->getEquipe().begin();i0!=j->getEquipe().end();++i0){
+				cout<<(*i0)->Getnom()<<endl;
+			}
+			
+			break;
+		}
 		case 1:{
 			j->getEtat()->piocherPorteFaceVisible();
 			break;
@@ -50,38 +72,62 @@ int main() {
 			j->getEtat()->piocherPorteFaceCache();
 		}
 		case 3:{
+			//j->getEtat()->changerRace();
 			break;
 		}
 		case 4:{
+			c=choisirCarte(j);
+			if(typeid(*c)==typeid(Equipement)){
+				
+				j->getEtat()->poseEquipement((Equipement*)c);
+			}
+			else{
+				cout<<"Vous n'avez pas choisi un equipement"<<endl;
+				j->getMain().push_back(c);
+			}
 			break;
 		}
 		case 5:{
+			
+			//j->getEtat()->equipe();
 			break;
 		}
 		case 6:{
+			//j->getEtat()->desequiper();
 			break;
 		}
 		case 7:{
+			//j->getEtat()->combattre();
 			break;
 		}
 		case 8:{
+			//j->getEtat()->poserMalediction();
 			break;
 		}
 		case 9:{
+			//j->getEtat()->poserPotion();
 			break;
 		}
 		case 10:{
+			//j->getEtat()->deguerpir()
 			break;
 		}
 		case 11:{
+			//j->getEtat()->defausserCarte();
+			break;
+		}
+		
+		case 12:{
+			j->getEtat()->finirTour();
 			break;
 		}
 		
 		default:
 			break;
-	}
+	
 		//void vendreObjets(vector<Tresor> * sacAvendre);
 		
+	}
 }
   
   
@@ -90,4 +136,28 @@ int main() {
 	
   
   return 0;
+}
+
+
+Carte * choisirCarte(Joueur * j){
+	Carte * res;
+	vector<Carte *>::iterator i;
+	unsigned int choix, n=0;
+	for(i=j->getMain().begin();i!=j->getMain().end();++i){
+		cout<<n<<" : "<<(*i)->Getnom()<<endl;
+		++n;
+	}
+	cin>>choix;
+	while(choix<0 || choix>=j->getMain().size()){
+		cout<<"La carte n'existe pas, choisissez en une autre";
+		cin>>choix;
+	}
+	
+	i=j->getMain().begin();
+	for(n=0;n<choix;n++){
+		++i;
+	}
+	res=*i;
+	j->getMain().erase(i);
+	return res;
 }

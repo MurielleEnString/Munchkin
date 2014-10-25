@@ -79,8 +79,8 @@ void DebutTour::vendreObjets(vector<Tresor*> * sacAvendre){
 	}
 	delete sacAvendre;
 	somme=somme/1000;
-	if(joueur->getNiv()+somme>9) joueur->setNiv(9);
-	else joueur->setNiv(joueur->getNiv()+somme);
+	if(joueur->getNiveau()+somme>9) joueur->setNiveau(9);
+	else joueur->setNiveau(joueur->getNiveau()+somme);
 }
 
 void DebutTour::defausserCarte(Carte * c){

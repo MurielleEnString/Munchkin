@@ -19,6 +19,8 @@ class Bagarre:public EtatJoueur{
 		int calculForceJoueur();
 		int calculForceMonstre(Monstre * m);
 		
+		Monstre * mons;
+		
 		
 	
 	
@@ -26,10 +28,9 @@ class Bagarre:public EtatJoueur{
 		Bagarre(Joueur *j);
 		virtual ~Bagarre();
 		
-		bool combattre(Monstre * m);
+		void combattre(Monstre * m);
 		void deguerpir(Monstre * m);
 		void poserPotion(Personnage * p, Potion * po);
-		void changerRace(Race * r);
 	
 	
 };

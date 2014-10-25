@@ -49,6 +49,4 @@ Porte::Porte(std::string nom, std::string description, Effet * e):Carte(nom, des
 Porte::~Porte() {
 }
 
-string Porte::type(){
-	return "Porte";
-}
+

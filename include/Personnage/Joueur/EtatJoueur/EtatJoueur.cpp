@@ -31,9 +31,8 @@ void EtatJoueur::desequiper(Equipement * e){
 	cout<<"Vous ne pouvez pas changer votre équipement maintenant"<<endl;
 }
 
-bool EtatJoueur::combattre(Monstre * m){
+void EtatJoueur::combattre(Monstre * m){
 	cout<<"Vous ne pouvez pas poser de monstre maintenant"<<endl;
-	return false;
 }
 
 void EtatJoueur::poserMalediction(Joueur * cible, Malediction * m){

@@ -38,9 +38,9 @@ class Munchkin {
     //Destructeur
     ~Munchkin();
   
-	std::vector<Porte*> getPiochePorte();
-	std::vector<Carte*> getDefausse();
-	std::vector<Tresor*> getPiocheTresor();
+	std::vector<Porte*>& getPiochePorte();
+	std::vector<Carte*>& getDefausse();
+	std::vector<Tresor*>& getPiocheTresor();
 	Joueur * getCourant();
 	
 	bool getFinPartie();
@@ -49,6 +49,7 @@ class Munchkin {
 	
 	
 	Porte * piocherPorte();
+	Tresor * piocherTresor();
 
   private:
     //Attributs

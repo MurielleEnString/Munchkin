@@ -35,7 +35,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	//CREATION DES CARTES
 	
 	//Cartes Porte
-	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),1,1));
+	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),0,2));
 	piochePorte.push_back(new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1));
 	piochePorte.push_back(new Malediction("Canard de l'appocalypse","Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux",new Effet(-2, new PerteGainNiv())));
 	//piochePorte.push_back(new Malediction("Vraiment trop injuste !","Perdez l'objet qui vous donne le plus haut bonus",new Effet(0, new PerteObjMax())));
@@ -113,7 +113,12 @@ Munchkin::~Munchkin() {
 Porte * Munchkin::piocherPorte(){
 	Porte * res=piochePorte.front();
 	piochePorte.erase(piochePorte.begin());
-	cout<<res->type()<<endl;
+	return res;
+}
+
+Tresor * Munchkin::piocherTresor(){
+	Tresor * res=piocheTresor.front();
+	piocheTresor.erase(piocheTresor.begin());
 	return res;
 }
 
@@ -139,17 +144,17 @@ void Munchkin::setFinPartie(bool b){
 	finPartie=b;
 }
 
-std::vector<Porte*> Munchkin::getPiochePorte(){
+std::vector<Porte*>& Munchkin::getPiochePorte(){
 	return piochePorte;
 }
 
 
 
-std::vector<Tresor*> Munchkin::getPiocheTresor(){
+std::vector<Tresor*>& Munchkin::getPiocheTresor(){
 	return piocheTresor;
 }
 
-std::vector<Carte*> Munchkin::getDefausse(){
+std::vector<Carte*>& Munchkin::getDefausse(){
 	return defausse;
 }
 

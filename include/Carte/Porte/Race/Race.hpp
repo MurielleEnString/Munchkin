@@ -18,7 +18,7 @@ class Race:public Porte{
 		
 	public:
 		Race(Effet * e,Effet * e0, string nom, string description);
-		~Race();
+		virtual ~Race();
 		void poser(Joueur * j);
 		
 };

@@ -3,31 +3,33 @@
 Bagarre::Bagarre(Joueur *j):EtatJoueur(j){}
 Bagarre::~Bagarre(){}
 
-bool Bagarre::combattre(Monstre * m){
+void Bagarre::combattre(Monstre * m){
 	//Envoie signal aux autres joueurs... ou pas !
+	mons=m;
 	cout<<"bagarre"<<endl;
+	cout<<"Le monstre a une force de : "<<calculForceMonstre(m)<<endl;
+	cout<<"Vous avez une force de : "<<calculForceJoueur()<<endl;
 	if(calculForceJoueur()>calculForceMonstre(m)){
+		cout<<"Vous gagnez le combat"<<endl;
 		for(int i=0;i<m->getTresors();i++){
-			cout<<"Vous gagnez le combat"<<endl;
-			joueur->getMain().push_back(joueur->getJeu()->getPiocheTresor().back());
-			joueur->getJeu()->getPiocheTresor().pop_back();
 			
+			Tresor * recomp=joueur->getJeu()->piocherTresor();
+			cout<<recomp->Getnom()<<endl;
+			joueur->getMain().push_back(recomp);
+			cout<<joueur->getMain().size()<<endl;			
 		}
-		joueur->setNiv(joueur->getNiveau()+m->getNbNiv());
+		joueur->setNiveau(joueur->getNiveau()+m->getNbNiv());
 		joueur->getJeu()->getDefausse().push_back((Carte*)m);
 		joueur->setBonus(0);
 		joueur->setEtat((EtatJoueur*)joueur->getFin());
-		if(joueur->getNiv()>=10){
+		if(joueur->getNiveau()>=10){
 			joueur->getJeu()->setFinPartie(true);
 		}
 	}
 	else{
 		cout<<"Vous perdez le combat"<<endl;
-		return false;
 				
-	}
-	return false;
-		
+	}		
 }
 
 
@@ -36,7 +38,7 @@ int Bagarre::calculForceJoueur(){
 	for(vector<Equipement*>::iterator i=joueur->getEquipe().begin(); i!=joueur->getEquipe().end();++i){
 		f=f+(*i)->getBonus();
 	}
-	return f+joueur->getBonus();+joueur->getNiveau();
+	return f+joueur->getBonus()+joueur->getNiveau();
 }
 
 int Bagarre::calculForceMonstre(Monstre * m){
@@ -72,9 +74,8 @@ void Bagarre::poserPotion(Personnage * p, Potion * po){
 		po->getEffet()->setCible(p);
 	}
 	p->setBonus(p->getBonus()+po->getBonus());
+	combattre(mons);
 }
 
-void Bagarre::changerRace(Race * r){
-	cout<<"Vous ne pouvez pas changer de race"<<endl;
-}
+
 

@@ -26,6 +26,7 @@ class Personnage {
 
     //Accesseurs
     int getNiveau();
+    void setNiveau(int n);
     int getBonus();
     void setBonus(int b);
 

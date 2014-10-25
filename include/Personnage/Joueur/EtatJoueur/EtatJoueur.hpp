@@ -36,7 +36,7 @@ class EtatJoueur{
 		virtual void poseEquipement(Equipement * e);
 		virtual void equiper(Equipement * e);
 		virtual void desequiper(Equipement * e);
-		virtual bool combattre(Monstre * m);
+		virtual void combattre(Monstre * m);
 		virtual void poserMalediction(Joueur * cible, Malediction * m);
 		virtual void poserPotion(Personnage * p, Potion * po);
 		virtual void vendreObjets(vector<Tresor*> * sacAvendre);

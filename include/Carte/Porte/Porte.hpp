@@ -22,10 +22,8 @@ class Porte:public Carte {
     Porte(std::string nom, std::string description, Effet * e);
 
     //Destructeur
-    ~Porte();
+    virtual ~Porte();
 
-
-	virtual string type();
   protected:
 
   private:
