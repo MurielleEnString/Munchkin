@@ -13,9 +13,11 @@ void OuvrirPorte::changerRace(Race * r){
 	
 	
 	if(joueur->getRace()->Getnom()=="Humain"){
+		
 		delete joueur->getRace();
 	}
 	else{
+		cout<<"coucou"<<endl;
 		Effet * e=joueur->getRace()->getEffet();
 		e->setVal(-e->getVal());
 		e->prendEffet();

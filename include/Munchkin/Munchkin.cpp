@@ -37,7 +37,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	//CREATION DES CARTES
 	
 	//Cartes Porte
-	
+	piochePorte.push_back(new Race(new Effet(1,new CarteSupMain()),NULL,"Nain",""));
 	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),2,2));
 	piochePorte.push_back(new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1));
 	//piochePorte.push_back(new Malediction("Canard de l'appocalypse","Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux",new Effet(-2, new PerteGainNiv())));

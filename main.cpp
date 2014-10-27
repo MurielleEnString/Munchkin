@@ -49,7 +49,7 @@ int main() {
 	
 	switch(choix){
 		case 0:{
-			cout<<"Vous êtes : joueur "<<j->getId()<<endl;
+			cout<<endl<<"Vous êtes : joueur "<<j->getId()<<endl;
 			cout<<"niveau : "<<j->getNiveau()<<endl;
 			cout<<"Votre main :"<<j->getMain().size()<<endl;
 			for(i=j->getMain().begin();i!=j->getMain().end();++i){
@@ -64,6 +64,8 @@ int main() {
 				cout<<(*i0)->Getnom()<<endl;
 			}
 			cout<<"Votre bonus pour déguerpir : "<<j->getValDeguerpir()<<endl;
+			cout<<"Nb cartes max en main : "<<j->getNbCartesMain()<<endl;
+			cout<<endl;
 			
 			break;
 		}
@@ -75,6 +77,15 @@ int main() {
 			j->getEtat()->piocherPorteFaceCache();
 		}
 		case 3:{
+			c=choisirCarte(j);
+			if(c!=NULL && typeid(*c)==typeid(Race)){
+				
+				j->getEtat()->changerRace((Race*)c);
+			}
+			else{
+				cout<<"Vous n'avez pas choisi une Race"<<endl;
+				j->getMain().push_back(c);
+			}
 			//j->getEtat()->changerRace();
 			break;
 		}
