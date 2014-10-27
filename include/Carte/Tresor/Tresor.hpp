@@ -24,7 +24,7 @@ class Tresor:public Carte {
     Tresor(std::string n, std::string d, Effet * e, int p);
 
     //Destructeur
-    ~Tresor();
+    virtual ~Tresor();
 
     //Accesseurs
     void afficher() const;

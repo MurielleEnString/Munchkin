@@ -29,7 +29,7 @@ class Bagarre:public EtatJoueur{
 		virtual ~Bagarre();
 		
 		void combattre(Monstre * m);
-		void deguerpir(Monstre * m);
+		void deguerpir();
 		void poserPotion(Personnage * p, Potion * po);
 	
 	

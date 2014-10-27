@@ -22,7 +22,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Carte::Carte(std::string n, Effet * e):nom(n) {}
+Carte::Carte(std::string n, Effet * e):nom(n),e(e) {}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Méthode : Carte(std::string n, std::string d)
@@ -31,7 +31,7 @@ Carte::Carte(std::string n, Effet * e):nom(n) {}
 //Postcondition : Aucune
 //Description : Constructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Carte::Carte(std::string n, std::string d, Effet * e):nom(n),description(d) {}
+Carte::Carte(std::string n, std::string d, Effet * e):nom(n),description(d),e(e) {}
 
 
 /****************************************************************************************************/

@@ -12,7 +12,6 @@ class PillerPiece:public EtatJoueur{
 		virtual ~PillerPiece();
 		
 		void piocherPorteFaceCache();
-		void defausserCarte(Carte * c);
 		void changerRace(Race * r);
 		void poseEquipement(Equipement * e);
 		void equiper(Equipement * e);

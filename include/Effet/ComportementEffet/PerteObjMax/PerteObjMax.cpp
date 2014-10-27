@@ -1,5 +1,7 @@
 #include "PerteObjMax.hpp"
 
+//PerteObjMax::~PerteObjMax(){}
+
 void comp(Personnage * p, int n){
 	if(typeid(*p )==typeid(Joueur)){
 		Equipement * e=(*((Joueur*)p)->getEquipe().begin());

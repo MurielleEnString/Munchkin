@@ -18,19 +18,20 @@
 
 class Effet;
 
+using namespace std;
+
 /****************************************************************************************************/
 
 class Potion:public Tresor {
   public :
     //Constructeur
-    Potion(std::string n, int p,int b, Effet * e); //Constructeur par défaut
-    Potion(std::string n, std::string d, int p,int b, Effet * e);
+    Potion(string n, Effet * e, int p,int b);
+    Potion(string n, string d, Effet * e, int p,int b);
 
     //Destructeur
-    ~Potion();
+    virtual ~Potion();
 
     //Accesseurs
-    void afficher() const;
     int getBonus();
     
 

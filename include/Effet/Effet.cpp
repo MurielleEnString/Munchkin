@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Méthode : Effet(int valeur)
-//Paramètre : Aucun
+//Paramètre : Aucun	
 //Précondition : Aucune
 //Postcondition : Aucune
 //Description : Constructeur par défaut

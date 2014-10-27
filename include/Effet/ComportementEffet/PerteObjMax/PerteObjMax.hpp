@@ -8,7 +8,9 @@
 	
 class PerteObjMax:public ComportementEffet{
 	public:
-		void comp(Personnage * p, int n);	
+		//PerteObjMax(){};
+		void comp(Personnage * p, int n);
+		//virtual ~PerteObjMax();
 };
 
 

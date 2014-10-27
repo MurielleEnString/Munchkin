@@ -11,17 +11,7 @@ void PillerPiece::piocherPorteFaceCache(){
 	joueur->setEtat((EtatJoueur*)joueur->getFin());
 }
 
-void PillerPiece::defausserCarte(Carte * c){
-	vector<Carte*>::iterator i=joueur->getMain().begin();
-	while(i!=joueur->getMain().end()){
-		if((*i)->compare(c)){
-			break;
-		}
-		i++;
-	}
-	joueur->getMain().erase(i);
-	//AJOUT DE LA CARTE A LA DEFAUSSE
-}
+
 
 void PillerPiece::changerRace(Race * r){
 	
@@ -41,40 +31,26 @@ void PillerPiece::changerRace(Race * r){
 }
 
 void PillerPiece::poseEquipement(Equipement * e){
-	joueur->getBagage().push_back(e);	
+	joueur->getBagage().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->setCible(joueur);
+	}	
 }
 
 void PillerPiece::equiper(Equipement * e){
-	vector<Equipement*>::iterator i=joueur->getBagage().begin();
-	while(i!=joueur->getBagage().end()){
-		if((*i)->compare(e)){
-			break;
-		}
-		i++;
-	}
-	if((*i)->getEffet()!=NULL){
-		(*i)->getEffet()->setCible((Personnage*)joueur);
-		(*i)->getEffet()->prendEffet();
-	}
-	joueur->getBagage().erase(i);
 	joueur->getEquipe().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->prendEffet();
+	}
 }
 
 void PillerPiece::desequiper(Equipement * e){
-	vector<Equipement*>::iterator i=joueur->getEquipe().begin();
-	while(i!=joueur->getEquipe().end()){
-		if((*i)->compare(e)){
-			break;
-		}
-		i++;
-	}
-	if((*i)->getEffet()!=NULL){
-		Effet * e=(*i)->getEffet();
-		e->setVal(-e->getVal());
-		e->prendEffet();
-	}
-	joueur->getEquipe().erase(i);
 	joueur->getBagage().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->setVal(-e->getEffet()->getVal());
+		e->getEffet()->prendEffet();
+		e->getEffet()->setVal(-e->getEffet()->getVal());
+	}
 }
 
 void PillerPiece::poserMalediction(Joueur * cible, Malediction * m){

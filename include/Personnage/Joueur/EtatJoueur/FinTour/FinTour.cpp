@@ -8,6 +8,7 @@ FinTour::~FinTour(){}
 void FinTour::finirTour(){
 	if(joueur->getMain().size()<6){
 		joueur->setEtat(joueur->getFin());
+		joueur->getJeu()->changementJoueur(joueur);
 	}
 	else{
 		cout<<"Vous devez défausser de cartes pour n'en avoir plus que 5 en main"<<endl;
@@ -15,15 +16,7 @@ void FinTour::finirTour(){
 }
 
 void FinTour::defausserCarte(Carte * c){
-	vector<Carte*>::iterator i=joueur->getMain().begin();
-	while(i!=joueur->getMain().end()){
-		if((*i)->compare(c)){
-			break;
-		}
-		i++;
-	}
-	joueur->getMain().erase(i);
-	//AJOUT DE LA CARTE A LA DEFAUSSE
+	joueur->getJeu()->defausser(c);
 }
 
 void FinTour::changerRace(Race * r){
@@ -44,40 +37,26 @@ void FinTour::changerRace(Race * r){
 }
 
 void FinTour::poseEquipement(Equipement * e){
-	joueur->getBagage().push_back(e);	
+	joueur->getBagage().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->setCible(joueur);
+	}	
 }
 
 void FinTour::equiper(Equipement * e){
-	vector<Equipement*>::iterator i=joueur->getBagage().begin();
-	while(i!=joueur->getBagage().end()){
-		if((*i)->compare(e)){
-			break;
-		}
-		i++;
-	}
-	if((*i)->getEffet()!=NULL){
-		(*i)->getEffet()->setCible((Personnage*)joueur);
-		(*i)->getEffet()->prendEffet();
-	}
-	joueur->getBagage().erase(i);
 	joueur->getEquipe().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->prendEffet();
+	}
 }
 
 void FinTour::desequiper(Equipement * e){
-	vector<Equipement*>::iterator i=joueur->getEquipe().begin();
-	while(i!=joueur->getEquipe().end()){
-		if((*i)->compare(e)){
-			break;
-		}
-		i++;
-	}
-	if((*i)->getEffet()!=NULL){
-		Effet * e=(*i)->getEffet();
-		e->setVal(-e->getVal());
-		e->prendEffet();
-	}
-	joueur->getEquipe().erase(i);
 	joueur->getBagage().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->setVal(-e->getEffet()->getVal());
+		e->getEffet()->prendEffet();
+		e->getEffet()->setVal(-e->getEffet()->getVal());
+	}
 }
 
 void FinTour::poserMalediction(Joueur * cible, Malediction * m){

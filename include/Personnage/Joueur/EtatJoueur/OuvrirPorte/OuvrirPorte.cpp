@@ -4,32 +4,9 @@ OuvrirPorte::OuvrirPorte(Joueur *j):EtatJoueur(j){}
 
 OuvrirPorte::~OuvrirPorte(){}
 
-void OuvrirPorte::piocherPorteFaceVisible(){
-	
-	
-	
-	Porte * c=joueur->getJeu()->getPiochePorte().front();
-	
-	cout<<"J'ai pioché "<<c->Getnom()<<endl;
-	cout<<typeid(*c ).name()<<" "<<endl;
-	
-	if(typeid(*c )==typeid(Monstre)){
-		cout<<"c'est un monstre"<<endl;
-		joueur->setEtat((EtatJoueur*)joueur->getBagarre());
-		joueur->getEtat()->combattre((Monstre*)c);
-		
-	}
-	else{ 
-		if(typeid(*c )==typeid(Malediction)){
-			((Malediction*)c)->getEffet()->setCible(joueur);
-			((Malediction*)c)->getEffet()->prendEffet();
-			joueur->getJeu()->getDefausse().push_back((Carte *)c);			
-		}
-		else{
-			joueur->getMain().push_back(c);
-		}
-	}
-	
+void OuvrirPorte::piocherPorteFaceCache(){
+	joueur->setEtat(joueur->getPiller());
+	joueur->getEtat()->piocherPorteFaceCache();
 }
 
 void OuvrirPorte::changerRace(Race * r){
@@ -50,40 +27,26 @@ void OuvrirPorte::changerRace(Race * r){
 }
 
 void OuvrirPorte::poseEquipement(Equipement * e){
-	joueur->getBagage().push_back(e);	
+	joueur->getBagage().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->setCible(joueur);
+	}	
 }
 
 void OuvrirPorte::equiper(Equipement * e){
-	vector<Equipement*>::iterator i=joueur->getBagage().begin();
-	while(i!=joueur->getBagage().end()){
-		if((*i)->compare(e)){
-			break;
-		}
-		i++;
-	}
-	if((*i)->getEffet()!=NULL){
-		(*i)->getEffet()->setCible((Personnage*)joueur);
-		(*i)->getEffet()->prendEffet();
-	}
-	joueur->getBagage().erase(i);
 	joueur->getEquipe().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->prendEffet();
+	}
 }
 
 void OuvrirPorte::desequiper(Equipement * e){
-	vector<Equipement*>::iterator i=joueur->getEquipe().begin();
-	while(i!=joueur->getEquipe().end()){
-		if((*i)->compare(e)){
-			break;
-		}
-		i++;
-	}
-	if((*i)->getEffet()!=NULL){
-		Effet * e=(*i)->getEffet();
-		e->setVal(-e->getVal());
-		e->prendEffet();
-	}
-	joueur->getEquipe().erase(i);
 	joueur->getBagage().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->setVal(-e->getEffet()->getVal());
+		e->getEffet()->prendEffet();
+		e->getEffet()->setVal(-e->getEffet()->getVal());
+	}
 }
 
 void OuvrirPorte::poserMalediction(Joueur * cible, Malediction * m){
@@ -105,6 +68,9 @@ void OuvrirPorte::vendreObjets(vector<Tresor*> * sacAvendre){
 	else joueur->setNiveau(joueur->getNiveau()+somme);
 }
 
-void OuvrirPorte::defausserCarte(Carte * c){
-	//A Faire
+
+
+void OuvrirPorte::combattre(Monstre * m){
+	joueur->setEtat(joueur->getBagarre());
+	joueur->getEtat()->combattre(m);
 }

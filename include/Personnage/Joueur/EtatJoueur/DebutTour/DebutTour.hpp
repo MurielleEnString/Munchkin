@@ -18,7 +18,7 @@ class DebutTour:public EtatJoueur{
 		void desequiper(Equipement * e);
 		void poserMalediction(Joueur * cible, Malediction * m);
 		void vendreObjets(vector<Tresor*> * sacAvendre);
-		void defausserCarte(Carte * c);
+		
 		
 	private:
 	

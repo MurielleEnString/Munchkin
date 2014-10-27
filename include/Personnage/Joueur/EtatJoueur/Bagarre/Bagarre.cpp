@@ -4,9 +4,8 @@ Bagarre::Bagarre(Joueur *j):EtatJoueur(j){}
 Bagarre::~Bagarre(){}
 
 void Bagarre::combattre(Monstre * m){
-	//Envoie signal aux autres joueurs... ou pas !
+	
 	mons=m;
-	cout<<"bagarre"<<endl;
 	cout<<"Le monstre a une force de : "<<calculForceMonstre(m)<<endl;
 	cout<<"Vous avez une force de : "<<calculForceJoueur()<<endl;
 	if(calculForceJoueur()>calculForceMonstre(m)){
@@ -14,12 +13,10 @@ void Bagarre::combattre(Monstre * m){
 		for(int i=0;i<m->getTresors();i++){
 			
 			Tresor * recomp=joueur->getJeu()->piocherTresor();
-			cout<<recomp->Getnom()<<endl;
-			joueur->getMain().push_back(recomp);
-			cout<<joueur->getMain().size()<<endl;			
+			joueur->getMain().push_back(recomp);			
 		}
 		joueur->setNiveau(joueur->getNiveau()+m->getNbNiv());
-		joueur->getJeu()->getDefausse().push_back((Carte*)m);
+		joueur->getJeu()->defausser((Carte*)m);
 		joueur->setBonus(0);
 		joueur->setEtat((EtatJoueur*)joueur->getFin());
 		if(joueur->getNiveau()>=10){
@@ -49,7 +46,7 @@ int Bagarre::calculForceMonstre(Monstre * m){
 
 
 
-void Bagarre::deguerpir(Monstre * m){
+void Bagarre::deguerpir(){
 	srand(time(NULL));
 	int de=rand()%6+1;
 	cout<<"Vous lancez le dé et faites : "<<de<<endl;
@@ -58,10 +55,10 @@ void Bagarre::deguerpir(Monstre * m){
 	}
 	else{
 		cout<<"Le monstre vous attrape"<<endl;
-		m->getEffet()->setCible(joueur);
-		m->getEffet()->prendEffet();
+		mons->getEffet()->setCible(joueur);
+		mons->getEffet()->prendEffet();
 	}
-	joueur->getJeu()->getDefausse().push_back((Carte*)m);
+	joueur->getJeu()->defausser((Carte*)mons);
 	joueur->setBonus(0);
 	joueur->setEtat((EtatJoueur*)joueur->getFin());
 }
@@ -72,8 +69,10 @@ void Bagarre::deguerpir(Monstre * m){
 void Bagarre::poserPotion(Personnage * p, Potion * po){
 	if(po->getEffet()!=NULL){
 		po->getEffet()->setCible(p);
+		po->getEffet()->prendEffet();
 	}
 	p->setBonus(p->getBonus()+po->getBonus());
+	joueur->getJeu()->defausser(po);
 	combattre(mons);
 }
 

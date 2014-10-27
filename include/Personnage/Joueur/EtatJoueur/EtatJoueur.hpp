@@ -40,7 +40,7 @@ class EtatJoueur{
 		virtual void poserMalediction(Joueur * cible, Malediction * m);
 		virtual void poserPotion(Personnage * p, Potion * po);
 		virtual void vendreObjets(vector<Tresor*> * sacAvendre);
-		virtual void deguerpir(Monstre * m);
+		virtual void deguerpir();
 		virtual void defausserCarte(Carte * c);
 		virtual void finirTour();
 		

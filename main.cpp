@@ -15,10 +15,11 @@ using namespace std;
 
 
 Carte * choisirCarte(Joueur * j);
+Equipement * choisirEquipement(Joueur * j,vector<Equipement *>& v);
 
 int main() {
 	int choix;
-  Munchkin * m = new Munchkin("blabla", 3);
+  Munchkin * m = new Munchkin("blabla", 1);
   Joueur * j=m->getCourant();
   vector<Carte*>::iterator i;
   vector<Equipement*>::iterator i0;
@@ -48,6 +49,7 @@ int main() {
 	
 	switch(choix){
 		case 0:{
+			cout<<"Vous êtes : joueur "<<j->getId()<<endl;
 			cout<<"niveau : "<<j->getNiveau()<<endl;
 			cout<<"Votre main :"<<j->getMain().size()<<endl;
 			for(i=j->getMain().begin();i!=j->getMain().end();++i){
@@ -61,6 +63,7 @@ int main() {
 			for(i0=j->getEquipe().begin();i0!=j->getEquipe().end();++i0){
 				cout<<(*i0)->Getnom()<<endl;
 			}
+			cout<<"Votre bonus pour déguerpir : "<<j->getValDeguerpir()<<endl;
 			
 			break;
 		}
@@ -77,7 +80,7 @@ int main() {
 		}
 		case 4:{
 			c=choisirCarte(j);
-			if(typeid(*c)==typeid(Equipement)){
+			if(c!=NULL && typeid(*c)==typeid(Equipement)){
 				
 				j->getEtat()->poseEquipement((Equipement*)c);
 			}
@@ -88,16 +91,32 @@ int main() {
 			break;
 		}
 		case 5:{
+			c=choisirEquipement(j,j->getBagage());
+			if(c!=NULL){
+				cout<<c->Getnom()<<endl;
+				j->getEtat()->equiper((Equipement*)c);
+			}
 			
-			//j->getEtat()->equipe();
 			break;
 		}
 		case 6:{
-			//j->getEtat()->desequiper();
+			c=choisirEquipement(j,j->getEquipe());
+			if(c!=NULL){
+				cout<<c->Getnom()<<endl;
+				j->getEtat()->desequiper((Equipement*)c);
+			}
 			break;
 		}
 		case 7:{
-			//j->getEtat()->combattre();
+			c=choisirCarte(j);
+			if(c!=NULL && typeid(*c)==typeid(Monstre)){
+				
+				j->getEtat()->combattre((Monstre*)c);
+			}
+			else{
+				cout<<"Vous n'avez pas choisi un equipement"<<endl;
+				j->getMain().push_back(c);
+			}
 			break;
 		}
 		case 8:{
@@ -105,15 +124,31 @@ int main() {
 			break;
 		}
 		case 9:{
-			//j->getEtat()->poserPotion();
+			c=choisirCarte(j);
+			if(c!=NULL && typeid(*c)==typeid(Potion)){
+				
+				j->getEtat()->poserPotion(j,(Potion*)c);
+			}
+			else{
+				cout<<"Vous n'avez pas choisi une potion"<<endl;
+				j->getMain().push_back(c);
+			}
+			
 			break;
 		}
 		case 10:{
-			//j->getEtat()->deguerpir()
+			
+			j->getEtat()->deguerpir();
 			break;
 		}
 		case 11:{
-			//j->getEtat()->defausserCarte();
+			c=choisirCarte(j);
+			if(c!=NULL){
+				j->getEtat()->defausserCarte(c);
+			}
+			else{
+				cout<<"Vous n'avez pas de carte en main"<<endl;
+			}
 			break;
 		}
 		
@@ -143,21 +178,56 @@ Carte * choisirCarte(Joueur * j){
 	Carte * res;
 	vector<Carte *>::iterator i;
 	unsigned int choix, n=0;
-	for(i=j->getMain().begin();i!=j->getMain().end();++i){
-		cout<<n<<" : "<<(*i)->Getnom()<<endl;
-		++n;
-	}
-	cin>>choix;
-	while(choix<0 || choix>=j->getMain().size()){
-		cout<<"La carte n'existe pas, choisissez en une autre";
+	if(j->getMain().size()>0){
+		for(i=j->getMain().begin();i!=j->getMain().end();++i){
+			cout<<n<<" : "<<(*i)->Getnom()<<endl;
+			++n;
+		}
 		cin>>choix;
+		while(choix<0 || choix>=j->getMain().size()){
+			cout<<"La carte n'existe pas, choisissez en une autre";
+			cin>>choix;
+		}
+		
+		i=j->getMain().begin();
+		for(n=0;n<choix;n++){
+			++i;
+		}
+		res=*i;
+		j->getMain().erase(i);
+		return res;
 	}
-	
-	i=j->getMain().begin();
-	for(n=0;n<choix;n++){
-		++i;
+	else{
+		cout<<"Vous n'avez pas de carte en main"<<endl;
+		return NULL;
 	}
-	res=*i;
-	j->getMain().erase(i);
-	return res;
+}
+
+Equipement * choisirEquipement(Joueur * j,vector<Equipement *>& v){
+	vector<Equipement *>::iterator i;
+	Equipement * res;
+	unsigned int choix, n=0;
+	if(v.size()>0){
+		for(i=v.begin();i!=v.end();++i){
+			cout<<n<<" : "<<(*i)->Getnom()<<endl;
+			++n;
+		}
+		cin>>choix;
+		while(choix<0 || choix>=v.size()){
+			cout<<"La carte n'existe pas, choisissez en une autre";
+			cin>>choix;
+		}
+		
+		i=v.begin();
+		for(n=0;n<choix;n++){
+			++i;
+		}
+		res=*i;
+		v.erase(i);
+		return res;
+	}
+	else{
+		cout<<"Vous n'avez pas d'equipement à cet endroit"<<endl;
+	}
+	return NULL;
 }

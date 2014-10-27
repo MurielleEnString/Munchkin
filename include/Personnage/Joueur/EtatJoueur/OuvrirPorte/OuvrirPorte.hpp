@@ -19,15 +19,14 @@ class OuvrirPorte:public EtatJoueur{
 		OuvrirPorte(Joueur * j);
 		virtual ~OuvrirPorte();
 		
-		void piocherPorteFaceVisible();
-		
+		void piocherPorteFaceCache();
 		void changerRace(Race * r);
 		void poseEquipement(Equipement * e);
 		void equiper(Equipement * e);
 		void desequiper(Equipement * e);
 		void poserMalediction(Joueur * cible, Malediction * m);
 		void vendreObjets(vector<Tresor*> * sacAvendre);
-		void defausserCarte(Carte * c);
+		void combattre(Monstre * m);
 	
 };
 	

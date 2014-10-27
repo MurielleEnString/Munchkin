@@ -47,7 +47,7 @@ void EtatJoueur::vendreObjets(vector<Tresor*> * sacAvendre){
 	
 	cout<<"Vous ne pouvez pas vendre d'objet maintenant"<<endl;
 }
-void EtatJoueur::deguerpir(Monstre * m){
+void EtatJoueur::deguerpir(){
 	cout<<"Vous ne pouvez pas deguerpir si vous n'êtes pas poursuivi"<<endl;
 }
 

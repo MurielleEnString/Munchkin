@@ -18,6 +18,7 @@
 #include "../Effet/ComportementEffet/MalusBonus/MalusBonus.hpp"
 //#include "../Effet/ComportementEffet/PerteObjMax/PerteObjMax.hpp"
 #include "../Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.hpp"
+#include "../Carte/Tresor/Potion/Potion.hpp"
 #include <vector>
 
 class Joueur;
@@ -50,6 +51,7 @@ class Munchkin {
 	
 	Porte * piocherPorte();
 	Tresor * piocherTresor();
+	void defausser(Carte * c);
 
   private:
     //Attributs

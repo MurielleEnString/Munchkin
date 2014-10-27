@@ -6,8 +6,29 @@ DebutTour::~DebutTour(){}
 
 void DebutTour::piocherPorteFaceVisible(){
 	
-	joueur->setEtat((EtatJoueur*)joueur->getOuvrirLaPorte());
-	joueur->getEtat()->piocherPorteFaceVisible();
+	Porte * c=joueur->getJeu()->piocherPorte();
+	cout<<"J'ai pioché "<<c->Getnom()<<endl;	
+	if(typeid(*c )==typeid(Monstre)){
+		cout<<"c'est un monstre"<<endl;
+		joueur->setEtat((EtatJoueur*)joueur->getBagarre());
+		joueur->getEtat()->combattre((Monstre*)c);
+		
+	}
+	else{ 
+		if(typeid(*c )==typeid(Malediction)){
+		
+			
+			((Malediction*)c)->getEffet()->setCible(joueur);
+			((Malediction*)c)->getEffet()->prendEffet();
+			joueur->getJeu()->defausser((Carte *)c);
+			joueur->setEtat(joueur->getOuvrirLaPorte());
+				
+		}
+		else{
+			joueur->getMain().push_back(c);
+			joueur->setEtat(joueur->getOuvrirLaPorte());
+		}
+	}
 }
 
 void DebutTour::changerRace(Race * r){
@@ -28,42 +49,27 @@ void DebutTour::changerRace(Race * r){
 }
 
 void DebutTour::poseEquipement(Equipement * e){
-	joueur->getBagage().push_back(e);	
+	joueur->getBagage().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->setCible(joueur);
+	}	
 }
 
 void DebutTour::equiper(Equipement * e){
-	vector<Equipement*>::iterator i=joueur->getBagage().begin();
-	while(i!=joueur->getBagage().end()){
-		if((*i)->compare(e)){
-			break;
-		}
-		i++;
-	}
-	if((*i)->getEffet()!=NULL){
-		(*i)->getEffet()->setCible((Personnage*)joueur);
-		(*i)->getEffet()->prendEffet();
-	}
-	joueur->getBagage().erase(i);
 	joueur->getEquipe().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->prendEffet();
+	}
 }
 
 void DebutTour::desequiper(Equipement * e){
-	vector<Equipement*>::iterator i=joueur->getEquipe().begin();
-	while(i!=joueur->getEquipe().end()){
-		if((*i)->compare(e)){
-			break;
-		}
-		i++;
-	}
-	if((*i)->getEffet()!=NULL){
-		Effet * e=(*i)->getEffet();
-		e->setVal(-e->getVal());
-		e->prendEffet();
-	}
-	joueur->getEquipe().erase(i);
 	joueur->getBagage().push_back(e);
+	if(e->getEffet()!=NULL){
+		e->getEffet()->setVal(-e->getEffet()->getVal());
+		e->getEffet()->prendEffet();
+		e->getEffet()->setVal(-e->getEffet()->getVal());
+	}
 }
-
 void DebutTour::poserMalediction(Joueur * cible, Malediction * m){
 	//Appliquer malediction
 	joueur->getJeu()->getDefausse().push_back(m);
@@ -83,9 +89,7 @@ void DebutTour::vendreObjets(vector<Tresor*> * sacAvendre){
 	else joueur->setNiveau(joueur->getNiveau()+somme);
 }
 
-void DebutTour::defausserCarte(Carte * c){
-	//A Faire
-}
+
 
 
 

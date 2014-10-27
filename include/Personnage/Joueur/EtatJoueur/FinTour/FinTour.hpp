@@ -3,6 +3,7 @@
 	
 	#include "../EtatJoueur.hpp"
 	#include "../../Joueur.hpp"
+	#include "../../../../Munchkin/Munchkin.hpp"
 	
 	
 class FinTour:public EtatJoueur{
