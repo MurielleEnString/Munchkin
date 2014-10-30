@@ -16,19 +16,29 @@ using namespace std;
 
 Carte * choisirCarte(Joueur * j);
 Equipement * choisirEquipement(Joueur * j,vector<Equipement *>& v);
+Joueur * choisirJoueur(Munchkin * m);
 
 int main() {
 	int choix;
-  Munchkin * m = new Munchkin("blabla", 1);
+  Munchkin * m = new Munchkin("blabla", 2);
   Joueur * j=m->getCourant();
   vector<Carte*>::iterator i;
   vector<Equipement*>::iterator i0;
   Carte * c;
+  vector<Joueur *>::iterator ite;
+  int n=0;
   
   
   
   while(!m->getFinPartie()){
 	j=m->getCourant();
+	n=0;
+	//cout<<m->getJoueurs().size()<<endl;
+	
+	/*for(ite=m->getJoueurs().begin();ite!=m->getJoueurs().end();++i){
+			cout<<n<<" Joueur : "<<(*ite)->getId()<<endl;
+			++n;
+	}*/
 	
 
 	cout<<"Actions :"<<endl;
@@ -49,8 +59,13 @@ int main() {
 	
 	switch(choix){
 		case 0:{
+			for(ite=m->getJoueurs().begin();ite!=m->getJoueurs().end();++ite){
+				cout<<n<<" Joueur : "<<(*ite)<<endl;
+				++n;
+			}
 			cout<<endl<<"Vous êtes : joueur "<<j->getId()<<endl;
 			cout<<"niveau : "<<j->getNiveau()<<endl;
+			cout<<"Votre race : "<<j->getRace()->Getnom()<<endl;
 			cout<<"Votre main :"<<j->getMain().size()<<endl;
 			for(i=j->getMain().begin();i!=j->getMain().end();++i){
 				cout<<(*i)->Getnom()<<endl;
@@ -75,18 +90,17 @@ int main() {
 		}
 		case 2:{
 			j->getEtat()->piocherPorteFaceCache();
+			break;
 		}
 		case 3:{
 			c=choisirCarte(j);
 			if(c!=NULL && typeid(*c)==typeid(Race)){
-				
 				j->getEtat()->changerRace((Race*)c);
 			}
 			else{
 				cout<<"Vous n'avez pas choisi une Race"<<endl;
 				j->getMain().push_back(c);
 			}
-			//j->getEtat()->changerRace();
 			break;
 		}
 		case 4:{
@@ -131,7 +145,16 @@ int main() {
 			break;
 		}
 		case 8:{
-			//j->getEtat()->poserMalediction();
+			c=choisirCarte(j);
+			if(c!=NULL && typeid(*c)==typeid(Malediction)){
+				
+				j->getEtat()->poserMalediction(choisirJoueur(m),(Malediction*)c);
+			}
+			else{
+				cout<<"Vous n'avez pas choisi une potion"<<endl;
+				j->getMain().push_back(c);
+			}
+			
 			break;
 		}
 		case 9:{
@@ -201,7 +224,7 @@ Carte * choisirCarte(Joueur * j){
 		}
 		
 		i=j->getMain().begin();
-		for(n=0;n<choix;n++){
+		for(n=0;n<choix;++n){
 			++i;
 		}
 		res=*i;
@@ -230,7 +253,7 @@ Equipement * choisirEquipement(Joueur * j,vector<Equipement *>& v){
 		}
 		
 		i=v.begin();
-		for(n=0;n<choix;n++){
+		for(n=0;n<choix;++n){
 			++i;
 		}
 		res=*i;
@@ -241,4 +264,27 @@ Equipement * choisirEquipement(Joueur * j,vector<Equipement *>& v){
 		cout<<"Vous n'avez pas d'equipement à cet endroit"<<endl;
 	}
 	return NULL;
+}
+
+Joueur * choisirJoueur(Munchkin * m){
+	vector<Joueur *>::iterator i;
+	Joueur * res;
+	unsigned int choix, n=0;
+	cout<<m->getJoueurs().size()<<endl;
+		for(i=m->getJoueurs().begin();i!=m->getJoueurs().end();++i){
+			cout<<n<<" Joueur : "<<(*i)->getId()<<endl;
+			++n;
+		}
+		cin>>choix;
+		while(choix<0 || choix>=m->getJoueurs().size()){
+			cout<<"Le joueur n'existe pas, choisissez en un autre";
+			cin>>choix;
+		}
+		
+		i=m->getJoueurs().begin();
+		for(n=0;n<choix;++n){
+			++i;
+		}
+		res=*i;
+		return res;	
 }

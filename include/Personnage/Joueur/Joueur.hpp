@@ -47,7 +47,7 @@ class Joueur:public Personnage{
   
 	
     //Constructeur
-    Joueur(Munchkin * j, int i);
+    Joueur(Munchkin * j, int i, Race * r);
 
     //Destructeur
     ~Joueur();

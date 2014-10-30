@@ -34,10 +34,7 @@ void DebutTour::piocherPorteFaceVisible(){
 void DebutTour::changerRace(Race * r){
 	
 	
-	if(joueur->getRace()->Getnom()=="Humain"){
-		delete joueur->getRace();
-	}
-	else{
+	if(joueur->getRace()->Getnom()!="Humain"){
 		Effet * e=joueur->getRace()->getEffet();
 		e->setVal(-e->getVal());
 		e->prendEffet();
@@ -71,8 +68,9 @@ void DebutTour::desequiper(Equipement * e){
 	}
 }
 void DebutTour::poserMalediction(Joueur * cible, Malediction * m){
-	//Appliquer malediction
-	joueur->getJeu()->getDefausse().push_back(m);
+	m->getEffet()->setCible(cible);
+	m->getEffet()->prendEffet();
+	joueur->getJeu()->defausser(m);
 }
 
 void DebutTour::vendreObjets(vector<Tresor*> * sacAvendre){

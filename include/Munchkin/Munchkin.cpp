@@ -25,23 +25,35 @@
 Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	int i=0;
 	
+	//Création Race Humain
+	 Race * h=new Race(NULL,NULL,"Humain","");
+	 
 	//CREATION DES JOUEURS
 	for(;i<nbJoueurs;++i){
-		joueurs.push_back(new Joueur(this,i));
+		joueurs.push_back(new Joueur(this,i, h));
 	}
+	
 	courant=*joueurs.begin();
 	courant->setEtat(courant->getDebut());
 	courant->getMain().push_back(new Potion("Cotion de Ponfusion",NULL, 100,3));
-	
+	courant->setNiveau(5);
 	
 	//CREATION DES CARTES
 	
 	//Cartes Porte
-	piochePorte.push_back(new Race(new Effet(1,new CarteSupMain()),NULL,"Nain",""));
 	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),2,2));
+	piochePorte.push_back(new Race(new Effet(1,new CarteSupMain()),NULL,"Nain",""));
+	piochePorte.push_back(new Malediction("Canard de l'appocalypse","Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux",new Effet(-2, new PerteGainNiv())));
 	piochePorte.push_back(new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1));
-	//piochePorte.push_back(new Malediction("Canard de l'appocalypse","Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux",new Effet(-2, new PerteGainNiv())));
+	
+	piochePorte.push_back(new Race(new Effet(1,new MalusBonusDeguerpir()),NULL,"Elfe",""));
+	
 	//piochePorte.push_back(new Malediction("Vraiment trop injuste !","Perdez l'objet qui vous donne le plus haut bonus",new Effet(0, new PerteObjMax())));
+	
+	
+	
+	
+	
 	
 	//Cartes Trésor
 	piocheTresor.push_back(new Equipement("Bottes de deplacement frénétique","Ces bottes vous confèrent un bonus de +2 pour deguerpir",400 ,0 ,new Effet(2, new MalusBonusDeguerpir())));
@@ -52,7 +64,9 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	piocheTresor.push_back(new Equipement("Casque de virilité ostentatoire",600,3,NULL));
 	piocheTresor.push_back(new Equipement("Bottes de convocation d'hémoroides",400,2,NULL));
 	
-	
+	//Melange des pioches
+	//random_shuffle(piochePorte.begin(), piochePorte.end());
+	//random_shuffle(piocheTresor.begin(), piocheTresor.end());
 	
 	
 	
@@ -166,7 +180,7 @@ void Munchkin::defausser(Carte * c){
 
 void Munchkin::changementJoueur(Joueur * j){
 	unsigned int id=j->getId();
-	if(id==joueurs.size()-1){
+	if(id>=joueurs.size()-1){
 		courant=*joueurs.begin();
 	}
 	else{
@@ -205,4 +219,8 @@ std::vector<Carte*>& Munchkin::getDefausse(){
 
 Joueur * Munchkin::getCourant(){
 	return courant;
+}
+
+std::vector<Joueur*>& Munchkin::getJoueurs(){
+	return joueurs;
 }

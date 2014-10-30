@@ -16,10 +16,7 @@ void PillerPiece::piocherPorteFaceCache(){
 void PillerPiece::changerRace(Race * r){
 	
 	
-	if(joueur->getRace()->Getnom()=="Humain"){
-		delete joueur->getRace();
-	}
-	else{
+	if(joueur->getRace()->Getnom()!="Humain"){
 		Effet * e=joueur->getRace()->getEffet();
 		e->setVal(-e->getVal());
 		e->prendEffet();

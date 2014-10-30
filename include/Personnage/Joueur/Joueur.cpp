@@ -22,8 +22,8 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Joueur::Joueur(Munchkin * j, int i):Personnage(), id(i){
-	race = new Race(new Effet(0,new MalusBonus()),NULL,"Humain","");
+Joueur::Joueur(Munchkin * j, int i, Race * r):Personnage(), id(i),jeu(j),race(r){
+	
 	valDeguerpir=2;
 	nbCartesMain=5;
 	debut= new DebutTour(this);
@@ -32,7 +32,6 @@ Joueur::Joueur(Munchkin * j, int i):Personnage(), id(i){
 	bagarre=new Bagarre(this);
 	fin=new FinTour(this);
 	attente=new Attente(this);
-	race=NULL;
 	etat_=attente;
 	jeu=j;
 }
