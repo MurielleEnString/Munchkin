@@ -1,3 +1,10 @@
+/**
+ * \file EtatJoueur.cpp
+ * \brief implémentation classe EtatJoueur
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #include "EtatJoueur.hpp"
 
 
@@ -5,6 +12,11 @@ EtatJoueur::EtatJoueur(Joueur * j): joueur(j){
 }
 
 EtatJoueur::~EtatJoueur(){}
+
+/*********************************************************************/
+/*********************ACTIONS POSSIBLES*******************************/
+/*********************************************************************/
+
 void EtatJoueur::piocherPorteFaceVisible(){
 	cout<<"Vous ne pouvez pas piocher pour l'instant"<<endl;
 }

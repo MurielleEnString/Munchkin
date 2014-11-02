@@ -1,3 +1,10 @@
+/**
+ * \file PerteGainNiv.cpp
+ * \brief implémentation classe PerteGainNiv
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #include "PerteGainNiv.hpp"
 
 void PerteGainNiv::comp(Personnage * p, int n){

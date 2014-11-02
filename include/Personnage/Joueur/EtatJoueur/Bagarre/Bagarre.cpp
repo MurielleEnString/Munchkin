@@ -1,3 +1,12 @@
+/**
+ * \file Bagarre.cpp
+ * \brief implémentation classe Bagarre
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
+
+
 #include "Bagarre.hpp"
 
 Bagarre::Bagarre(Joueur *j):EtatJoueur(j){}

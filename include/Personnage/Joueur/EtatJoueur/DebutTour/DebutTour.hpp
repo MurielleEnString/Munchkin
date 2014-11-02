@@ -1,3 +1,11 @@
+/**
+ * \file DebutTour.hpp
+ * \brief declaration classe DebutTour
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
+
 #ifndef DEBUTTOUR_HPP
 	#define DEBUTTOUR_HPP
 	

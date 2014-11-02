@@ -1,8 +1,9 @@
-/*
-  Fichier Porte.hpp
-  Définition de la classe Porte
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Porte.hpp
+ * \brief déclaration classe Porte
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 

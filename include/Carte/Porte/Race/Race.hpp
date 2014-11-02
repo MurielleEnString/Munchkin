@@ -1,3 +1,12 @@
+
+/**
+ * \file Race.hpp
+ * \brief declaration classe Race
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
+
 #ifndef RACE_HPP
 	#define RACE_HPP
 	

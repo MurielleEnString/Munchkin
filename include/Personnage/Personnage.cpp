@@ -1,8 +1,9 @@
-/*
-  Fichier Personnage.cpp
-  Définition des méthodes de Personnage
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Personnage.cpp
+ * \brief implémentation classe Personnage
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 
@@ -22,10 +23,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Personnage::Personnage() {
-  niveau = 1;
-  bonus =0;
-}
+Personnage::Personnage():niveau(1),bonus(0){}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Méthode : Personnage(int niv)
@@ -34,10 +32,7 @@ Personnage::Personnage() {
 //Postcondition : Aucune
 //Description : Constructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Personnage::Personnage(int niv) {
-	niveau = niv;
-	bonus=0;
-}
+Personnage::Personnage(int niv):niveau(niv),bonus(0) {}
 
 
 /****************************************************************************************************/

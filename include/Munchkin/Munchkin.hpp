@@ -1,8 +1,10 @@
-/*
-  Fichier Munchkin.hpp
-  Définition de la classe Munchkin
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Munchkin.hpp
+ * \brief declaration classe Munchkin
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 
 /****************************************************************************************************/
 

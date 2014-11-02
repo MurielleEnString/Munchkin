@@ -1,3 +1,10 @@
+/**
+ * \file PerteGainNiv.hpp
+ * \brief declaration classe PerteGainNiv
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #ifndef PERTEGAINNIV_HPP
 	#define PERTEGAINNIV_HPP
 	

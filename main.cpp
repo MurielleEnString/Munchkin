@@ -1,3 +1,11 @@
+/**
+ * \file main.cpp
+ * \brief programme de tests
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
+
 #include <iostream>
 
 #include "include/Munchkin/Munchkin.hpp"
@@ -20,7 +28,7 @@ Joueur * choisirJoueur(Munchkin * m);
 
 int main() {
 	int choix;
-  Munchkin * m = new Munchkin("blabla", 2);
+  Munchkin * m = new Munchkin("blabla", 1);
   Joueur * j=m->getCourant();
   vector<Carte*>::iterator i;
   vector<Equipement*>::iterator i0;
@@ -151,7 +159,7 @@ int main() {
 				j->getEtat()->poserMalediction(choisirJoueur(m),(Malediction*)c);
 			}
 			else{
-				cout<<"Vous n'avez pas choisi une potion"<<endl;
+				cout<<"Vous n'avez pas choisi une malediction"<<endl;
 				j->getMain().push_back(c);
 			}
 			
@@ -197,13 +205,17 @@ int main() {
 		//void vendreObjets(vector<Tresor> * sacAvendre);
 		
 	}
+	if(j->getNiveau()==10){
+		cout<<"Le joueur "<<j->getId()<<" gagne la partie."<<endl;
+	}
+	
 }
   
   
   
  
 	
-  
+  delete m;
   return 0;
 }
 

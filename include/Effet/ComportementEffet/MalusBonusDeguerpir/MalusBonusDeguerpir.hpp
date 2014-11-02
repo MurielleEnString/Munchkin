@@ -1,3 +1,11 @@
+/**
+ * \file MalusBonusDeguerpir.hpp
+ * \brief declaration classe MalusBonusDeguerpir
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
+
 #ifndef MALUSBONUSDEGUERPIR_HPP
 	#define MALUSBONUSDEGUERPIR_HPP
 	

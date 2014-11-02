@@ -1,3 +1,10 @@
+/**
+ * \file FinTour.cpp
+ * \brief implémentation classe FinTour
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #include "FinTour.hpp"
 
 FinTour::FinTour(Joueur * j):EtatJoueur(j){
@@ -29,6 +36,9 @@ void FinTour::changerRace(Race * r){
 		joueur->getJeu()->getDefausse().push_back(joueur->getRace());
 		
 	}
+	else{
+		delete joueur->getRace();
+	}
 	joueur->setRace(r);
 	joueur->getRace()->poser(joueur);
 }
@@ -57,8 +67,9 @@ void FinTour::desequiper(Equipement * e){
 }
 
 void FinTour::poserMalediction(Joueur * cible, Malediction * m){
-	//Appliquer malediction
-	joueur->getJeu()->getDefausse().push_back(m);
+	m->getEffet()->setCible(cible);
+	m->getEffet()->prendEffet();
+	joueur->getJeu()->defausser(m);
 }
 
 void FinTour::vendreObjets(vector<Tresor*> * sacAvendre){

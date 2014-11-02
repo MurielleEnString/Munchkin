@@ -1,4 +1,10 @@
-
+/**
+ * \file Malediction.hpp
+ * \brief déclaration classe Malediction
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+ 
 #ifndef MALEDICTION_HPP
 	#define MALEDICTION_HPP
 

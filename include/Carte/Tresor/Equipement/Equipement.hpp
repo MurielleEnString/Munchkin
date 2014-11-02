@@ -1,8 +1,9 @@
-/*
-  Fichier Equipement.hpp
-  Définition de la classe Equipement
-  Auteur : LE CORVEC Quentin Cdrik Boua
-*/
+/**
+ * \file Equipement.hpp
+ * \brief declaration classe Equipement
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 

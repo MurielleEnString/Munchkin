@@ -1,3 +1,11 @@
+/**
+ * \file Bagarre.hpp
+ * \brief declaration classe Bagarre
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
+
 #ifndef BAGARRE_HPP
 #define BAGARRE_HPP
 

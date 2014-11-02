@@ -1,8 +1,9 @@
-/*
-  Fichier Porte.cpp
-  Définition des méthodes de Porte
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Porte.cpp
+ * \brief implementation classe Porte
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 

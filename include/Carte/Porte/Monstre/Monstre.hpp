@@ -1,8 +1,9 @@
-/*
-  Fichier Monstre.hpp
-  Définition de la classe Monstre
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Monstre.hpp
+ * \brief declaration classe Monstre
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 
@@ -31,8 +32,6 @@ class Monstre:public Porte, public Personnage {
     ~Monstre();
     int getTresors();
     int getNbNiv();
-    
-    string type();
 
   private:
     //Attributs

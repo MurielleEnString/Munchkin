@@ -1,3 +1,10 @@
+/**
+ * \file PerteObjMax.hpp
+ * \brief declaration classe PerteObjMax
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #ifndef PERTEOBJMAX_HPP
 	#define PERTEOBJMAX_HPP
 	

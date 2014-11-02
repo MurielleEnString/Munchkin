@@ -1,8 +1,9 @@
-/*
-  Fichier Joueur.hpp
-  Définition de la classe Joueur
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Joueur.hpp
+ * \brief declaration classe Joueur
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 
@@ -75,7 +76,7 @@ class Joueur:public Personnage{
 	vector<Equipement*>& getBagage();
 	vector<Equipement*>& getEquipe();
 	vector<Carte*>& getMain();
-	Race * race;
+	
 	
 	Munchkin * getJeu();
 	
@@ -95,6 +96,8 @@ class Joueur:public Personnage{
 	
 		
 	EtatJoueur * etat_;
+	
+	Race * race;
 		
     std::vector<Carte*>  main;
     std::vector<Equipement*> bagage;

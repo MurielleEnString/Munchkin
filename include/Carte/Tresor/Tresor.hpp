@@ -1,8 +1,10 @@
-/*
-  Fichier Tresor.hpp
-  Définition de la classe Tresor
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+
+/**
+ * \file Tresor.hpp
+ * \brief declaration classe Tresor
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 

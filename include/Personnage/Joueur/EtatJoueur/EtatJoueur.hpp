@@ -1,3 +1,11 @@
+/**
+ * \file EtatJoueur.hpp
+ * \brief declaration classe EtatJoueur
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
+
 #ifndef ETATJOUEUR_HPP
 	#define ETATJOUEUR_HPP
 	

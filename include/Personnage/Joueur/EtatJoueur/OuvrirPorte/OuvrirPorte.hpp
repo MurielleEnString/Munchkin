@@ -1,3 +1,10 @@
+/**
+ * \file OuvrirPorte.hpp
+ * \brief declaration classe OuvrirPorte
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #ifndef OUVRIRPORTE_HPP
 	#define OUVRIRPORTE_HPP
 	

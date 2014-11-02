@@ -1,8 +1,9 @@
-/*
-  Fichier Carte.hpp
-  Définition de la classe Carte
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Carte.hpp
+ * \brief déclaration classe Carte
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 

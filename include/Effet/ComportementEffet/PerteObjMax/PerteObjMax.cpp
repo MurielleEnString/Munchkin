@@ -1,3 +1,11 @@
+/**
+ * \file PerteObjMax.cpp
+ * \brief implémentation classe PerteObjMax
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
+
 #include "PerteObjMax.hpp"
 
 //PerteObjMax::~PerteObjMax(){}

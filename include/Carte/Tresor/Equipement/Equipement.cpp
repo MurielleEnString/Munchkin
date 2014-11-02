@@ -1,9 +1,9 @@
-/*
-  Fichier Equipement.cpp
-  Définition des méthodes de Equipement
-  Auteur : LE CORVEC Quentin, Cédric boite
-*/
-
+/**
+ * \file Equipement.cpp
+ * \brief implémentation classe Equipement
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 /****************************************************************************************************/
 
 #include "Equipement.hpp"
@@ -14,37 +14,15 @@
 /********** Constructeur                                                                   **********/
 /****************************************************************************************************/
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : Equipement(std::string n, int p, Effet * e) : Tresor(n,e,p)
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description : Constructeur par défaut
-////////////////////////////////////////////////////////////////////////////////////////////////////
-Equipement::Equipement(std::string n, int p,int b, Effet * e) : Tresor(n,e,p),bonus(b) {
-}
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : Equipement(std::string n, std::string d, int p, Effet * e) : Tresor(n, d, e, p)
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description : Constructeur
-////////////////////////////////////////////////////////////////////////////////////////////////////
-Equipement::Equipement(std::string n, std::string d, int p,int b, Effet * e) : Tresor(n, d, e, p),bonus(b) {
-}
+Equipement::Equipement(std::string n, int p,int b, Effet * e) : Tresor(n,e,p),bonus(b) {}
+Equipement::Equipement(std::string n, std::string d, int p,int b, Effet * e) : Tresor(n, d, e, p),bonus(b) {}
 
 /****************************************************************************************************/
 /********** Destructeur **********/
 /****************************************************************************************************/
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : ~Equipement()
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description : Destructeur
-////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Equipement::~Equipement() {
 }
 
@@ -55,24 +33,8 @@ Equipement::~Equipement() {
 int Equipement::getBonus(){
 	return bonus;
 }
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : estVide() const
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description :
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//void Equipement::Equipement() const {
-//}
-
-/****************************************************************************************************/
-/********** Mutateurs **********/
-/****************************************************************************************************/
 
 
-
-/****************************************************************************************************/
 
 
 

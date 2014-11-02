@@ -1,3 +1,10 @@
+/**
+ * \file PillerPiece.hpp
+ * \brief declaration classe PillerPiece
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #ifndef PILLERPIECE_HPP
 #define PILLERPIECE_HPP
 

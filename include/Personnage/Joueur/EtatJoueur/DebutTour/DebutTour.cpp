@@ -1,3 +1,11 @@
+/**
+ * \file DebutTour.cpp
+ * \brief implémentation classe DebutTour
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
+
 #include "DebutTour.hpp"
 
 DebutTour::DebutTour(Joueur * j):EtatJoueur(j){}
@@ -40,6 +48,9 @@ void DebutTour::changerRace(Race * r){
 		e->prendEffet();
 		joueur->getJeu()->getDefausse().push_back(joueur->getRace());
 		
+	}
+	else{
+		delete joueur->getRace();
 	}
 	joueur->setRace(r);
 	joueur->getRace()->poser(joueur);

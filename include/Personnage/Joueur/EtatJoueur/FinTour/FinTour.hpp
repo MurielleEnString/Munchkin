@@ -1,3 +1,10 @@
+/**
+ * \file FinTour.hpp
+ * \brief declaration classe FinTour
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #ifndef FINTOUR_HPP
 	#define FINTOUR_HPP
 	

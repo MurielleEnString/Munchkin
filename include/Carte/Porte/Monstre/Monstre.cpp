@@ -1,8 +1,9 @@
-/*
-  Fichier Monstre.cpp
-  Définition des méthodes de Monstre
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Monstre.cpp
+ * \brief implementation classe Monstre
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 
@@ -14,36 +15,10 @@
 /****************************************************************************************************/
 /**********          Constructeur                                                          **********/
 /****************************************************************************************************/
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : Monstre(std::string nom, Effet * e, int niv, int nbT):Porte(nom), Personnage(niv)
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description : Constructeur par défaut
-////////////////////////////////////////////////////////////////////////////////////////////////////
-Monstre::Monstre(std::string nom, Effet * e, int niv, int nbT):Porte(nom, e), Personnage(niv){
-	tresors=nbT;
-	nbNiv=1;
-
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : Monstre(std::string nom, Effet * e, int niv, int nbT, int nbN):Porte(nom), Personnage(niv)
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description : Constructeur
-////////////////////////////////////////////////////////////////////////////////////////////////////
-Monstre::Monstre(std::string nom, Effet * e, int niv, int nbT, int nbN):Porte(nom,e), Personnage(niv) {
-	tresors=nbT;
-	nbNiv=nbN;
-}
+Monstre::Monstre(std::string nom, Effet * e, int niv, int nbT):Porte(nom, e), Personnage(niv), tresors(nbT), nbNiv(1){}
+Monstre::Monstre(std::string nom, Effet * e, int niv, int nbT, int nbN):Porte(nom,e), Personnage(niv), tresors(nbT), nbNiv(nbN) {}
 
 
-string Monstre::type(){
-	return "Monstre";
-}
 
 /****************************************************************************************************/
 /**********          Destructeur                                                           **********/

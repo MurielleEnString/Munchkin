@@ -1,8 +1,10 @@
-/*
-  Fichier Personnage.hpp
-  Définition de la classe Personnage
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Personnage.hpp
+ * \brief declaration classe Personnage
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 
 /****************************************************************************************************/
 

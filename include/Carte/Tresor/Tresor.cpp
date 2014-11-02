@@ -1,8 +1,9 @@
-/*
-  Fichier Tresor.cpp
-  Définition des méthodes de Tresor
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Tresor.cpp
+ * \brief implementation classe Tresor
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 
@@ -14,27 +15,9 @@
 /**********          Constructeur                                                          **********/
 /****************************************************************************************************/
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : Tresor(std::string n, Effet * e, int p):Carte(n)
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description : Constructeur par défaut
-////////////////////////////////////////////////////////////////////////////////////////////////////
-Tresor::Tresor(std::string n, Effet * e, int p):Carte(n, e) {
-   prix = p;
-}
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//Méthode : Tresor(std::string n, std::string d, Effet * e, int p) : Carte(n, d)
-//Paramètre : Aucun
-//Précondition : Aucune
-//Postcondition : Aucune
-//Description : Constructeur
-////////////////////////////////////////////////////////////////////////////////////////////////////
-Tresor::Tresor(std::string n, std::string d, Effet * e, int p) : Carte(n, d, e) {
-   prix = p;
-}
+Tresor::Tresor(std::string n, Effet * e, int p):Carte(n, e), prix(p) {}
+Tresor::Tresor(std::string n, std::string d, Effet * e, int p) : Carte(n, d, e), prix(p) {}
 
 /****************************************************************************************************/
 /**********          Destructeur                                                           **********/

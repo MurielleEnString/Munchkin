@@ -1,8 +1,10 @@
-/*
-  Fichier Munchkin.cpp
-  Définition des méthodes de Munchkin
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Munchkin.cpp
+ * \brief implementation classe Munchkin
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 
 /****************************************************************************************************/
 
@@ -23,14 +25,13 @@
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
-	int i=0;
+	int i;
 	
-	//Création Race Humain
-	 Race * h=new Race(NULL,NULL,"Humain","");
+	
 	 
 	//CREATION DES JOUEURS
-	for(;i<nbJoueurs;++i){
-		joueurs.push_back(new Joueur(this,i, h));
+	for(i=0;i<nbJoueurs;++i){
+		joueurs.push_back(new Joueur(this,i, new Race(NULL,NULL,"Humain","")));
 	}
 	
 	courant=*joueurs.begin();
@@ -41,7 +42,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	//CREATION DES CARTES
 	
 	//Cartes Porte
-	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),2,2));
+	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),2,2,4));
 	piochePorte.push_back(new Race(new Effet(1,new CarteSupMain()),NULL,"Nain",""));
 	piochePorte.push_back(new Malediction("Canard de l'appocalypse","Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux",new Effet(-2, new PerteGainNiv())));
 	piochePorte.push_back(new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1));
@@ -56,6 +57,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	
 	
 	//Cartes Trésor
+	piocheTresor.push_back(new Potion("Cotion de Ponfusion",NULL, 100,3));
 	piocheTresor.push_back(new Equipement("Bottes de deplacement frénétique","Ces bottes vous confèrent un bonus de +2 pour deguerpir",400 ,0 ,new Effet(2, new MalusBonusDeguerpir())));
 	piocheTresor.push_back(new Equipement("Enorme Rocher",0,3,NULL));
 	piocheTresor.push_back(new Equipement("Targe d'inconscience suicidaire",400,2,NULL));
@@ -65,8 +67,8 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	piocheTresor.push_back(new Equipement("Bottes de convocation d'hémoroides",400,2,NULL));
 	
 	//Melange des pioches
-	//random_shuffle(piochePorte.begin(), piochePorte.end());
-	//random_shuffle(piocheTresor.begin(), piocheTresor.end());
+	random_shuffle(piochePorte.begin(), piochePorte.end());
+	random_shuffle(piocheTresor.begin(), piocheTresor.end());
 	
 	
 	
@@ -122,6 +124,22 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 //Description : Destructeur
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 Munchkin::~Munchkin() {
+	while(!joueurs.empty()){
+		delete joueurs.back();
+		joueurs.pop_back();
+	}
+	while(!defausse.empty()){
+		delete defausse.back();
+		defausse.pop_back();
+	}
+	while(!piochePorte.empty()){
+		delete piochePorte.back();
+		piochePorte.pop_back();
+	}
+	while(!piocheTresor.empty()){
+		delete piocheTresor.back();
+		piocheTresor.pop_back();
+	}
 }
 
 /****************************************************************************************************/

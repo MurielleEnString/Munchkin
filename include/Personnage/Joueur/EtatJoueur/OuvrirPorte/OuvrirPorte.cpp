@@ -1,3 +1,10 @@
+/**
+ * \file OuvrirPorte.cpp
+ * \brief implémentation classe OuvrirPorte
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #include "OuvrirPorte.hpp"
 
 OuvrirPorte::OuvrirPorte(Joueur *j):EtatJoueur(j){}
@@ -18,6 +25,9 @@ void OuvrirPorte::changerRace(Race * r){
 		e->prendEffet();
 		joueur->getJeu()->getDefausse().push_back(joueur->getRace());
 		
+	}
+	else{
+		delete joueur->getRace();
 	}
 	joueur->setRace(r);
 	joueur->getRace()->poser(joueur);
@@ -47,8 +57,9 @@ void OuvrirPorte::desequiper(Equipement * e){
 }
 
 void OuvrirPorte::poserMalediction(Joueur * cible, Malediction * m){
-	//Appliquer malediction
-	joueur->getJeu()->getDefausse().push_back(m);
+	m->getEffet()->setCible(cible);
+	m->getEffet()->prendEffet();
+	joueur->getJeu()->defausser(m);
 }
 
 void OuvrirPorte::vendreObjets(vector<Tresor*> * sacAvendre){

@@ -1,8 +1,9 @@
-/*
-  Fichier Equipement.hpp
-  Définition de la classe Equipement
-  Auteur : LE CORVEC Quentin Cdrik Boua
-*/
+/**
+ * \file Potion.hpp
+ * \brief declaration classe Potion
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 

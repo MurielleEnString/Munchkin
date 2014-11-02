@@ -1,10 +1,31 @@
+/**
+ * \file Potion.cpp
+ * \brief implementation classe Potion
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #include "Potion.hpp"
 
-Potion::Potion(string n, Effet * e, int p,int b):Tresor(n,e,p){bonus=b;}
 
-Potion::Potion(string n, string d, Effet * e, int p,int b):Tresor(n,d,e,p) {bonus=b;}
+/****************************************************************************************************/
+/********** Constructeur                                                                   **********/
+/****************************************************************************************************/
+Potion::Potion(string n, Effet * e, int p,int b):Tresor(n,e,p), bonus(b){}
+
+Potion::Potion(string n, string d, Effet * e, int p,int b):Tresor(n,d,e,p), bonus(b){}
+
+/****************************************************************************************************/
+/********** Destructeur **********/
+/****************************************************************************************************/
 
 Potion::~Potion(){}
+
+
+
+/****************************************************************************************************/
+/********** Accesseurs **********/
+/****************************************************************************************************/
 
 int Potion::getBonus(){
 	return bonus;

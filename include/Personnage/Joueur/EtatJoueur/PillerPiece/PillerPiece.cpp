@@ -1,3 +1,10 @@
+/**
+ * \file PillerPiece.cpp
+ * \brief implémentation classe PillerPiece
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
+
 #include "PillerPiece.hpp"
 
 PillerPiece::PillerPiece(Joueur *j):EtatJoueur(j){
@@ -22,6 +29,9 @@ void PillerPiece::changerRace(Race * r){
 		e->prendEffet();
 		joueur->getJeu()->getDefausse().push_back(joueur->getRace());
 		
+	}
+	else{
+		delete joueur->getRace();
 	}
 	joueur->setRace(r);
 	joueur->getRace()->poser(joueur);
@@ -51,8 +61,9 @@ void PillerPiece::desequiper(Equipement * e){
 }
 
 void PillerPiece::poserMalediction(Joueur * cible, Malediction * m){
-	//Appliquer malediction
-	joueur->getJeu()->getDefausse().push_back(m);
+	m->getEffet()->setCible(cible);
+	m->getEffet()->prendEffet();
+	joueur->getJeu()->defausser(m);
 }
 
 void PillerPiece::vendreObjets(vector<Tresor*> * sacAvendre){

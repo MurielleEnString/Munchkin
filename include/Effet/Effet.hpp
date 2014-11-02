@@ -1,8 +1,9 @@
-/*
-  Fichier Effet.hpp
-  Définition de la classe Effet
-  Auteur : LE CORVEC Quentin Cédric Bois
-*/
+/**
+ * \file Effet.hpp
+ * \brief declaration classe Effet
+ * \author Bois Cédric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 
@@ -33,9 +34,13 @@ class Effet{
 
   protected:
     //Attributs
+    
     int val;
+    
     Personnage * cible;
-    ComportementEffet * comp;
+    
+    
+    ComportementEffet * comp; //Comportement de l'effet
 
   private:
 

@@ -1,8 +1,9 @@
-/*
-  Fichier Joueur.cpp
-  D√©finition des m√©thodes de Joueur
-  Auteur : LE CORVEC Quentin CÈdric Bois
-*/
+/**
+ * \file Joueur.cpp
+ * \brief implÈmentation classe Joueur
+ * \author Bois CÈdric Le Corvec Quentin
+ * \date Octobre 2014
+ */
 
 /****************************************************************************************************/
 
@@ -22,10 +23,7 @@
 //Postcondition : Aucune
 //Description : Constructeur par d√©faut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-Joueur::Joueur(Munchkin * j, int i, Race * r):Personnage(), id(i),jeu(j),race(r){
-	
-	valDeguerpir=2;
-	nbCartesMain=5;
+Joueur::Joueur(Munchkin * j, int i, Race * r):Personnage(), id(i),nbCartesMain(5),valDeguerpir(2),race(r),jeu(j){
 	debut= new DebutTour(this);
 	ouvrirLaPorte=new OuvrirPorte(this);
 	piller=new PillerPiece(this);
@@ -33,7 +31,6 @@ Joueur::Joueur(Munchkin * j, int i, Race * r):Personnage(), id(i),jeu(j),race(r)
 	fin=new FinTour(this);
 	attente=new Attente(this);
 	etat_=attente;
-	jeu=j;
 }
 
 
@@ -55,6 +52,20 @@ Joueur::~Joueur(){
 	delete bagarre;
 	delete fin;
 	delete attente;
+	while(!main.empty()){
+		delete main.back();
+		main.pop_back();
+	}
+	while(!equipe.empty()){
+		delete equipe.back();
+		equipe.pop_back();
+	}
+	while(!bagage.empty()){
+		delete bagage.back();
+		bagage.pop_back();
+	}
+	
+	delete race;
 }
 
 
