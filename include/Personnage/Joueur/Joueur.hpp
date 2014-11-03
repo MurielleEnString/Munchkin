@@ -53,7 +53,7 @@ class Joueur:public Personnage{
     //Destructeur
     ~Joueur();
 
-    //Mutateurs
+    //Mutateurs et Accesseurs
     void setNbCartesMain(int n);
     int getNbCartesMain();
     void setValDeguerpir(int val);

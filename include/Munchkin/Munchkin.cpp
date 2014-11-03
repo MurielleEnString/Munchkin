@@ -156,6 +156,7 @@ Porte * Munchkin::piocherPorte(){
 				i--;
 			}
 		}
+		random_shuffle(piochePorte.begin(), piochePorte.end());
 	}
 	if(piochePorte.size()==0){
 		cout<<"Impossible de continuer, il n'y a plus de carte dans la pioche"<<endl;
@@ -163,6 +164,7 @@ Porte * Munchkin::piocherPorte(){
 		return NULL;
 	}
 	else{
+		
 		Porte * res=piochePorte.front();
 		piochePorte.erase(piochePorte.begin());
 		return res;
@@ -179,6 +181,7 @@ Tresor * Munchkin::piocherTresor(){
 				i--;
 			}
 		}
+		random_shuffle(piocheTresor.begin(), piocheTresor.end());
 	}
 	if(piocheTresor.size()==0){
 		cout<<"Impossible de continuer, il n'y a plus de carte dans la pioche"<<endl;
