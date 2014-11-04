@@ -1,5 +1,5 @@
-all:Joueur.o Carte.o Monstre.o Malediction.o Race.o Tresor.o Equipement.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour.o Bagarre.o FinTour.o Attente.o MalusBonus.o MalusBonusDeguerpir.o PerteGainNiv.o CarteSupMain.o PerteObjMax.o ComportementEffet.o Potion.o
-	g++ -Wall -g main.cpp obj/Debug/include/Carte/Tresor/Potion/Potion.o obj/Debug/include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.o obj/Debug/include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.o obj/Debug/include/Effet/ComportementEffet/ComportementEffet.o obj/Debug/include/Effet/ComportementEffet/MalusBonus/MalusBonus.o obj/Debug/include/Carte/Porte/Malediction/Malediction.o obj/Debug/include/Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.o obj/Debug/include/Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.o obj/Debug/include/Personnage/Joueur/EtatJoueur/Attente/Attente.o  obj/Debug/include/Carte/Tresor/Tresor.o obj/Debug/include/Personnage/Joueur/EtatJoueur/FinTour/FinTour.o obj/Debug/include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o obj/Debug/include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.o obj/Debug/include/Personnage/Joueur/EtatJoueur/OuvrirPorte/OuvrirPorte.o obj/Debug/include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.o obj/Debug/include/Carte/Carte.o obj/Debug/include/Personnage/Joueur/EtatJoueur/EtatJoueur.o obj/Debug/include/Carte/Porte/Porte.o obj/Debug/include/Carte/Porte/Monstre/Monstre.o obj/Debug/include/Carte/Tresor/Equipement/Equipement.o obj/Debug/include/Carte/Porte/Race/Race.o obj/Debug/include/Effet/Effet.o obj/Debug/include/Personnage/Personnage.o obj/Debug/include/Personnage/Joueur/Joueur.o obj/Debug/include/Munchkin/Munchkin.o -o main
+all:Joueur.o Carte.o Monstre.o Malediction.o Race.o Tresor.o Equipement.o Main.o Chaussure.o Armure.o CouvreChef.o Effet.o Munchkin.o Personnage.o Joueur.o OuvrirPorte.o PillerPiece.o DebutTour.o Bagarre.o FinTour.o Attente.o MalusBonus.o MalusBonusDeguerpir.o PerteGainNiv.o CarteSupMain.o PerteObjMax.o ComportementEffet.o Potion.o 
+	g++ -Wall -g main.cpp obj/Debug/include/Carte/Tresor/Potion/Potion.o obj/Debug/include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.o obj/Debug/include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.o obj/Debug/include/Effet/ComportementEffet/ComportementEffet.o obj/Debug/include/Effet/ComportementEffet/MalusBonus/MalusBonus.o obj/Debug/include/Carte/Porte/Malediction/Malediction.o obj/Debug/include/Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.o obj/Debug/include/Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.o obj/Debug/include/Personnage/Joueur/EtatJoueur/Attente/Attente.o  obj/Debug/include/Carte/Tresor/Tresor.o obj/Debug/include/Personnage/Joueur/EtatJoueur/FinTour/FinTour.o obj/Debug/include/Personnage/Joueur/EtatJoueur/Bagarre/Bagarre.o obj/Debug/include/Personnage/Joueur/EtatJoueur/PillerPiece/PillerPiece.o obj/Debug/include/Personnage/Joueur/EtatJoueur/OuvrirPorte/OuvrirPorte.o obj/Debug/include/Personnage/Joueur/EtatJoueur/DebutTour/DebutTour.o obj/Debug/include/Carte/Carte.o obj/Debug/include/Personnage/Joueur/EtatJoueur/EtatJoueur.o obj/Debug/include/Carte/Porte/Porte.o obj/Debug/include/Carte/Porte/Monstre/Monstre.o obj/Debug/include/Carte/Tresor/Equipement/Equipement.o obj/Debug/include/Carte/Tresor/Equipement/CouvreChef/CouvreChef.o obj/Debug/include/Carte/Tresor/Equipement/Armure/Armure.o obj/Debug/include/Carte/Tresor/Equipement/Chaussure/Chaussure.o obj/Debug/include/Carte/Tresor/Equipement/Main/Main.o obj/Debug/include/Carte/Porte/Race/Race.o obj/Debug/include/Effet/Effet.o obj/Debug/include/Personnage/Personnage.o obj/Debug/include/Personnage/Joueur/Joueur.o obj/Debug/include/Munchkin/Munchkin.o -o main
 
 
 
@@ -23,6 +23,18 @@ Tresor.o:Carte.o
 	
 Equipement.o:Tresor.o
 	g++ -Wall include/Carte/Tresor/Equipement/Equipement.cpp -o obj/Debug/include/Carte/Tresor/Equipement/Equipement.o -c
+	
+Chaussure.o:Tresor.o Equipement.o
+	g++ -Wall include/Carte/Tresor/Equipement/Chaussure/Chaussure.cpp -o obj/Debug/include/Carte/Tresor/Equipement/Chaussure/Chaussure.o -c
+
+Main.o:Tresor.o Equipement.o
+	g++ -Wall include/Carte/Tresor/Equipement/Main/Main.cpp -o obj/Debug/include/Carte/Tresor/Equipement/Main/Main.o -c
+	
+Armure.o:Tresor.o Equipement.o
+	g++ -Wall include/Carte/Tresor/Equipement/Armure/Armure.cpp -o obj/Debug/include/Carte/Tresor/Equipement/Armure/Armure.o -c
+	
+CouvreChef.o:Tresor.o Equipement.o
+	g++ -Wall include/Carte/Tresor/Equipement/CouvreChef/CouvreChef.cpp -o obj/Debug/include/Carte/Tresor/Equipement/CouvreChef/CouvreChef.o -c
 
 Potion.o:Tresor.o
 	g++ -Wall include/Carte/Tresor/Potion/Potion.cpp -o obj/Debug/include/Carte/Tresor/Potion/Potion.o -c

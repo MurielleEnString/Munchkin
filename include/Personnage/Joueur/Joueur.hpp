@@ -43,6 +43,11 @@ class Attente;
 
 class EtatJoueur;
 
+class Main;
+class Armure;
+class Chaussure;
+class CouvreChef;
+
 class Joueur:public Personnage{
   public:
   
@@ -76,6 +81,16 @@ class Joueur:public Personnage{
 	vector<Equipement*>& getBagage();
 	vector<Equipement*>& getEquipe();
 	vector<Carte*>& getMain();
+	Main * getMaing();
+	void setMaing(Main * m);
+	Main * getMaind();
+	void setMaind(Main * m);
+	Armure * getTorse();
+	void setTorse(Armure * a);
+	Chaussure * getPieds();
+	void setPieds(Chaussure * c);
+	CouvreChef * getTete();
+	void setTete(CouvreChef * c);
 	
 	
 	Munchkin * getJeu();
@@ -102,6 +117,11 @@ class Joueur:public Personnage{
     std::vector<Carte*>  main;
     std::vector<Equipement*> bagage;
     std::vector<Equipement*> equipe;
+    Main * maing;
+    Main * maind;
+    Chaussure * pieds;
+    Armure * torse;
+    CouvreChef * tete;
     
     Munchkin * jeu;
     

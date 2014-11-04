@@ -154,3 +154,41 @@ void Joueur::setRace(Race *r){
 	race=r;
 }
 
+Main * Joueur::getMaing(){
+	return maing;
+}
+
+void Joueur::setMaing(Main * m){
+	maing=m;
+}
+
+Main * Joueur::getMaind(){
+	return maind;
+}
+void Joueur::setMaind(Main * m){
+	maind=m;
+}
+
+Armure * Joueur::getTorse(){
+	return torse;
+}
+
+void Joueur::setTorse(Armure * a){
+	torse=a;
+}
+
+Chaussure * Joueur::getPieds(){
+	return pieds;
+}
+
+void Joueur::setPieds(Chaussure * c){
+	pieds=c;
+}
+
+CouvreChef * Joueur::getTete(){
+	return tete;
+}
+
+void Joueur::setTete(CouvreChef * c){
+	tete=c;
+}

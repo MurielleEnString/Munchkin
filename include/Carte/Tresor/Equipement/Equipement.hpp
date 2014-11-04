@@ -14,6 +14,7 @@
 
 
 #include "../Tresor.hpp"
+#include "../../../Personnage/Joueur/Joueur.hpp"
 #include <string>
 #include <iostream>
 
@@ -33,6 +34,7 @@ class Equipement:public Tresor {
     //Accesseurs
     void afficher() const;
     int getBonus();
+    virtual void equiper(Joueur * j);
     
 
   protected:

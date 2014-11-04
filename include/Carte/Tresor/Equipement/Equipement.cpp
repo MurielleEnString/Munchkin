@@ -35,6 +35,18 @@ int Equipement::getBonus(){
 }
 
 
+void Equipement::equiper(Joueur * j){
+	vector<Equipement*>::iterator it=j->getBagage().begin();
+	while((*it)->compare(this) || it!=j->getBagage().end()){
+		++it;
+	}
+	if((*it)->compare(this)){
+		j->getBagage().erase(it);
+		j->getEquipe().push_back(this);
+	}
+}
+
+
 
 
 
