@@ -16,7 +16,10 @@ using namespace std;
 /****************************************************************************************************/
 
 class Chaussure:public Equipement{
-	void equiper(Joueur * j);
+	public:
+		Chaussure(std::string n, int p,int b, Effet * e);
+		Chaussure(std::string n, std::string d, int p,int b, Effet * e);
+		void equiper(Joueur * j);
 };
 
 

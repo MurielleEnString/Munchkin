@@ -9,8 +9,8 @@
 #ifndef ETATJOUEUR_HPP
 	#define ETATJOUEUR_HPP
 	
-	
-	
+	#include "../Joueur.hpp"
+	#include "../../../Carte/Tresor/Equipement/Equipement.hpp"
 	#include <iostream>
 	#include <vector>
 	
@@ -20,7 +20,7 @@
 	
 class Joueur;
 class Race;
-class Munchkin;
+//class Munchkin;
 class Personnage;
 class Monstre;
 class Equipement;

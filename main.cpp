@@ -86,6 +86,11 @@ int main() {
 			for(i0=j->getEquipe().begin();i0!=j->getEquipe().end();++i0){
 				cout<<(*i0)->Getnom()<<endl;
 			}
+			if(j->getTorse!=NULL){cout<<"Torse : "<<j->getTorse()->Getnom()<<endl;}
+			if(j->getMaing!=NULL){cout<<"Main Gauche : "<<j->getMaing()->Getnom()<<endl;}
+			if(j->getMaind!=NULL){cout<<"Main Droite : "<<j->getMaind()->Getnom()<<endl;}
+			if(j->getTete!=NULL){cout<<"Tête : "<<j->getTete()->Getnom()<<endl;}
+			if(j->getPieds!=NULL){cout<<"Pieds : "<<j->getTete()->Getnom()<<endl};
 			cout<<"Votre bonus pour déguerpir : "<<j->getValDeguerpir()<<endl;
 			cout<<"Nb cartes max en main : "<<j->getNbCartesMain()<<endl;
 			cout<<endl;

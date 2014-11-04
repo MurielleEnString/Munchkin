@@ -25,7 +25,7 @@ void Bagarre::combattre(Monstre * m){
 			joueur->getMain().push_back(recomp);			
 		}
 		joueur->setNiveau(joueur->getNiveau()+m->getNbNiv());
-		joueur->getJeu()->defausser((Carte*)m);
+		joueur->defausser((Carte*)m);
 		joueur->setBonus(0);
 		joueur->setEtat((EtatJoueur*)joueur->getFin());
 		if(joueur->getNiveau()>=10){
@@ -67,7 +67,7 @@ void Bagarre::deguerpir(){
 		mons->getEffet()->setCible(joueur);
 		mons->getEffet()->prendEffet();
 	}
-	joueur->getJeu()->defausser((Carte*)mons);
+	joueur->defausser((Carte*)mons);
 	joueur->setBonus(0);
 	joueur->setEtat((EtatJoueur*)joueur->getFin());
 }
@@ -81,7 +81,7 @@ void Bagarre::poserPotion(Personnage * p, Potion * po){
 		po->getEffet()->prendEffet();
 	}
 	p->setBonus(p->getBonus()+po->getBonus());
-	joueur->getJeu()->defausser(po);
+	joueur->defausser(po);
 	combattre(mons);
 }
 

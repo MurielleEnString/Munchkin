@@ -12,6 +12,7 @@
 	#include "../EtatJoueur.hpp"
 	#include "../../Joueur.hpp"
 	
+class Equipement;
 class Race;
 
 

@@ -23,7 +23,7 @@ void OuvrirPorte::changerRace(Race * r){
 		Effet * e=joueur->getRace()->getEffet();
 		e->setVal(-e->getVal());
 		e->prendEffet();
-		joueur->getJeu()->getDefausse().push_back(joueur->getRace());
+		joueur->defausser(joueur->getRace());
 		
 	}
 	else{
@@ -59,7 +59,7 @@ void OuvrirPorte::desequiper(Equipement * e){
 void OuvrirPorte::poserMalediction(Joueur * cible, Malediction * m){
 	m->getEffet()->setCible(cible);
 	m->getEffet()->prendEffet();
-	joueur->getJeu()->defausser(m);
+	joueur->defausser(m);
 }
 
 void OuvrirPorte::vendreObjets(vector<Tresor*> * sacAvendre){

@@ -14,6 +14,7 @@
 
 
 #include "../Personnage.hpp"
+#include "../../Munchkin/Munchkin.hpp"
 #include "../../Carte/Porte/Race/Race.hpp"
 #include "EtatJoueur/DebutTour/DebutTour.hpp"
 #include "EtatJoueur/OuvrirPorte/OuvrirPorte.hpp"
@@ -31,7 +32,7 @@ using namespace std;
 
 
 class Effet;
-class Munchkin;
+//class Munchkin;
 
 class DebutTour;
 class OuvrirPorte;
@@ -58,6 +59,8 @@ class Joueur:public Personnage{
     //Destructeur
     ~Joueur();
 
+	void defausser(Carte *c);
+	void finTour();
     //Mutateurs et Accesseurs
     void setNbCartesMain(int n);
     int getNbCartesMain();

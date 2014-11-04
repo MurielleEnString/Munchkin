@@ -17,15 +17,17 @@
 #include "../../../Personnage/Joueur/Joueur.hpp"
 #include <string>
 #include <iostream>
+#include <vector>
 
 class Effet;
+class Joueur;
 
 /****************************************************************************************************/
 
 class Equipement:public Tresor {
   public :
     //Constructeur
-    Equipement(std::string n, int p,int b, Effet * e); //Constructeur par défaut
+    Equipement(std::string n, int p,int b, Effet * e);
     Equipement(std::string n, std::string d, int p,int b, Effet * e);
 
     //Destructeur
@@ -38,8 +40,6 @@ class Equipement:public Tresor {
     
 
   protected:
-
-  private:
 	int bonus;
 
 }; //Class Equipement

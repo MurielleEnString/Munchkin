@@ -16,6 +16,9 @@ using namespace std;
 /****************************************************************************************************/
 
 class CouvreChef:public Equipement{
+	public:
+		CouvreChef(std::string n, int p,int b, Effet * e);
+		CouvreChef(std::string n, std::string d, int p,int b, Effet * e);
 	void equiper(Joueur * j);
 };
 

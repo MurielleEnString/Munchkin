@@ -15,7 +15,7 @@ FinTour::~FinTour(){}
 void FinTour::finirTour(){
 	if(joueur->getMain().size()<6){
 		joueur->setEtat(joueur->getFin());
-		joueur->getJeu()->changementJoueur(joueur);
+		joueur->finTour();
 	}
 	else{
 		cout<<"Vous devez défausser de cartes pour n'en avoir plus que 5 en main"<<endl;
@@ -23,7 +23,7 @@ void FinTour::finirTour(){
 }
 
 void FinTour::defausserCarte(Carte * c){
-	joueur->getJeu()->defausser(c);
+	joueur->defausser(c);
 }
 
 void FinTour::changerRace(Race * r){
@@ -33,7 +33,7 @@ void FinTour::changerRace(Race * r){
 		Effet * e=joueur->getRace()->getEffet();
 		e->setVal(-e->getVal());
 		e->prendEffet();
-		joueur->getJeu()->getDefausse().push_back(joueur->getRace());
+		joueur->defausser(joueur->getRace());
 		
 	}
 	else{
@@ -69,7 +69,7 @@ void FinTour::desequiper(Equipement * e){
 void FinTour::poserMalediction(Joueur * cible, Malediction * m){
 	m->getEffet()->setCible(cible);
 	m->getEffet()->prendEffet();
-	joueur->getJeu()->defausser(m);
+	joueur->defausser(m);
 }
 
 void FinTour::vendreObjets(vector<Tresor*> * sacAvendre){
@@ -78,7 +78,7 @@ void FinTour::vendreObjets(vector<Tresor*> * sacAvendre){
 	vector<Tresor *>::iterator i;
 	for(i=sacAvendre->begin();i!=sacAvendre->end();++i){
 		somme+=(*i)->getPrix();
-		joueur->getJeu()->getDefausse().push_back(*i);
+		joueur->defausser(*i);
 	}
 	delete sacAvendre;
 	somme=somme/1000;

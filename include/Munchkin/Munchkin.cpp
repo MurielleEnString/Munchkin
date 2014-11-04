@@ -42,7 +42,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	//CREATION DES CARTES
 	
 	//Cartes Porte
-	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),2,2,4));
+	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),2,3,4));
 	piochePorte.push_back(new Race(new Effet(1,new CarteSupMain()),NULL,"Nain",""));
 	piochePorte.push_back(new Malediction("Canard de l'appocalypse","Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux",new Effet(-2, new PerteGainNiv())));
 	piochePorte.push_back(new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1));
@@ -57,14 +57,23 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	
 	
 	//Cartes Trésor
-	piocheTresor.push_back(new Potion("Cotion de Ponfusion",NULL, 100,3));
-	piocheTresor.push_back(new Equipement("Bottes de deplacement frénétique","Ces bottes vous confèrent un bonus de +2 pour deguerpir",400 ,0 ,new Effet(2, new MalusBonusDeguerpir())));
-	piocheTresor.push_back(new Equipement("Enorme Rocher",0,3,NULL));
-	piocheTresor.push_back(new Equipement("Targe d'inconscience suicidaire",400,2,NULL));
-	piocheTresor.push_back(new Equipement("Epée (de) Batard(e)",400,2,NULL));
-	piocheTresor.push_back(new Equipement("Tronçonneuse de la mort",600,3,NULL));
-	piocheTresor.push_back(new Equipement("Casque de virilité ostentatoire",600,3,NULL));
-	piocheTresor.push_back(new Equipement("Bottes de convocation d'hémoroides",400,2,NULL));
+	//piocheTresor.push_back(new Potion("Cotion de Ponfusion",NULL, 100,3));
+	/*piocheTresor.push_back(new Chaussure("Bottes de deplacement frénétique","Ces bottes vous confèrent un bonus de +2 pour deguerpir",400 ,0 ,new Effet(2, new MalusBonusDeguerpir())));
+	piocheTresor.push_back(new Main("Enorme Rocher",0,3,NULL,2));
+	piocheTresor.push_back(new Main("Targe d'inconscience suicidaire",400,2,NULL));
+	piocheTresor.push_back(new Main("Epée (de) Batard(e)",400,2,NULL));
+	piocheTresor.push_back(new Main("Tronçonneuse de la mort",600,3,NULL,2));
+	piocheTresor.push_back(new Main("Enclume",0,3,NULL,2));
+	piocheTresor.push_back(new Main("Lance de 3.50m",200,1,NULL,2));
+	piocheTresor.push_back(new Main("Tondeuse à gazon",600,3,NULL,2));
+	piocheTresor.push_back(new CouvreChef("Casque de virilité ostentatoire",600,3,NULL));
+	piocheTresor.push_back(new CouvreChef("Casque de courage",200,1,NULL));
+	piocheTresor.push_back(new Chaussure("Bottes de convocation d'hémoroides",400,2,NULL));
+	piocheTresor.push_back(new Chaussure("Bottes de pas de deux",400,2,NULL));
+	piocheTresor.push_back(new Armure("Armure de flammes",400,2,NULL));
+	piocheTresor.push_back(new Armure("Armure de cuir",200,1,NULL));
+	piocheTresor.push_back(new Equipement("Genouilleres perforantes",200,1,NULL));*/
+	piocheTresor.push_back(new Armure("Armure de gluante",200,1,NULL));
 	
 	//Melange des pioches
 	random_shuffle(piochePorte.begin(), piochePorte.end());

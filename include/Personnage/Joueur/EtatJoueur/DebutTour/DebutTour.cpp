@@ -64,7 +64,7 @@ void DebutTour::poseEquipement(Equipement * e){
 }
 
 void DebutTour::equiper(Equipement * e){
-	joueur->getEquipe().push_back(e);
+	e->equiper(joueur);
 	if(e->getEffet()!=NULL){
 		e->getEffet()->prendEffet();
 	}

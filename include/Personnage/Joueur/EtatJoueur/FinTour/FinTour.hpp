@@ -10,7 +10,8 @@
 	
 	#include "../EtatJoueur.hpp"
 	#include "../../Joueur.hpp"
-	#include "../../../../Munchkin/Munchkin.hpp"
+	//#include "../../../../Munchkin/Munchkin.hpp"
+	class Equipement;
 	
 	
 class FinTour:public EtatJoueur{

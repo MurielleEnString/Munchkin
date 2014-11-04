@@ -13,9 +13,9 @@
 	#include "../../../../Carte/Carte.hpp"
 	#include "../../../../Carte/Porte/Monstre/Monstre.hpp"
 	#include "../../../../Carte/Porte/Malediction/Malediction.hpp"
-	#include "../../../../Munchkin/Munchkin.hpp"
+	//#include "../../../../Munchkin/Munchkin.hpp"
 	#include <typeinfo>
-	
+	class Equipement;
 	
 
 

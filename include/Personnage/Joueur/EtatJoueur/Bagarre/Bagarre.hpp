@@ -14,12 +14,13 @@
 #include <stdlib.h>
 #include "../EtatJoueur.hpp"
 #include "../../Joueur.hpp"
-#include "../../../../Munchkin/Munchkin.hpp"
+//#include "../../../../Munchkin/Munchkin.hpp"
 #include "../../../../Carte/Tresor/Equipement/Equipement.hpp"
 #include "../../../../Carte/Tresor/Potion/Potion.hpp"
 
-using namespace std;
 
+using namespace std;
+class Equipement;
 class Race;
 
 class Bagarre:public EtatJoueur{

@@ -17,6 +17,10 @@ using namespace std;
 
 class Main:public Equipement{
 	public:
+		Main(std::string n, int p,int b, Effet * e);
+		Main(std::string n, std::string d, int p,int b, Effet * e);
+		Main(std::string n, std::string d, int p,int b, Effet * e, int nb);
+		Main(std::string n, int p,int b, Effet * e, int nb);
 		void equiper(Joueur * j);
 	private :
 		int nbMain;

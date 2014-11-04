@@ -22,12 +22,17 @@
 //#include "../Effet/ComportementEffet/PerteObjMax/PerteObjMax.hpp"
 #include "../Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.hpp"
 #include "../Carte/Tresor/Potion/Potion.hpp"
+//#include "../Carte/Tresor/Equipement/Chaussure/Chaussure.hpp"
+//#include "../Carte/Tresor/Equipement/CouvreChef/CouvreChef.hpp"
+//#include "../Carte/Tresor/Equipement/Main/Main.hpp"
+#include "../Carte/Tresor/Equipement/Armure/Armure.hpp"
 #include <vector>
 
 class Joueur;
 class Porte;
 class Tresor;
 
+//class Armure;
 
 using namespace std;
 
