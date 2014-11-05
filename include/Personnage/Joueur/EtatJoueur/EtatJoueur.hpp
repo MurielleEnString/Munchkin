@@ -9,8 +9,8 @@
 #ifndef ETATJOUEUR_HPP
 	#define ETATJOUEUR_HPP
 	
-	#include "../Joueur.hpp"
-	#include "../../../Carte/Tresor/Equipement/Equipement.hpp"
+	//#include "../Joueur.hpp"
+	//#include "../../../Carte/Tresor/Equipement/Equipement.hpp"
 	#include <iostream>
 	#include <vector>
 	

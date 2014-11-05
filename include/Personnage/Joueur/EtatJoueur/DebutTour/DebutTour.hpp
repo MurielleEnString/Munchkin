@@ -13,7 +13,8 @@
 	#include "../../Joueur.hpp"
 	#include "../../../../Carte/Tresor/Equipement/Equipement.hpp"
 	
-	//class Equipement;
+	
+	
 
 class DebutTour:public EtatJoueur{
 	public:
