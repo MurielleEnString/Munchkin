@@ -21,7 +21,9 @@ class Main:public Equipement{
 		Main(std::string n, std::string d, int p,int b, Effet * e);
 		Main(std::string n, std::string d, int p,int b, Effet * e, int nb);
 		Main(std::string n, int p,int b, Effet * e, int nb);
-		void equiper(Joueur * j);
+		
+		int getNbMain();
+		
 	private :
 		int nbMain;
 };

@@ -22,7 +22,7 @@ class Armure:public Equipement{
 	public:
 		Armure(std::string n, int p,int b, Effet * e);
 		Armure(std::string n, std::string d, int p,int b, Effet * e);
-		void equiper(Joueur * j);
+		
 };
 
 

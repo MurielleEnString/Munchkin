@@ -51,10 +51,21 @@ void FinTour::poseEquipement(Equipement * e){
 }
 
 void FinTour::equiper(Equipement * e){
-	joueur->getEquipe().push_back(e);
 	if(e->getEffet()!=NULL){
 		e->getEffet()->prendEffet();
 	}
+	if(typeid(*e)==typeid(Equipement))joueur->equiperEquipement(e);
+	if(typeid(*e)==typeid(Main)){
+			if(((Main*)e)->getNbMain()==1){
+				joueur->equiper1Main((Main*)e);
+			}
+			else{
+				joueur->equiper2Main((Main*)e);
+			}
+	}
+	if(typeid(*e)==typeid(Armure))joueur->equiperArmure((Armure*)e);
+	if(typeid(*e)==typeid(CouvreChef))joueur->equiperCouvreChef((CouvreChef*)e);
+	if(typeid(*e)==typeid(Chaussure))joueur->equiperChaussure((Chaussure*)e);
 }
 
 void FinTour::desequiper(Equipement * e){

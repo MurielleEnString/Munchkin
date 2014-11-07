@@ -58,7 +58,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	
 	//Cartes Trésor
 	//piocheTresor.push_back(new Potion("Cotion de Ponfusion",NULL, 100,3));
-	/*piocheTresor.push_back(new Chaussure("Bottes de deplacement frénétique","Ces bottes vous confèrent un bonus de +2 pour deguerpir",400 ,0 ,new Effet(2, new MalusBonusDeguerpir())));
+	piocheTresor.push_back(new Chaussure("Bottes de deplacement frénétique","Ces bottes vous confèrent un bonus de +2 pour deguerpir",400 ,0 ,new Effet(2, new MalusBonusDeguerpir())));
 	piocheTresor.push_back(new Main("Enorme Rocher",0,3,NULL,2));
 	piocheTresor.push_back(new Main("Targe d'inconscience suicidaire",400,2,NULL));
 	piocheTresor.push_back(new Main("Epée (de) Batard(e)",400,2,NULL));
@@ -72,7 +72,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	piocheTresor.push_back(new Chaussure("Bottes de pas de deux",400,2,NULL));
 	piocheTresor.push_back(new Armure("Armure de flammes",400,2,NULL));
 	piocheTresor.push_back(new Armure("Armure de cuir",200,1,NULL));
-	piocheTresor.push_back(new Equipement("Genouilleres perforantes",200,1,NULL));*/
+	piocheTresor.push_back(new Equipement("Genouilleres perforantes",200,1,NULL));
 	piocheTresor.push_back(new Armure("Armure de gluante",200,1,NULL));
 	
 	//Melange des pioches

@@ -75,6 +75,118 @@ void Joueur::defausser(Carte *c){
 void Joueur::finTour(){
 	jeu->changementJoueur(this);
 }
+
+
+void Joueur::equiperEquipement(Equipement * e){
+	vector<Equipement*>::iterator it=bagage.begin();
+	if(bagage.size()!=0){
+		while((*it)->compare(e) || it!=bagage.end()){
+			++it;
+		}
+	}
+	if((*it)->compare(e)){
+		bagage.erase(it);
+		equipe.push_back(e);
+	}
+}
+
+void Joueur::equiperCouvreChef(CouvreChef * c){
+	
+	vector<Equipement*>::iterator it=bagage.begin();
+	if(bagage.size()!=0){
+		while(c->compare((CouvreChef*)(*it)) || it!=bagage.end()){
+			++it;
+		}
+	}
+	
+	if(c->compare((CouvreChef*)(*it))){
+		cout<<(*it)->Getnom()<<endl;
+		//bagage.erase(it);
+		
+		if(tete!=NULL){
+			
+			bagage.push_back(tete);
+		}
+		tete=c;
+	}
+}
+
+void Joueur::equiper1Main(Main * m){
+	vector<Equipement*>::iterator it=bagage.begin();
+	if(bagage.size()!=0){
+		while(((Main *)(*it))->compare(m) || it!=bagage.end()){
+			++it;
+		}
+	}
+	if(((Main *)(*it))->compare(m)){
+			bagage.erase(it);
+			if(maind!=NULL){
+				if(maing!=NULL){
+					bagage.push_back(maind);
+					maind=m;
+				}
+				else{
+					maing=m;
+				}
+			}
+			else{
+				maind=m;
+			}
+				
+	}
+}
+
+void Joueur::equiper2Main(Main * m){
+	vector<Equipement*>::iterator it=bagage.begin();
+	if(bagage.size()!=0){
+		while(((Main *)(*it))->compare(m) || it!=bagage.end()){
+			++it;
+		}
+	}
+	if(((Main *)(*it))->compare(m)){
+		if(maind!=NULL){
+			bagage.push_back(maind);
+		}
+		if(maing!=NULL){
+			bagage.push_back(maing);
+		}
+		maind=m;
+		maing=m;
+		
+	}
+}
+
+void Joueur::equiperArmure(Armure * a){
+	vector<Equipement*>::iterator it=bagage.begin();
+	if(bagage.size()!=0){
+		while(a->compare((Armure*)(*it)) || it!=bagage.end()){
+			++it;
+		}
+	}
+	if(a->compare((Armure*)(*it))){
+		bagage.erase(it);
+		if(torse!=NULL){
+			bagage.push_back(torse);
+		}
+		torse=a;
+	}
+}
+
+void Joueur::equiperChaussure(Chaussure * c){
+	vector<Equipement*>::iterator it=bagage.begin();
+	if(bagage.size()!=0){
+		while((*it)->compare(c) || it!=bagage.end()){
+			++it;
+		}
+	}
+	if((*it)->compare(c)){
+		bagage.erase(it);
+		if(pieds!=NULL){
+			bagage.push_back(pieds);
+		}
+		pieds=c;
+	}
+}
 /****************************************************************************************************/
 /**********          Mutateurs                                                             **********/
 /****************************************************************************************************/

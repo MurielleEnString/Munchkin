@@ -22,6 +22,10 @@
 #include "EtatJoueur/Bagarre/Bagarre.hpp"
 #include "EtatJoueur/FinTour/FinTour.hpp"
 #include "EtatJoueur/Attente/Attente.hpp"
+#include "../../Carte/Tresor/Equipement/CouvreChef/CouvreChef.hpp"
+#include "../../Carte/Tresor/Equipement/Main/Main.hpp"
+#include "../../Carte/Tresor/Equipement/Chaussure/Chaussure.hpp"
+#include "../../Carte/Tresor/Equipement/Armure/Armure.hpp"
 #include <vector>
 #include <string>
 
@@ -32,7 +36,7 @@ using namespace std;
 
 
 class Effet;
-//class Munchkin;
+class Munchkin;
 
 class DebutTour;
 class OuvrirPorte;
@@ -61,6 +65,13 @@ class Joueur:public Personnage{
 
 	void defausser(Carte *c);
 	void finTour();
+	void equiperEquipement(Equipement * e);
+	void equiperCouvreChef(CouvreChef * c);
+	void equiper1Main(Main * m);
+	void equiper2Main(Main * m);
+	void equiperArmure(Armure * a);
+	void equiperChaussure(Chaussure * c);
+	
     //Mutateurs et Accesseurs
     void setNbCartesMain(int n);
     int getNbCartesMain();

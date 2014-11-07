@@ -64,10 +64,22 @@ void DebutTour::poseEquipement(Equipement * e){
 }
 
 void DebutTour::equiper(Equipement * e){
-	e->equiper(joueur);
 	if(e->getEffet()!=NULL){
 		e->getEffet()->prendEffet();
 	}
+	if(typeid(*e)==typeid(Equipement))joueur->equiperEquipement(e);
+	if(typeid(*e)==typeid(Main)){
+			if(((Main*)e)->getNbMain()==1){
+				joueur->equiper1Main((Main*)e);
+			}
+			else{
+				joueur->equiper2Main((Main*)e);
+			}
+	}
+	if(typeid(*e)==typeid(Armure))joueur->equiperArmure((Armure*)e);
+	if(typeid(*e)==typeid(CouvreChef))joueur->equiperCouvreChef((CouvreChef*)e);
+	if(typeid(*e)==typeid(Chaussure))joueur->equiperChaussure((Chaussure*)e);
+	
 }
 
 void DebutTour::desequiper(Equipement * e){

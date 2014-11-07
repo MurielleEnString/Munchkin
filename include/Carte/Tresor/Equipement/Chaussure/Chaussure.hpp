@@ -19,7 +19,7 @@ class Chaussure:public Equipement{
 	public:
 		Chaussure(std::string n, int p,int b, Effet * e);
 		Chaussure(std::string n, std::string d, int p,int b, Effet * e);
-		void equiper(Joueur * j);
+		
 };
 
 
