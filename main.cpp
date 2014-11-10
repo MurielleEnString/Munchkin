@@ -90,7 +90,7 @@ int main() {
 			if(j->getMaing()!=NULL){cout<<"Main Gauche : "<<j->getMaing()->Getnom()<<endl;}
 			if(j->getMaind()!=NULL){cout<<"Main Droite : "<<j->getMaind()->Getnom()<<endl;}
 			if(j->getTete()!=NULL){cout<<"Tête : "<<j->getTete()->Getnom()<<endl;}
-			if(j->getPieds()!=NULL){cout<<"Pieds : "<<j->getTete()->Getnom()<<endl;}
+			if(j->getPieds()!=NULL){cout<<"Pieds : "<<j->getPieds()->Getnom()<<endl;}
 			cout<<"Votre bonus pour déguerpir : "<<j->getValDeguerpir()<<endl;
 			cout<<"Nb cartes max en main : "<<j->getNbCartesMain()<<endl;
 			cout<<endl;

@@ -78,51 +78,33 @@ void Joueur::finTour(){
 
 
 void Joueur::equiperEquipement(Equipement * e){
-	vector<Equipement*>::iterator it=bagage.begin();
-	if(bagage.size()!=0){
-		while((*it)->compare(e) || it!=bagage.end()){
-			++it;
-		}
-	}
-	if((*it)->compare(e)){
-		bagage.erase(it);
-		equipe.push_back(e);
-	}
+	equipe.push_back(e);
 }
 
 void Joueur::equiperCouvreChef(CouvreChef * c){
-	
-	vector<Equipement*>::iterator it=bagage.begin();
-	if(bagage.size()!=0){
-		while(c->compare((CouvreChef*)(*it)) || it!=bagage.end()){
-			++it;
-		}
-	}
-	
-	if(c->compare((CouvreChef*)(*it))){
-		cout<<(*it)->Getnom()<<endl;
-		//bagage.erase(it);
-		
 		if(tete!=NULL){
-			
 			bagage.push_back(tete);
+			if(tete->getEffet()!=NULL){
+				tete->getEffet()->setVal(-tete->getEffet()->getVal());
+				tete->getEffet()->prendEffet();
+				tete->getEffet()->setVal(-tete->getEffet()->getVal());
+			}
 		}
-		tete=c;
-	}
+		tete=c;	
 }
 
 void Joueur::equiper1Main(Main * m){
-	vector<Equipement*>::iterator it=bagage.begin();
-	if(bagage.size()!=0){
-		while(((Main *)(*it))->compare(m) || it!=bagage.end()){
-			++it;
-		}
-	}
-	if(((Main *)(*it))->compare(m)){
-			bagage.erase(it);
 			if(maind!=NULL){
 				if(maing!=NULL){
+					if(maing==maind){
+						maing=NULL;
+					}
 					bagage.push_back(maind);
+					if(maind->getEffet()!=NULL){
+						maind->getEffet()->setVal(-maind->getEffet()->getVal());
+						maind->getEffet()->prendEffet();
+						maind->getEffet()->setVal(-maind->getEffet()->getVal());
+					}
 					maind=m;
 				}
 				else{
@@ -132,60 +114,68 @@ void Joueur::equiper1Main(Main * m){
 			else{
 				maind=m;
 			}
-				
-	}
 }
 
 void Joueur::equiper2Main(Main * m){
-	vector<Equipement*>::iterator it=bagage.begin();
-	if(bagage.size()!=0){
-		while(((Main *)(*it))->compare(m) || it!=bagage.end()){
-			++it;
-		}
-	}
-	if(((Main *)(*it))->compare(m)){
+
+	if(maind!=maing){
 		if(maind!=NULL){
 			bagage.push_back(maind);
+			if(maind->getEffet()!=NULL){
+				maind->getEffet()->setVal(-maind->getEffet()->getVal());
+				maind->getEffet()->prendEffet();
+				maind->getEffet()->setVal(-maind->getEffet()->getVal());
+			}
+			
 		}
 		if(maing!=NULL){
 			bagage.push_back(maing);
+			if(maing->getEffet()!=NULL){
+				maing->getEffet()->setVal(-maing->getEffet()->getVal());
+				maing->getEffet()->prendEffet();
+				maing->getEffet()->setVal(-maing->getEffet()->getVal());
+			}
 		}
-		maind=m;
-		maing=m;
-		
 	}
+	else{
+		if(maind!=NULL){
+			bagage.push_back(maind);
+			if(maind->getEffet()!=NULL){
+					maind->getEffet()->setVal(-maind->getEffet()->getVal());
+					maind->getEffet()->prendEffet();
+					maind->getEffet()->setVal(-maind->getEffet()->getVal());
+			}
+		}
+	}
+	maind=m;
+	maing=m;
+		
+	
 }
 
 void Joueur::equiperArmure(Armure * a){
-	vector<Equipement*>::iterator it=bagage.begin();
-	if(bagage.size()!=0){
-		while(a->compare((Armure*)(*it)) || it!=bagage.end()){
-			++it;
-		}
-	}
-	if(a->compare((Armure*)(*it))){
-		bagage.erase(it);
 		if(torse!=NULL){
 			bagage.push_back(torse);
+			if(torse->getEffet()!=NULL){
+				torse->getEffet()->setVal(-torse->getEffet()->getVal());
+				torse->getEffet()->prendEffet();
+				torse->getEffet()->setVal(-torse->getEffet()->getVal());
+			}
 		}
 		torse=a;
-	}
 }
 
 void Joueur::equiperChaussure(Chaussure * c){
-	vector<Equipement*>::iterator it=bagage.begin();
-	if(bagage.size()!=0){
-		while((*it)->compare(c) || it!=bagage.end()){
-			++it;
-		}
-	}
-	if((*it)->compare(c)){
-		bagage.erase(it);
 		if(pieds!=NULL){
 			bagage.push_back(pieds);
+			if(pieds->getEffet()!=NULL){
+				pieds->getEffet()->setVal(-pieds->getEffet()->getVal());
+				pieds->getEffet()->prendEffet();
+				pieds->getEffet()->setVal(-pieds->getEffet()->getVal());
+			}
 		}
 		pieds=c;
-	}
+	
 }
 /****************************************************************************************************/
 /**********          Mutateurs                                                             **********/

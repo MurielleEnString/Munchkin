@@ -44,6 +44,21 @@ int Bagarre::calculForceJoueur(){
 	for(vector<Equipement*>::iterator i=joueur->getEquipe().begin(); i!=joueur->getEquipe().end();++i){
 		f=f+(*i)->getBonus();
 	}
+	if(joueur->getTete()!=NULL){
+		f+=joueur->getTete()->getBonus();
+	}
+	if(joueur->getTorse()!=NULL){
+		f+=joueur->getTorse()->getBonus();
+	}
+	if(joueur->getPieds()!=NULL){
+		f+=joueur->getPieds()->getBonus();
+	}
+	if(joueur->getMaing()!=NULL){
+		f+=joueur->getMaing()->getBonus();
+	}
+	if(joueur->getMaind()!=NULL){
+		f+=joueur->getMaind()->getBonus();
+	}
 	return f+joueur->getBonus()+joueur->getNiveau();
 }
 
