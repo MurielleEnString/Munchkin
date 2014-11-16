@@ -14,6 +14,12 @@
 /****************************************************************************************************/
 
 class FabriqueCarte{
-	Carte creerCarte(String nom);
-	virtual Carte fabriquerCarte(String nom)=0;
+	protected:
+		
+		FabriqueTresor * ft;
+		Munchkin * jeu
+	public:
+		FabriqueCarte(Munchkin * m);
+		Carte creerCarte(String nom);
+		virtual Carte fabriquerCarte(String nom)=0;
 };

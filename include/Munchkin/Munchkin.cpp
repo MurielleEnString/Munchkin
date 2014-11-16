@@ -12,10 +12,8 @@
 
 /****************************************************************************************************/
 
-<<<<<<< HEAD
 int myrandom (int i) { return std::rand()%i;}
-=======
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 
 /****************************************************************************************************/
 /**********          Constructeur                                                          **********/
@@ -28,16 +26,11 @@ int myrandom (int i) { return std::rand()%i;}
 //Postcondition : Aucune
 //Description : Constructeur par défaut
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
 
 Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	int i;
 	std::srand ( unsigned ( std::time(0) ) );
-=======
-Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
-	int i;
-	
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 	
 	 
 	//CREATION DES JOUEURS
@@ -53,11 +46,11 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	//CREATION DES CARTES
 	
 	//Cartes Porte
-<<<<<<< HEAD
+
 	/*piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),2,3));
-=======
+
 	piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),2,3));
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 	piochePorte.push_back(new Race(new Effet(1,new CarteSupMain()),NULL,"Nain",""));
 	piochePorte.push_back(new Malediction("Canard de l'appocalypse","Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux",new Effet(-2, new PerteGainNiv())));
 	piochePorte.push_back(new Monstre("Manticor-nithorynque",new Effet(-2, new PerteGainNiv()),6,1));
@@ -67,23 +60,21 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	//piochePorte.push_back(new Malediction("Vraiment trop injuste !","Perdez l'objet qui vous donne le plus haut bonus",new Effet(0, new PerteObjMax())));
 <<<<<<< HEAD
 	*/
-=======
-	
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 	
 	
 	
 	
 	
 	//Cartes Trésor
-<<<<<<< HEAD
+
 	/*piocheTresor.push_back(new Potion("Cotion de Ponfusion",NULL, 100,3));
 	piocheTresor.push_back(new Chaussure("Bottes de deplacement frénétique","Ces bottes vous confèrent un bonus de +2 pour deguerpir",400 ,0 ,new Effet(2, new MalusBonusDeguerpir())));
 	piocheTresor.push_back(new Chaussure("Bottes de pas de deux",400,2,NULL));
-=======
+
 	//piocheTresor.push_back(new Potion("Cotion de Ponfusion",NULL, 100,3));
 	piocheTresor.push_back(new Chaussure("Bottes de deplacement frénétique","Ces bottes vous confèrent un bonus de +2 pour deguerpir",400 ,0 ,new Effet(2, new MalusBonusDeguerpir())));
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 	piocheTresor.push_back(new Main("Enorme Rocher",0,3,NULL,2));
 	piocheTresor.push_back(new Main("Targe d'inconscience suicidaire",400,2,NULL));
 	piocheTresor.push_back(new Main("Epée (de) Batard(e)",400,2,NULL));
@@ -94,10 +85,9 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	piocheTresor.push_back(new CouvreChef("Casque de virilité ostentatoire",600,3,NULL));
 	piocheTresor.push_back(new CouvreChef("Casque de courage",200,1,NULL));
 	piocheTresor.push_back(new Chaussure("Bottes de convocation d'hémoroides",400,2,NULL));
-<<<<<<< HEAD
-=======
+
 	piocheTresor.push_back(new Chaussure("Bottes de pas de deux",400,2,NULL));
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 	piocheTresor.push_back(new Armure("Armure de flammes",400,2,NULL));
 	piocheTresor.push_back(new Armure("Armure de cuir",200,1,NULL));
 	piocheTresor.push_back(new Equipement("Genouilleres perforantes",200,1,NULL));
@@ -108,37 +98,41 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	random_shuffle(piochePorte.begin(), piochePorte.end(), myrandom);
 	random_shuffle(piocheTresor.begin(), piocheTresor.end(),myrandom);
 	
+
+	
 	
 	
 string ligne;
-=======
-	
-	//Melange des pioches
-	random_shuffle(piochePorte.begin(), piochePorte.end());
-	random_shuffle(piocheTresor.begin(), piocheTresor.end());
-	
-	
-	
-/*  string ligne;
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
-  int id
+int e=0;
+	string mot="";
+  string id;
   string nom;
   string description;
-  Carte c;
+  filename="Cartes.txt";
 
   std::ifstream ifs(filename.c_str());
   // filename est le nom du ficher de cartes
 
   if(ifs) {
     while (getline(ifs, ligne)) {
-      std::istringstream iss(ligne);
-<<<<<<< HEAD
-      
-=======
+		mot="";
+		e=0;
+		while(ligne[e]!='\0'){
+			//strcat(mot,ligne[e]);
+			mot+=ligne[e];
+			e++;
+		}
+		cout<<mot<<endl;
+		
+		
+     
+      /*std::stringstream iss(ligne);
+
       iss >> id;
+      
       iss >> nom;
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
-      switch(id) {
+      cout<<id<<nom<<endl;!*/
+     /* switch(id) {
         case 1:
           c = new Monstre(nom,);
         break;
@@ -158,13 +152,11 @@ string ligne;
         default:
           std::cout << "ID inconnue" << std::endl;
         break;
-      }
-    }
-<<<<<<< HEAD
+      }*/
+	}
   }
-=======
-  }*/
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
+  
 }
 
 
@@ -205,10 +197,9 @@ Munchkin::~Munchkin() {
 Porte * Munchkin::piocherPorte(){
 	if(piochePorte.size()==0){
 		vector<Carte*>::iterator i;
-<<<<<<< HEAD
+
 		std::srand ( unsigned ( std::time(0) ) );
-=======
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 		for(i=defausse.begin();i!=defausse.end();++i){
 			if(typeid((**i))==typeid(Malediction) || typeid((**i))==typeid(Monstre) || typeid((**i))==typeid(Race)){
 				piochePorte.push_back((Porte*)*i);
@@ -216,11 +207,10 @@ Porte * Munchkin::piocherPorte(){
 				i--;
 			}
 		}
-<<<<<<< HEAD
+
 		random_shuffle(piochePorte.begin(), piochePorte.end(),myrandom);
-=======
 		random_shuffle(piochePorte.begin(), piochePorte.end());
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 	}
 	if(piochePorte.size()==0){
 		cout<<"Impossible de continuer, il n'y a plus de carte dans la pioche"<<endl;
@@ -237,10 +227,9 @@ Porte * Munchkin::piocherPorte(){
 
 Tresor * Munchkin::piocherTresor(){
 	if(piocheTresor.size()==0){
-<<<<<<< HEAD
+
 		std::srand ( unsigned ( std::time(0) ) );
-=======
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 		vector<Carte*>::iterator i;
 		for(i=defausse.begin();i!=defausse.end();++i){
 			if(typeid((**i))==typeid(Equipement) || typeid((**i))==typeid(Potion)){
@@ -249,11 +238,11 @@ Tresor * Munchkin::piocherTresor(){
 				i--;
 			}
 		}
-<<<<<<< HEAD
+
 		random_shuffle(piocheTresor.begin(), piocheTresor.end(),myrandom);
-=======
+
 		random_shuffle(piocheTresor.begin(), piocheTresor.end());
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+
 	}
 	if(piocheTresor.size()==0){
 		cout<<"Impossible de continuer, il n'y a plus de carte dans la pioche"<<endl;

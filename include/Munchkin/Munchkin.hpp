@@ -27,12 +27,14 @@
 //#include "../Carte/Tresor/Equipement/Main/Main.hpp"
 #include "../Carte/Tresor/Equipement/Armure/Armure.hpp"
 #include <vector>
-<<<<<<< HEAD
+
 #include <ctime> 
 #include <cstdlib> 
 #include <fstream>
-=======
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
+#include <sstream>
+#include <string.h>
+
+
 
 class Joueur;
 class Porte;
@@ -42,10 +44,7 @@ class Tresor;
 
 using namespace std;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 1cfeb13c198a19f6fb590d9f35891bf652e09d3c
 /****************************************************************************************************/
 
 class Munchkin {
