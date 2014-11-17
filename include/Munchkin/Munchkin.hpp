@@ -26,6 +26,8 @@
 //#include "../Carte/Tresor/Equipement/CouvreChef/CouvreChef.hpp"
 //#include "../Carte/Tresor/Equipement/Main/Main.hpp"
 #include "../Carte/Tresor/Equipement/Armure/Armure.hpp"
+#include "../Fabrique/FabriqueTresor.hpp"
+#include "../Fabrique/FabriquePorte.hpp"
 #include <vector>
 
 #include <ctime> 
@@ -80,6 +82,7 @@ class Munchkin {
 	std::vector<Joueur*> joueurs;
 	Joueur * courant;
 	bool finPartie;
+	
   
   
 

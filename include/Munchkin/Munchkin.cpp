@@ -45,6 +45,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	
 	//CREATION DES CARTES
 	
+	
 	//Cartes Porte
 
 	/*piochePorte.push_back(new Monstre("Rat Muscle",new Effet(-1, new PerteGainNiv()),2,3));
@@ -58,7 +59,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	piochePorte.push_back(new Race(new Effet(1,new MalusBonusDeguerpir()),NULL,"Elfe",""));
 	
 	//piochePorte.push_back(new Malediction("Vraiment trop injuste !","Perdez l'objet qui vous donne le plus haut bonus",new Effet(0, new PerteObjMax())));
-<<<<<<< HEAD
+
 	*/
 
 	
@@ -92,7 +93,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	piocheTresor.push_back(new Armure("Armure de cuir",200,1,NULL));
 	piocheTresor.push_back(new Equipement("Genouilleres perforantes",200,1,NULL));
 	piocheTresor.push_back(new Armure("Armure de gluante",200,1,NULL));
-<<<<<<< HEAD
+
 	*/
 	//Melange des pioches
 	random_shuffle(piochePorte.begin(), piochePorte.end(), myrandom);
@@ -109,6 +110,7 @@ int e=0;
   string nom;
   string description;
   filename="Cartes.txt";
+  FabriqueCarte * fb=new FabriqueCarte(this, new FabriquePorte(), new FabriqueTresor());
 
   std::ifstream ifs(filename.c_str());
   // filename est le nom du ficher de cartes
