@@ -16,3 +16,5 @@
 class FabriquePotion{
 	virtual Carte fabriquerPotion(String nom);
 };
+
+#endif

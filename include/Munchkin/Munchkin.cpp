@@ -44,7 +44,32 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	//courant->setNiveau(5);
 	
 	//CREATION DES CARTES
-	
+	FabriqueCarte * fb=new FabriqueCarte(new FabriquePorte(), new FabriqueTresor());
+	string ligne;
+	int e=0;
+	string mot="";
+	string id;
+	string nom;
+	string description;
+	filename="Cartes.txt";
+  
+
+	std::ifstream ifs(filename.c_str());
+	// filename est le nom du ficher de cartes
+
+	if(ifs) {
+		while (getline(ifs, ligne)) {
+			mot="";
+			e=0;
+			while(ligne[e]!='\0'){
+				//strcat(mot,ligne[e]);
+				mot+=ligne[e];
+				e++;
+			}
+			
+			fb->creerCarte(mot);
+		}
+	}
 	
 	//Cartes Porte
 
@@ -103,60 +128,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	
 	
 	
-string ligne;
-int e=0;
-	string mot="";
-  string id;
-  string nom;
-  string description;
-  filename="Cartes.txt";
-  FabriqueCarte * fb=new FabriqueCarte(this, new FabriquePorte(), new FabriqueTresor());
 
-  std::ifstream ifs(filename.c_str());
-  // filename est le nom du ficher de cartes
-
-  if(ifs) {
-    while (getline(ifs, ligne)) {
-		mot="";
-		e=0;
-		while(ligne[e]!='\0'){
-			//strcat(mot,ligne[e]);
-			mot+=ligne[e];
-			e++;
-		}
-		cout<<mot<<endl;
-		
-		
-     
-      /*std::stringstream iss(ligne);
-
-      iss >> id;
-      
-      iss >> nom;
-      cout<<id<<nom<<endl;!*/
-     /* switch(id) {
-        case 1:
-          c = new Monstre(nom,);
-        break;
-
-        case 2:
-          c = new (nom,)
-        break;
-
-        case 3:
-          c = new (nom,)
-        break;
-
-        case 4:
-          c = new (nom,)
-        break;
-
-        default:
-          std::cout << "ID inconnue" << std::endl;
-        break;
-      }*/
-	}
-  }
 
   
 }

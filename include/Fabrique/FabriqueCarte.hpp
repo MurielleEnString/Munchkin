@@ -14,15 +14,16 @@
 
 //#include "FabriqueTresor.hpp"
 //#include "FabriquePorte.hpp"
-#include "../Munchkin/Munchkin.hpp"
 #include <string>
-
+#include <iostream>
 
 using namespace std;
 
 class Carte;
 class Tresor;
-class Munchkin;
+
+
+
 /****************************************************************************************************/
 
 class FabriqueCarte{
@@ -30,12 +31,13 @@ class FabriqueCarte{
 		
 		FabriqueCarte * ft; //Fabrique de trésors
 		FabriqueCarte * fp;//Fabrique de portes
-		Munchkin * jeu;
+		
 	public:
 		FabriqueCarte();
-		FabriqueCarte(Munchkin * m, FabriqueCarte * f1, FabriqueCarte * f2);
-		void creerCarte(string nom);
-		virtual Carte * fabriquerCarte(string nom)=0;
+		FabriqueCarte(FabriqueCarte * f1, FabriqueCarte * f2);
+		Carte * creerCarte(string nom);
+		virtual Carte * fabriquerCarte(string nom);
+		string typeACreer(string s);
 };
 
 #endif
