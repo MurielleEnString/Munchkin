@@ -16,6 +16,7 @@
 //#include "FabriquePorte.hpp"
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -36,8 +37,8 @@ class FabriqueCarte{
 		FabriqueCarte();
 		FabriqueCarte(FabriqueCarte * f1, FabriqueCarte * f2);
 		Carte * creerCarte(string nom);
-		virtual Carte * fabriquerCarte(string nom);
-		string typeACreer(string s);
+		virtual Carte * fabriquerCarte(vector<string> champs);
+		vector<string> decompString(string s);
 };
 
 #endif

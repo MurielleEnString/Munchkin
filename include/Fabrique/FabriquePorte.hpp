@@ -16,7 +16,7 @@
 
 
 #include "FabriqueCarte.hpp"
-#include <string>
+#include "../Carte/Porte/Monstre/Monstre.hpp"
 
 
 using namespace std;
@@ -31,7 +31,7 @@ class FabriquePorte:public FabriqueCarte{
 	
 	public:
 		FabriquePorte();
-		virtual Carte * fabriquerCarte(string nom);
+		virtual Carte * fabriquerCarte(vector<string> champs);
 };
 
 #endif

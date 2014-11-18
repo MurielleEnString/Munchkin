@@ -31,7 +31,7 @@ class FabriqueTresor:public FabriqueCarte{
 	
 	public:
 		FabriqueTresor();
-		virtual Carte * fabriquerCarte(string nom);
+		virtual Carte * fabriquerCarte(vector<string> champs);
 };
 
 #endif

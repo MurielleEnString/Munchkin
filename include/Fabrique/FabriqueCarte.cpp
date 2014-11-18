@@ -4,35 +4,56 @@ FabriqueCarte::FabriqueCarte(){
 }
 
 FabriqueCarte::FabriqueCarte(FabriqueCarte * f1, FabriqueCarte * f2){
-	ft=f1;
-	fp=f2;
+	fp=f1;
+	ft=f2;
 }
 
 
 Carte * FabriqueCarte::creerCarte(string nom){
 	
-	string type=typeACreer(nom);
-	if(type=="Equipement" || type=="Potion" || type=="Armure" || type=="Chaussure" || type=="Main" || type=="Couvrechef"){
-		cout<<"ft "<<type<<endl;
-		return ft->fabriquerCarte(nom);
+	vector<string> champs=decompString(nom);
+	cout<<champs.front()<<endl;
+	if(champs.front()=="Equipement" || champs.front()=="Potion" || champs.front()=="Armure" || champs.front()=="Chaussure" || champs.front()=="Main" || champs.front()=="CouvreChef"){
+		//cout<<"ft "<<champs.front()<<endl;
+		return ft->fabriquerCarte(champs);
 	}
-	else if(type=="Malediction" || type=="Monstre" || type=="Race"){
-		cout<<"fp "<<type<<endl;
-		return fp->fabriquerCarte(nom);
+	
+	else if(champs.front()=="Malediction" || champs.front()=="Monstre" || champs.front()=="Race"){
+		cout<<"fp "<<champs.front()<<endl;
+		return fp->fabriquerCarte(champs);
 	}
 }
 
-Carte * FabriqueCarte::fabriquerCarte(string nom){
+Carte * FabriqueCarte::fabriquerCarte(vector<string> champs){
 		return NULL;
 }
 
-string FabriqueCarte::typeACreer(string nom){
+vector<string> FabriqueCarte::decompString(string nom){
 	int i=0;
-	string type="";
-	while(nom[i]!=';'){
-		type+=nom[i];
+	int n=1;
+	int c=0;
+	string champ="";
+	
+	
+	while(nom[i]!='\0'){
+		if(nom[i]==';'){
+			++n;
+		}
 		++i;
 	}
-	return type;
+	
+	vector<string> res;
+	i=0;
+	while(nom[i]!='\0'){
+		
+		if(nom[i]==';'){
+			res.push_back(champ);
+			++c;
+			champ="";
+		}
+		else champ+=nom[i];
+		++i;
+	}
+	return res;
 }
 

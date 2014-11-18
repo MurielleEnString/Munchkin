@@ -66,8 +66,9 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 				mot+=ligne[e];
 				e++;
 			}
-			
-			fb->creerCarte(mot);
+			if(ligne[0]!='\0'){
+				fb->creerCarte(mot);
+			}
 		}
 	}
 	

@@ -100,10 +100,10 @@ FabriqueCarte.o: Munchkin.o
 	g++ -Wall include/Fabrique/FabriqueCarte.cpp -o obj/Debug/include/Fabrique/FabriqueCarte.o -c
 	
 FabriqueTresor.o: FabriqueCarte.o
-	g++ -Wall include/Fabrique/FabriqueTresor.cpp -o obj/Debug/include/Fabrique/FabriqueTresor.o -c
+	g++ -std=c++11 -Wall include/Fabrique/FabriqueTresor.cpp -o obj/Debug/include/Fabrique/FabriqueTresor.o -c
 	
 FabriquePorte.o: FabriqueCarte.o
-	g++ -Wall include/Fabrique/FabriquePorte.cpp -o obj/Debug/include/Fabrique/FabriquePorte.o -c
+	g++ -std=c++11 -Wall include/Fabrique/FabriquePorte.cpp -o obj/Debug/include/Fabrique/FabriquePorte.o -c
 
 
 clean:
