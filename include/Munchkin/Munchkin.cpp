@@ -44,9 +44,10 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	//courant->setNiveau(5);
 	
 	//CREATION DES CARTES
-	FabriqueCarte * fb=new FabriqueCarte(new FabriquePorte(), new FabriqueTresor());
+	FabriqueCarte * fp=new FabriquePorte();
+	FabriqueCarte * ft=new FabriqueTresor();
+	vector<string> champs;
 	string ligne;
-	int e=0;
 	string mot="";
 	string id;
 	string nom;
@@ -60,17 +61,21 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	if(ifs) {
 		while (getline(ifs, ligne)) {
 			mot="";
-			e=0;
-			while(ligne[e]!='\0'){
-				//strcat(mot,ligne[e]);
-				mot+=ligne[e];
-				e++;
+			champs=fp->decompString(ligne);
+			if(champs.front()=="Equipement" || champs.front()=="Potion" || champs.front()=="Armure" || champs.front()=="Chaussure" || champs.front()=="Main" || champs.front()=="CouvreChef"){
+				piocheTresor.push_back((Tresor*)ft->fabriquerCarte(champs));
 			}
-			if(ligne[0]!='\0'){
-				fb->creerCarte(mot);
+			
+			else if(champs.front()=="Malediction" || champs.front()=="Monstre" || champs.front()=="Race"){
+				piochePorte.push_back((Porte*)fp->fabriquerCarte(champs));
 			}
 		}
 	}
+	
+	
+	
+	
+	
 	
 	//Cartes Porte
 

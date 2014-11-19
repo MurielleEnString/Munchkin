@@ -17,3 +17,10 @@ Equipement;Genouilleres perforantes;;200;1;
 Potion;Cotion de Ponfusion;;100;3;
 
 Monstre;Rat Muscle;;2;3;(PerteGainNiv,-1)
+Monstre;Manticor-nithorynque;;6;1;(PerteGainNiv,-2)
+Race;Nain;;(CarteSupMain,1)
+Race;Elfe;;(MalusBonusDeguerpir,1)
+Malediction;Canard de l'appocalypse;Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux;(PerteGainNiv,-2)
+Malediction;Vraiment trop injuste !;Perdez l'objet qui vous donne le plus haut bonus;(PerteObjMax,0)	
+	
+	

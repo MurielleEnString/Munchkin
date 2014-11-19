@@ -16,6 +16,8 @@
 
 
 #include "FabriqueCarte.hpp"
+#include "../Carte/Tresor/Potion/Potion.hpp"
+#include "../Carte/Tresor/Equipement/Equipement.hpp"
 #include <string>
 
 
