@@ -22,6 +22,7 @@ using namespace std;
 
 class Carte;
 class Tresor;
+class FabriqueEffet;
 
 
 
@@ -29,15 +30,10 @@ class Tresor;
 
 class FabriqueCarte{
 	protected:
-		
-		FabriqueCarte * ft; //Fabrique de trésors
-		FabriqueCarte * fp;//Fabrique de portes
-		
+		FabriqueEffet * fe;
 	public:
 		FabriqueCarte();
-		FabriqueCarte(FabriqueCarte * f1, FabriqueCarte * f2);
-		Carte * creerCarte(string nom);
-		virtual Carte * fabriquerCarte(vector<string> champs);
+		virtual Carte * fabriquerCarte(vector<string> champs)=0;
 		vector<string> decompString(string s);
 };
 

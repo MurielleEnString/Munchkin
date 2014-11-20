@@ -3,10 +3,10 @@ Chaussure;Bottes de pas deux;;400;2;
 Main;Enorme rocher;;0;3;
 Main;Targe d'inconscience suicidaire;;400;2;
 Main;Epée (de) Batard(e);;400;2;
-Main;Tronçonneuse de la mort;;600;3;;2
-Main;Enclume;;0;3;;2
-Main;Lance de 3.50m;;200;1;;2
-Main;Tondeuse à  gazon;;600;3;;2
+Main;Tronçonneuse de la mort;;600;3;;2;
+Main;Enclume;;0;3;;2;
+Main;Lance de 3.50m;;200;1;;2;
+Main;Tondeuse à  gazon;;600;3;;2;
 CouvreChef;Casque de virilité ostentatoire;;600;3;
 CouvreChef;Casque de courage;;200;1;
 Chaussure;Bottes de convocation d'hémoroides;;400;2;
@@ -16,4 +16,11 @@ Armure;Armure de gluante;;200;1;
 Equipement;Genouilleres perforantes;;200;1;
 Potion;Cotion de Ponfusion;;100;3;
 
-Monstre;Rat Muscle;;2;3;(PerteGainNiv,-1)
+Monstre;Rat Muscle;;2;3;(PerteGainNiv,-1);
+Monstre;Manticor-nithorynque;;6;1;(PerteGainNiv,-2);
+Race;Nain;;(CarteSupMain,1);
+Race;Elfe;;(MalusBonusDeguerpir,1);
+Malediction;Canard de l'appocalypse;Les avanturiers malins ne ramassent pas de canard dans les donjon, perdez 2 niveaux;(PerteGainNiv,-2);
+Malediction;Vraiment trop injuste !;Perdez l'objet qui vous donne le plus haut bonus;(PerteObjMax,0);
+	
+	

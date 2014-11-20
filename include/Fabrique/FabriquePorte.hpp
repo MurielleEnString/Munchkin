@@ -14,9 +14,12 @@
 #define FABRIQUEPORTE_HPP
 
 
-
+#include "FabriqueEffet.hpp"
 #include "FabriqueCarte.hpp"
 #include "../Carte/Porte/Monstre/Monstre.hpp"
+#include "../Carte/Porte/Race/Race.hpp"
+#include "../Carte/Porte/Malediction/Malediction.hpp"
+
 
 
 using namespace std;
