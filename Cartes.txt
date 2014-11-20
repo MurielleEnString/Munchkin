@@ -1,4 +1,4 @@
-Chaussure;Bottes de deplacement frénétique;Ces bottes vous confèrent un bonus de +2 pour deguerpir;400;0;(MalusBonusDeguerpir,2)
+Chaussure;Bottes de deplacement frénétique;Ces bottes vous confèrent un bonus de +2 pour deguerpir;400;0;(MalusBonusDeguerpir,2);
 Chaussure;Bottes de pas deux;;400;2;
 Main;Enorme rocher;;0;3;
 Main;Targe d'inconscience suicidaire;;400;2;

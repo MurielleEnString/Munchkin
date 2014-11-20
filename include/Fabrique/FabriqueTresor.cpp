@@ -22,7 +22,7 @@ Carte * FabriqueTresor::fabriquerCarte(vector<string> champs){
 		else return new Main(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
 	}
 	else if(champs.front()=="Chaussure"){
-		return new Main(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
+		return new Chaussure(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
 	}
 	else if(champs.front()=="CouvreChef"){
 	
