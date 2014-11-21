@@ -30,4 +30,3 @@ vector<string> FabriqueCarte::decompString(string nom){
 	}
 	return res;
 }
-
