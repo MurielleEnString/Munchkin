@@ -12,6 +12,7 @@
 
 void PerteObjMax::comp(Personnage * p, int n){
 	if(typeid(*p )==typeid(Joueur)){
+		
 		Equipement * e=(*((Joueur*)p)->getEquipe().begin());
 		int it=0,max;
 		vector<Equipement*>::iterator i;

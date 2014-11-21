@@ -94,7 +94,7 @@ CarteSupMain.o:ComportementEffet.o
 	g++ -Wall include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.cpp -o obj/Debug/include/Effet/ComportementEffet/CarteSupMain/CarteSupMain.o -c
 
 PerteObjMax.o:ComportementEffet.o
-	g++ -Wall include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.cpp -o obj/Debug/include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.o -c
+	g++ -Wall -g include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.cpp -o obj/Debug/include/Effet/ComportementEffet/PerteObjMax/PerteObjMax.o -c
 	
 FabriqueCarte.o: Munchkin.o
 	g++ -Wall include/Fabrique/FabriqueCarte.cpp -o obj/Debug/include/Fabrique/FabriqueCarte.o -c

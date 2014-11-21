@@ -127,7 +127,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 
 	*/
 	//Melange des pioches
-	random_shuffle(piochePorte.begin(), piochePorte.end(), myrandom);
+	//random_shuffle(piochePorte.begin(), piochePorte.end(), myrandom);
 	random_shuffle(piocheTresor.begin(), piocheTresor.end(),myrandom);
 	
 
