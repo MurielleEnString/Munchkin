@@ -1,7 +1,7 @@
 /**
  * \file FabriqueCarte.hpp
  * \brief declaration classe FabriqueCarte
- * \author Bois Cédric Le Corvec Quentin
+ * \author Bois CÃ©dric Le Corvec Quentin
  * \date Octobre 2014
  */
 

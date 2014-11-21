@@ -15,8 +15,17 @@
 
 #include <algorithm> 
 #include "../Personnage/Joueur/Joueur.hpp"
-
-
+#include "../Effet/Effet.hpp"
+#include "../Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.hpp"
+#include "../Effet/ComportementEffet/CarteSupMain/CarteSupMain.hpp"
+#include "../Effet/ComportementEffet/MalusBonus/MalusBonus.hpp"
+//#include "../Effet/ComportementEffet/PerteObjMax/PerteObjMax.hpp"
+#include "../Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.hpp"
+#include "../Carte/Tresor/Potion/Potion.hpp"
+//#include "../Carte/Tresor/Equipement/Chaussure/Chaussure.hpp"
+//#include "../Carte/Tresor/Equipement/CouvreChef/CouvreChef.hpp"
+//#include "../Carte/Tresor/Equipement/Main/Main.hpp"
+#include "../Carte/Tresor/Equipement/Armure/Armure.hpp"
 #include "../Fabrique/FabriqueTresor.hpp"
 #include "../Fabrique/FabriquePorte.hpp"
 #include <vector>

@@ -17,12 +17,6 @@
 
 
 #include "../Effet/Effet.hpp"
-#include "../Effet/ComportementEffet/CarteSupMain/CarteSupMain.hpp"
-#include "../Effet/ComportementEffet/PerteGainNiv/PerteGainNiv.hpp"
-#include "../Effet/ComportementEffet/CarteSupMain/CarteSupMain.hpp"
-#include "../Effet/ComportementEffet/MalusBonus/MalusBonus.hpp"
-#include "../Effet/ComportementEffet/PerteObjMax/PerteObjMax.hpp"
-#include "../Effet/ComportementEffet/MalusBonusDeguerpir/MalusBonusDeguerpir.hpp"
 #include <string>
 #include <vector>
 
