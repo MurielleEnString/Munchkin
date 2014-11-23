@@ -84,13 +84,13 @@ int main() {
 			}
 			cout<<"Vos Equipements actifs :"<<j->getEquipe().size()<<endl;
 			for(i0=j->getEquipe().begin();i0!=j->getEquipe().end();++i0){
-				cout<<(*i0)->Getnom()<<endl;
+				cout<<(*i0)->Getnom()<<" : +"<<(*i0)->getBonus()<<endl;
 			}
-			if(j->getTorse()!=NULL){cout<<"Torse : "<<j->getTorse()->Getnom()<<endl;}
-			if(j->getMaing()!=NULL){cout<<"Main Gauche : "<<j->getMaing()->Getnom()<<endl;}
-			if(j->getMaind()!=NULL){cout<<"Main Droite : "<<j->getMaind()->Getnom()<<endl;}
-			if(j->getTete()!=NULL){cout<<"Tête : "<<j->getTete()->Getnom()<<endl;}
-			if(j->getPieds()!=NULL){cout<<"Pieds : "<<j->getPieds()->Getnom()<<endl;}
+			if(j->getTorse()!=NULL){cout<<"Torse : "<<j->getTorse()->Getnom()<<" : +"<<j->getTorse()->getBonus()<<endl;}
+			if(j->getMaing()!=NULL){cout<<"Main Gauche : "<<j->getMaing()->Getnom()<<" : +"<<j->getMaing()->getBonus()<<endl;}
+			if(j->getMaind()!=NULL){cout<<"Main Droite : "<<j->getMaind()->Getnom()<<" : +"<<j->getMaind()->getBonus()<<endl;}
+			if(j->getTete()!=NULL){cout<<"Tête : "<<j->getTete()->Getnom()<<" : +"<<j->getTete()->getBonus()<<endl;}
+			if(j->getPieds()!=NULL){cout<<"Pieds : "<<j->getPieds()->Getnom()<<" : +"<<j->getPieds()->getBonus()<<endl;}
 			cout<<"Votre bonus pour déguerpir : "<<j->getValDeguerpir()<<endl;
 			cout<<"Nb cartes max en main : "<<j->getNbCartesMain()<<endl;
 			cout<<endl;

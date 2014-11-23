@@ -18,14 +18,15 @@ Carte * FabriqueTresor::fabriquerCarte(vector<string> champs){
 		return new Armure(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
 	}
 	else if(champs.front()=="Main"){
-		if(champs.back()=="2") return new Main(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e,stoi(champs.back()));
+		cout<<champs[1]<<" : "<<champs.size()<<endl;
+		if(champs.size()>5 && champs[5]=="2") return new Main(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e,stoi(champs[5]));
 		else return new Main(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
 	}
 	else if(champs.front()=="Chaussure"){
-		return new Main(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
+		return new Chaussure(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
 	}
 	else if(champs.front()=="CouvreChef"){
-	
+		return new CouvreChef(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
 	}
 	return NULL;
 }

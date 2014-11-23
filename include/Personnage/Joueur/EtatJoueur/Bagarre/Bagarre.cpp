@@ -56,7 +56,7 @@ int Bagarre::calculForceJoueur(){
 	if(joueur->getMaing()!=NULL){
 		f+=joueur->getMaing()->getBonus();
 	}
-	if(joueur->getMaind()!=NULL){
+	if(joueur->getMaind()!=NULL && joueur->getMaind()!=joueur->getMaing()){
 		f+=joueur->getMaind()->getBonus();
 	}
 	return f+joueur->getBonus()+joueur->getNiveau();
