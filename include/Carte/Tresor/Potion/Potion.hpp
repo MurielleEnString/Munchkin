@@ -32,15 +32,6 @@ class Potion:public Tresor {
     //Destructeur
     virtual ~Potion();
 
-    //Accesseurs
-    int getBonus();
-    
-
-  protected:
-
-  private:
-	int bonus;
-
 };
 
 /****************************************************************************************************/

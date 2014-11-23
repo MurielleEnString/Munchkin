@@ -36,7 +36,7 @@ class Personnage {
     //Attributs
     int niveau;
     int bonus;
-    Race * race;
+    
 
   private:
 

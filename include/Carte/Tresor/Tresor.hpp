@@ -22,8 +22,8 @@ class Effet;
 class Tresor:public Carte {
   public:
     //Constructeur
-    Tresor(std::string n, Effet * e, int p); //Constructeur par défaut
-    Tresor(std::string n, std::string d, Effet * e, int p);
+    Tresor(std::string n, int b,Effet * e, int p); //Constructeur par défaut
+    Tresor(std::string n, std::string d,int b, Effet * e, int p);
 
     //Destructeur
     virtual ~Tresor();
@@ -31,16 +31,14 @@ class Tresor:public Carte {
     //Accesseurs
     void afficher() const;
     int getPrix();
+    int getBonus();
 
     //Mutateurs
 
   protected:
     //Attributs
     int prix;
-    
-
-  private:
-
+	int bonus;
 }; //Class Tresor
 
 /****************************************************************************************************/

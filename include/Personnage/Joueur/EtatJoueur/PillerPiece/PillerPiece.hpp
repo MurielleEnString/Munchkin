@@ -24,10 +24,7 @@ class PillerPiece:public EtatJoueur{
 		void poseEquipement(Equipement * e);
 		void equiper(Equipement * e);
 		void desequiper(Equipement * e);
-		void poserMalediction(Joueur * cible, Malediction * m);
-		void vendreObjets(vector<Tresor*> * sacAvendre);
-	
-	
+		void poserMalediction(Joueur * cible, Malediction * m);	
 };
 
 

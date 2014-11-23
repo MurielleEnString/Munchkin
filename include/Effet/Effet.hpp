@@ -32,14 +32,11 @@ class Effet{
     int getVal();
     void setVal(int n);
 
-  protected:
+  private:
     //Attributs
     
     int val;
-    
     Personnage * cible;
-    
-    
     ComportementEffet * comp; //Comportement de l'effet
 
   private:

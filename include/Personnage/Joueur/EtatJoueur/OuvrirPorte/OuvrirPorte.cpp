@@ -73,20 +73,6 @@ void OuvrirPorte::poserMalediction(Joueur * cible, Malediction * m){
 	joueur->defausser(m);
 }
 
-void OuvrirPorte::vendreObjets(vector<Tresor*> * sacAvendre){
-	int somme=0;
-	
-	vector<Tresor *>::iterator i;
-	for(i=sacAvendre->begin();i!=sacAvendre->end();++i){
-		somme+=(*i)->getPrix();
-		joueur->getJeu()->getDefausse().push_back(*i);
-	}
-	delete sacAvendre;
-	somme=somme/1000;
-	if(joueur->getNiveau()+somme>9) joueur->setNiveau(9);
-	else joueur->setNiveau(joueur->getNiveau()+somme);
-}
-
 
 
 void OuvrirPorte::combattre(Monstre * m){

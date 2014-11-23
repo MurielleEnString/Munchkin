@@ -32,7 +32,6 @@ class OuvrirPorte:public EtatJoueur{
 		void equiper(Equipement * e);
 		void desequiper(Equipement * e);
 		void poserMalediction(Joueur * cible, Malediction * m);
-		void vendreObjets(vector<Tresor*> * sacAvendre);
 		void combattre(Monstre * m);
 	
 };

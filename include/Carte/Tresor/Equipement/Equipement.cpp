@@ -15,8 +15,8 @@
 /****************************************************************************************************/
 
 
-Equipement::Equipement(std::string n, int p,int b, Effet * e) : Tresor(n,e,p),bonus(b) {}
-Equipement::Equipement(std::string n, std::string d, int p,int b, Effet * e) : Tresor(n, d, e, p),bonus(b) {}
+Equipement::Equipement(std::string n, int p,int b, Effet * e) : Tresor(n,b,e,p){}
+Equipement::Equipement(std::string n, std::string d, int p,int b, Effet * e) : Tresor(n, d,b ,e, p) {}
 
 /****************************************************************************************************/
 /********** Destructeur **********/
@@ -26,13 +26,7 @@ Equipement::Equipement(std::string n, std::string d, int p,int b, Effet * e) : T
 Equipement::~Equipement() {
 }
 
-/****************************************************************************************************/
-/********** Accesseurs **********/
-/****************************************************************************************************/
 
-int Equipement::getBonus(){
-	return bonus;
-}
 
 
 

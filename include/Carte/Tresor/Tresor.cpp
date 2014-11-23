@@ -16,8 +16,8 @@
 /****************************************************************************************************/
 
 
-Tresor::Tresor(std::string n, Effet * e, int p):Carte(n, e), prix(p) {}
-Tresor::Tresor(std::string n, std::string d, Effet * e, int p) : Carte(n, d, e), prix(p) {}
+Tresor::Tresor(std::string n, int b,Effet * e, int p):Carte(n, e), prix(p), bonus(b) {}
+Tresor::Tresor(std::string n, std::string d,int b, Effet * e, int p) : Carte(n, d, e), prix(p), bonus(b) {}
 
 /****************************************************************************************************/
 /**********          Destructeur                                                           **********/
@@ -49,6 +49,9 @@ int Tresor::getPrix(){
 	return prix;
 }
 
+int Tresor::getBonus(){
+	return bonus;
+}
 
 /****************************************************************************************************/
 /**********          Mutateurs                                                             **********/

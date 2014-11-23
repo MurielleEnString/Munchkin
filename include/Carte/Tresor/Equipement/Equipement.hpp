@@ -31,16 +31,6 @@ class Equipement:public Tresor {
 
     //Destructeur
     ~Equipement();
-
-    //Accesseurs
-    void afficher() const;
-    int getBonus();
-    
-    
-
-  protected:
-	int bonus;
-
 }; //Class Equipement
 
 /****************************************************************************************************/
