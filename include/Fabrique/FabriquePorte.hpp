@@ -34,6 +34,7 @@ class FabriquePorte:public FabriqueCarte{
 	
 	public:
 		FabriquePorte();
+		~FabriquePorte();
 		virtual Carte * fabriquerCarte(vector<string> champs);
 };
 

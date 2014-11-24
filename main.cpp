@@ -50,12 +50,12 @@ int main() {
 	
 
 	cout<<"Actions :"<<endl;
-	cout<<"1 : Piocher une porte face visible" <<endl;
-	cout<<"2 : Piocher une porte face cachée"<<endl;
-	cout<<"3 : Changer de Race"<<endl;
-	cout<<"4 : Poser un equipement"<<endl;
-	cout<<"5 : Equiper un equipement du bagage"<<endl;
-	cout<<"6 : Desequiper un equipement que vous porter"<<endl;
+	cout<<"1 : Voir vos Equipement et votre main" <<endl;
+	cout<<"2 : Piocher une porte face visible" <<endl;
+	cout<<"3 : Piocher une porte face cachée"<<endl;
+	cout<<"4 : Changer de Race"<<endl;
+	cout<<"5 : Poser un equipement"<<endl;
+	cout<<"6 : Equiper un equipement du bagage"<<endl;
 	cout<<"7 : Combattre un monstre de votre main"<<endl;
 	cout<<"8 : Maudire un autre joueur avec une malediction de votre main"<<endl;
 	cout<<"9 : Poser une potion"<<endl;
@@ -66,7 +66,7 @@ int main() {
 	cin>>choix;
 	
 	switch(choix){
-		case 0:{
+		case 1:{
 			for(ite=m->getJoueurs().begin();ite!=m->getJoueurs().end();++ite){
 				cout<<n<<" Joueur : "<<(*ite)<<endl;
 				++n;
@@ -97,15 +97,15 @@ int main() {
 			
 			break;
 		}
-		case 1:{
+		case 2:{
 			j->getEtat()->piocherPorteFaceVisible();
 			break;
 		}
-		case 2:{
+		case 3:{
 			j->getEtat()->piocherPorteFaceCache();
 			break;
 		}
-		case 3:{
+		case 4:{
 			c=choisirCarte(j);
 			if(c!=NULL && typeid(*c)==typeid(Race)){
 				j->getEtat()->changerRace((Race*)c);
@@ -116,7 +116,7 @@ int main() {
 			}
 			break;
 		}
-		case 4:{
+		case 5:{
 			c=choisirCarte(j);
 			if(c!=NULL && (typeid(*c)==typeid(Equipement) || typeid(*c)==typeid(Armure) || typeid(*c)==typeid(Chaussure) || typeid(*c)==typeid(CouvreChef) || typeid(*c)==typeid(Main))){
 				
@@ -128,21 +128,13 @@ int main() {
 			}
 			break;
 		}
-		case 5:{
+		case 6:{
 			c=choisirEquipement(j,j->getBagage());
 			if(c!=NULL){
 				cout<<c->Getnom()<<endl;
 				j->getEtat()->equiper((Equipement*)c);
 			}
 			
-			break;
-		}
-		case 6:{
-			c=choisirEquipement(j,j->getEquipe());
-			if(c!=NULL){
-				cout<<c->Getnom()<<endl;
-				j->getEtat()->desequiper((Equipement*)c);
-			}
 			break;
 		}
 		case 7:{

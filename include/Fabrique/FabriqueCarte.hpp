@@ -33,6 +33,7 @@ class FabriqueCarte{
 		FabriqueEffet * fe;
 	public:
 		FabriqueCarte();
+		virtual ~FabriqueCarte();
 		virtual Carte * fabriquerCarte(vector<string> champs)=0;
 		vector<string> decompString(string s);
 };

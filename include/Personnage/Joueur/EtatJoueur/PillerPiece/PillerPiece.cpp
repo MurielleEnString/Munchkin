@@ -62,14 +62,6 @@ void PillerPiece::equiper(Equipement * e){
 	if(typeid(*e)==typeid(Chaussure))joueur->equiperChaussure((Chaussure*)e);
 }
 
-void PillerPiece::desequiper(Equipement * e){
-	joueur->getBagage().push_back(e);
-	if(e->getEffet()!=NULL){
-		e->getEffet()->setVal(-e->getEffet()->getVal());
-		e->getEffet()->prendEffet();
-		e->getEffet()->setVal(-e->getEffet()->getVal());
-	}
-}
 
 void PillerPiece::poserMalediction(Joueur * cible, Malediction * m){
 	m->getEffet()->setCible(cible);

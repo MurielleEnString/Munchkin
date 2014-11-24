@@ -5,6 +5,8 @@ FabriqueTresor::FabriqueTresor():FabriqueCarte(){
 	fe=new FabriqueEffet();
 }
 
+FabriqueTresor::~FabriqueTresor(){}
+
 Carte * FabriqueTresor::fabriquerCarte(vector<string> champs){
 	
 	Effet * e=fe->fabriquerEffet(champs);
@@ -18,7 +20,6 @@ Carte * FabriqueTresor::fabriquerCarte(vector<string> champs){
 		return new Armure(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
 	}
 	else if(champs.front()=="Main"){
-		cout<<champs[1]<<" : "<<champs.size()<<endl;
 		if(champs.size()>5 && champs[5]=="2") return new Main(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e,stoi(champs[5]));
 		else return new Main(champs[1],champs[2],stoi(champs[3]),stoi(champs[4]),e);
 	}

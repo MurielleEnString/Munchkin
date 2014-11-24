@@ -1,6 +1,7 @@
 #include "FabriqueCarte.hpp"
 
 FabriqueCarte::FabriqueCarte(){}
+FabriqueCarte::~FabriqueCarte(){}
 
 vector<string> FabriqueCarte::decompString(string nom){
 	int i=0;

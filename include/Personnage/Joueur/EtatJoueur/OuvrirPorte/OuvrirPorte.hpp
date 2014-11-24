@@ -30,7 +30,6 @@ class OuvrirPorte:public EtatJoueur{
 		void changerRace(Race * r);
 		void poseEquipement(Equipement * e);
 		void equiper(Equipement * e);
-		void desequiper(Equipement * e);
 		void poserMalediction(Joueur * cible, Malediction * m);
 		void combattre(Monstre * m);
 	

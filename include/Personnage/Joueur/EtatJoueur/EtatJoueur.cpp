@@ -39,9 +39,6 @@ void EtatJoueur::equiper(Equipement * e){
 	cout<<"Vous ne pouvez pas changer votre équipement maintenant"<<endl;
 }
 
-void EtatJoueur::desequiper(Equipement * e){
-	cout<<"Vous ne pouvez pas changer votre équipement maintenant"<<endl;
-}
 
 void EtatJoueur::combattre(Monstre * m){
 	cout<<"Vous ne pouvez pas poser de monstre maintenant"<<endl;

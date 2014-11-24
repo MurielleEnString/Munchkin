@@ -79,8 +79,10 @@ void Bagarre::deguerpir(){
 	}
 	else{
 		cout<<"Le monstre vous attrape"<<endl;
-		mons->getEffet()->setCible(joueur);
-		mons->getEffet()->prendEffet();
+		if(mons->getEffet()!=NULL){
+			mons->getEffet()->setCible(joueur);
+			mons->getEffet()->prendEffet();
+		}
 	}
 	joueur->defausser((Carte*)mons);
 	joueur->setBonus(0);

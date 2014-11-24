@@ -14,7 +14,6 @@ Effet * FabriqueEffet::fabriquerEffet(vector<string> champs){
 				comp+=champs[i][j];
 				++j;
 			}
-			cout<<"comp : "<<comp<<endl;
 			++j;
 			while(champs[i][j]!=')'){				//récupération de la valeur de l'effet
 				
@@ -22,7 +21,6 @@ Effet * FabriqueEffet::fabriquerEffet(vector<string> champs){
 				j++;
 			}
 			v=stoi(val);
-			cout<<"val : "<<v<<endl;
 		}
 	}
 	
