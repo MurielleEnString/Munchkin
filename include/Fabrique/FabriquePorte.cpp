@@ -4,7 +4,9 @@ FabriquePorte::FabriquePorte():FabriqueCarte(){
 	fe=new FabriqueEffet();
 }
 
-FabriquePorte::~FabriquePorte(){}
+FabriquePorte::~FabriquePorte(){
+		delete fe;
+}
 
 Carte * FabriquePorte::fabriquerCarte(vector<string> champs){
 	Effet * e=fe->fabriquerEffet(champs);

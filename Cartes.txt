@@ -26,6 +26,10 @@ Potion;Potion de Mauvaise Haleine;;100;2;
 Potion;Potion Glaciale Explosive;;100;3;
 Potion;Boisson Energisante Eventée;;200;2;
 Potion;Oh, les Jolis Ballons !;;0;5;
+Potion;Potion acide radioactive et électrique;;200;5;
+Potion;Potion de bravoure hystérique;;100;2;
+Potion;Potion de sommeil;;100;2;
+
 
 
 

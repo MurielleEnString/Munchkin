@@ -5,7 +5,9 @@ FabriqueTresor::FabriqueTresor():FabriqueCarte(){
 	fe=new FabriqueEffet();
 }
 
-FabriqueTresor::~FabriqueTresor(){}
+FabriqueTresor::~FabriqueTresor(){
+		delete fe;
+}
 
 Carte * FabriqueTresor::fabriquerCarte(vector<string> champs){
 	

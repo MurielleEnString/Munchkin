@@ -55,12 +55,14 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 		while (getline(ifs, ligne)) {
 			mot="";
 			champs=fp->decompString(ligne);
-			if(champs.front()=="Equipement" || champs.front()=="Potion" || champs.front()=="Armure" || champs.front()=="Chaussure" || champs.front()=="Main" || champs.front()=="CouvreChef"){
-				piocheTresor.push_back((Tresor*)ft->fabriquerCarte(champs));
-			}
-			
-			else if(champs.front()=="Malediction" || champs.front()=="Monstre" || champs.front()=="Race"){
-				piochePorte.push_back((Porte*)fp->fabriquerCarte(champs));
+			if(champs.size()>0){
+				if(champs.front()=="Equipement" || champs.front()=="Potion" || champs.front()=="Armure" || champs.front()=="Chaussure" || champs.front()=="Main" || champs.front()=="CouvreChef"){
+					piocheTresor.push_back((Tresor*)ft->fabriquerCarte(champs));
+				}
+				
+				else if(champs.front()=="Malediction" || champs.front()=="Monstre" || champs.front()=="Race"){
+					piochePorte.push_back((Porte*)fp->fabriquerCarte(champs));
+				}
 			}
 		}
 	}
@@ -73,6 +75,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	for(i=0;i<nbJoueurs;++i){
 		joueurs.push_back(new Joueur(this,i, new Race(NULL,NULL,"Humain","")));
 	}
+	joueurs.front()->setNiveau(7);
 	
 	for(vector<Joueur*>::iterator it=joueurs.begin();it!=joueurs.end();++it){
 		(*it)->getMain().push_back(piocherPorte());

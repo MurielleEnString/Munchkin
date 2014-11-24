@@ -13,7 +13,7 @@ FinTour::FinTour(Joueur * j):EtatJoueur(j){
 FinTour::~FinTour(){}
 
 void FinTour::finirTour(){
-	if(joueur->getMain().size()<6){
+	if(joueur->getMain().size()<=joueur->getNbCartesMain()){
 		joueur->setEtat(joueur->getFin());
 		joueur->finTour();
 	}

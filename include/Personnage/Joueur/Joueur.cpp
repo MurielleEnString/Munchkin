@@ -31,6 +31,11 @@ Joueur::Joueur(Munchkin * j, int i, Race * r):Personnage(), id(i),nbCartesMain(5
 	fin=new FinTour(this);
 	attente=new Attente(this);
 	etat_=attente;
+	tete=NULL;
+	torse=NULL;
+	maing=NULL;
+	maind=NULL;
+	pieds=NULL;
 }
 
 
@@ -63,6 +68,22 @@ Joueur::~Joueur(){
 	while(!bagage.empty()){
 		delete bagage.back();
 		bagage.pop_back();
+	}
+	
+	if(tete!=NULL){
+		delete tete;
+	}
+	if(maing!=NULL){
+		delete maing;
+	}
+	if(maind!=NULL){
+		delete maind;
+	}
+	if(pieds!=NULL){
+		delete pieds;
+	}
+	if(torse!=NULL){
+		delete torse;
 	}
 	
 	delete race;
