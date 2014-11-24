@@ -28,7 +28,6 @@ Joueur::Joueur(Munchkin * j, int i, Race * r):Personnage(), id(i),nbCartesMain(5
 	ouvrirLaPorte=new OuvrirPorte(this);
 	piller=new PillerPiece(this);
 	bagarre=new Bagarre(this);
-	fin=new FinTour(this);
 	attente=new Attente(this);
 	etat_=attente;
 	tete=NULL;
@@ -55,7 +54,6 @@ Joueur::~Joueur(){
 	delete ouvrirLaPorte;
 	delete piller;
 	delete bagarre;
-	delete fin;
 	delete attente;
 	while(!main.empty()){
 		delete main.back();
@@ -250,9 +248,6 @@ PillerPiece * Joueur::getPiller(){
 }
 Bagarre * Joueur::getBagarre(){
 	return bagarre;
-}
-FinTour * Joueur::getFin(){
-	return fin;
 }
 
 Attente * Joueur::getAttente(){

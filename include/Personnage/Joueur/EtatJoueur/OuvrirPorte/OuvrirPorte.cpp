@@ -12,8 +12,9 @@ OuvrirPorte::OuvrirPorte(Joueur *j):EtatJoueur(j){}
 OuvrirPorte::~OuvrirPorte(){}
 
 void OuvrirPorte::piocherPorteFaceCache(){
+	
+	joueur->getMain().push_back(joueur->getJeu()->piocherPorte());
 	joueur->setEtat(joueur->getPiller());
-	joueur->getEtat()->piocherPorteFaceCache();
 }
 
 void OuvrirPorte::changerRace(Race * r){

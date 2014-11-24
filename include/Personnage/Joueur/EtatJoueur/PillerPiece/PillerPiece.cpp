@@ -7,18 +7,24 @@
 
 #include "PillerPiece.hpp"
 
-PillerPiece::PillerPiece(Joueur *j):EtatJoueur(j){
-}
+PillerPiece::PillerPiece(Joueur * j):EtatJoueur(j){
+	}
 
 PillerPiece::~PillerPiece(){}
 
-void PillerPiece::piocherPorteFaceCache(){
-	Carte * c=joueur->getJeu()->piocherPorte();
-	joueur->getMain().push_back(c);
-	joueur->setEtat((EtatJoueur*)joueur->getFin());
+void PillerPiece::finirTour(){
+	if(joueur->getMain().size()<=joueur->getNbCartesMain()){
+		joueur->setEtat(joueur->getAttente());
+		joueur->finTour();
+	}
+	else{
+		cout<<"Vous devez défausser de cartes pour n'en avoir plus que 5 en main"<<endl;
+	}
 }
 
-
+void PillerPiece::defausserCarte(Carte * c){
+	joueur->defausser(c);
+}
 
 void PillerPiece::changerRace(Race * r){
 	
@@ -27,7 +33,7 @@ void PillerPiece::changerRace(Race * r){
 		Effet * e=joueur->getRace()->getEffet();
 		e->setVal(-e->getVal());
 		e->prendEffet();
-		joueur->getJeu()->getDefausse().push_back(joueur->getRace());
+		joueur->defausser(joueur->getRace());
 		
 	}
 	else{
@@ -63,8 +69,11 @@ void PillerPiece::equiper(Equipement * e){
 }
 
 
+
 void PillerPiece::poserMalediction(Joueur * cible, Malediction * m){
 	m->getEffet()->setCible(cible);
 	m->getEffet()->prendEffet();
-	joueur->getJeu()->defausser(m);
+	joueur->defausser(m);
 }
+
+

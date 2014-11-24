@@ -20,7 +20,6 @@
 #include "EtatJoueur/OuvrirPorte/OuvrirPorte.hpp"
 #include "EtatJoueur/PillerPiece/PillerPiece.hpp"
 #include "EtatJoueur/Bagarre/Bagarre.hpp"
-#include "EtatJoueur/FinTour/FinTour.hpp"
 #include "EtatJoueur/Attente/Attente.hpp"
 #include "../../Carte/Tresor/Equipement/CouvreChef/CouvreChef.hpp"
 #include "../../Carte/Tresor/Equipement/Main/Main.hpp"
@@ -42,7 +41,6 @@ class DebutTour;
 class OuvrirPorte;
 class Bagarre;
 class PillerPiece;
-class FinTour;
 class Attente;
 
 
@@ -89,7 +87,6 @@ class Joueur:public Personnage{
 	OuvrirPorte * getOuvrirLaPorte();
 	PillerPiece * getPiller();
 	Bagarre * getBagarre();
-	FinTour * getFin();
 	Attente * getAttente();
   
 	vector<Equipement*>& getBagage();
@@ -120,7 +117,6 @@ class Joueur:public Personnage{
     OuvrirPorte * ouvrirLaPorte;
 	PillerPiece * piller;
 	Bagarre * bagarre;
-	FinTour * fin;
 	Attente * attente;
 	
 		

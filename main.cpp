@@ -41,12 +41,7 @@ int main() {
   while(!m->getFinPartie()){
 	j=m->getCourant();
 	n=0;
-	//cout<<m->getJoueurs().size()<<endl;
 	
-	/*for(ite=m->getJoueurs().begin();ite!=m->getJoueurs().end();++i){
-			cout<<n<<" Joueur : "<<(*ite)->getId()<<endl;
-			++n;
-	}*/
 	
 
 	cout<<"Actions :"<<endl;
@@ -144,7 +139,7 @@ int main() {
 				j->getEtat()->combattre((Monstre*)c);
 			}
 			else{
-				cout<<"Vous n'avez pas choisi un equipement"<<endl;
+				cout<<"Vous n'avez pas choisi un monstre"<<endl;
 				j->getMain().push_back(c);
 			}
 			break;

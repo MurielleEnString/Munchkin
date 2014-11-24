@@ -27,7 +27,7 @@ void Bagarre::combattre(Monstre * m){
 		joueur->setNiveau(joueur->getNiveau()+m->getNbNiv());
 		joueur->defausser((Carte*)m);
 		joueur->setBonus(0);
-		joueur->setEtat((EtatJoueur*)joueur->getFin());
+		joueur->setEtat((EtatJoueur*)joueur->getPiller());
 		if(joueur->getNiveau()>=10){
 			joueur->getJeu()->setFinPartie(true);
 		}
@@ -86,7 +86,7 @@ void Bagarre::deguerpir(){
 	}
 	joueur->defausser((Carte*)mons);
 	joueur->setBonus(0);
-	joueur->setEtat((EtatJoueur*)joueur->getFin());
+	joueur->setEtat((EtatJoueur*)joueur->getPiller());
 }
 
 

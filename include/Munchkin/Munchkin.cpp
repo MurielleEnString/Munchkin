@@ -75,7 +75,7 @@ Munchkin::Munchkin(std::string filename, int nbJoueurs):finPartie(false) {
 	for(i=0;i<nbJoueurs;++i){
 		joueurs.push_back(new Joueur(this,i, new Race(NULL,NULL,"Humain","")));
 	}
-	joueurs.front()->setNiveau(7);
+	
 	
 	for(vector<Joueur*>::iterator it=joueurs.begin();it!=joueurs.end();++it){
 		(*it)->getMain().push_back(piocherPorte());
@@ -207,7 +207,7 @@ void Munchkin::changementJoueur(Joueur * j){
 		courant=*it;
 	}
 	courant->setEtat(courant->getDebut());
-	cout<<"Nouv courant : " <<courant->getId()<<endl;
+	cout<<"C'est au joueur n°" <<courant->getId()<<endl;
 	cout<<joueurs.size()<<endl;
 }
 

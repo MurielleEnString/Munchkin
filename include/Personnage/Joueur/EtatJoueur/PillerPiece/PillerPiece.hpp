@@ -5,28 +5,31 @@
  * \date Octobre 2014
  */
 
-#ifndef PILLERPIECE_HPP
-#define PILLERPIECE_HPP
-
-#include "../EtatJoueur.hpp"
-#include "../../Joueur.hpp"
-class Equipement;
-
-
-
+#ifndef PillerPiece_HPP
+	#define PillerPiece_HPP
+	
+	#include "../EtatJoueur.hpp"
+	#include "../../Joueur.hpp"
+	//#include "../../../../Munchkin/Munchkin.hpp"
+	class Equipement;
+	
+	
 class PillerPiece:public EtatJoueur{
 	public:
-		PillerPiece(Joueur *j);
+		PillerPiece(Joueur * j);
 		virtual ~PillerPiece();
 		
-		void piocherPorteFaceCache();
+		void finirTour();
+		void defausserCarte(Carte * c);
 		void changerRace(Race * r);
 		void poseEquipement(Equipement * e);
 		void equiper(Equipement * e);
-		void poserMalediction(Joueur * cible, Malediction * m);	
+		void poserMalediction(Joueur * cible, Malediction * m);
+		
+		
 };
 
 
-
-
+	
 #endif
+
