@@ -107,7 +107,7 @@ FabriqueEffet.o: FabriqueCarte.o
 
 
 clean:
-	rm -rf  *.o
+	find -name *.o -print0 |xargs -0  rm
 
 
 
